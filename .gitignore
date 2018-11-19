@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
-
+*.xml
+*.mk
+*.properties
+*.bash
 # Object files
 *.o
 *.ko
