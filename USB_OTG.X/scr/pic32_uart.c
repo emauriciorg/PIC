@@ -5,7 +5,7 @@
 #endif
 
 
-void initialize_UART_x(unsigned char UART_NUM,unsigned long UART_Baud){
+void pic32_uart_initialize(unsigned char UART_NUM,unsigned long UART_Baud){
 	
 	switch (UART_NUM){
 	

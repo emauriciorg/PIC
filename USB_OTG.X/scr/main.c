@@ -24,8 +24,10 @@ int main(){
 	while (1){
 
 		if(timers_timeout_reached()){
-			timers_trigger_timeout(2);			
+			timers_trigger_timeout(1);			
 			LED_YELLOW_TOGGLE();
+			DEBUG_MSG ("ADC1 is %d\n",  pic32_adc_read_channel(0));
+
 		}
 
 	}

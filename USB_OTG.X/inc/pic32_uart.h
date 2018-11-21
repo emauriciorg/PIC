@@ -251,7 +251,7 @@ UART_FUNCTION_DEC(3)
 UART_FUNCTION_DEC(4)
 UART_FUNCTION_DEC(5) 
 //UART Functions:
-void                initialize_UART_x(unsigned char UART_NUM,unsigned long  UART_Baud);
+void  pic32_uart_initialize(unsigned char UART_NUM,unsigned long  UART_Baud);
 
      
 
