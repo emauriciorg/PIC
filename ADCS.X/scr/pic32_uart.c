@@ -4,58 +4,52 @@
 	char Debug_CMD;
 #endif
 
-
-void initialize_UART_x(unsigned char UART_NUM,unsigned long UART_Baud){
-	
+enum uart_ids{
+	UART_ID_1,
+	UART_ID_2,
+	UART_ID_3,
+	UART_ID_4,
+	UART_ID_5,
+	UART_ID_6
+};
+void initialize_UART_x(char UART_NUM,long int UART_Baud){
 	switch (UART_NUM){
-	
 	case UART1:
 		#ifdef __USE_UART1_
 		UART_FUNCTIONS_INIT(1,4,3);//validate TRHOUGH MACROS
-		UART_PIN_SETUP(PORTD,BIT_2,BIT_3);
 		#endif
 		break;
 	case UART2:
 		#ifdef __USE_UART2_
-		UART_FUNCTIONS_INIT(2,3,2);
-		UART_PIN_SETUP(PORTF,BIT_4,BIT_5);
+		UART_FUNCTIONS_INIT(2,4,2);
 		#endif
 		break;
-#ifdef UART_PLIB_CONFLICT_SOLVE
-	case UART3:
+	case UART_ID_3:
 		#ifdef __USE_UART3_
 		UART_FUNCTIONS_INIT(3,4,1);
 		#endif
 		break;
-	case UART4:
+	case UART_ID_4:
 		#ifdef __USE_UART4_
 		UART_FUNCTIONS_INIT(4,2,0)
 		#endif
 		break;
-	case UART5:
+	case UART_ID_5:
 		#ifdef __USE_UART5_
 		UART_FUNCTIONS_INIT(5,4,0);
 		#endif
 		break;
-	case UART6:
+	case UART_ID_6:
 		#ifdef __USE_UART6_
 		UART_FUNCTIONS_INIT(6,1,0);
 		#endif
 		break;
-#endif
 	default:
 		break;
 	}
 
 }
 
-/*for pps use*/
-void uart_set_pins(){
-	PPSUnLock;
-	/* PPSInput(4,U2RX,RPF4); */
-	/* PPSOutput(3,RPf5,U2TX);*/
-	PPSLock;
-}
 
 #ifdef __USE_UART1_ // UART1 
 
@@ -129,21 +123,21 @@ void uart_set_pins(){
 
 
 #ifdef __DEBUG_
-void _mon_putc(char c){
-	while(!UARTTransmitterIsReady(__debug_port_));
-	UARTSendDataByte(__debug_port_, c);
-	while(!UARTTransmissionHasCompleted(__debug_port_));
-}
-
-#ifndef PRINT_STDIO
-void DEBUG_MSG(char* str){
-	while(*str != '\0'){
+	void _mon_putc(char c){
 		while(!UARTTransmitterIsReady(__debug_port_));
-		UARTSendDataByte(__debug_port_, *str);
-		str++;
+		UARTSendDataByte(__debug_port_, c);
 		while(!UARTTransmissionHasCompleted(__debug_port_));
 	}
-}
+
+#ifndef PRINT_STDIO
+	void DEBUG_MSG(char* str){
+		while(*str != '\0'){
+			while(!UARTTransmitterIsReady(__debug_port_));
+			UARTSendDataByte(__debug_port_, *str);
+			str++;
+			while(!UARTTransmissionHasCompleted(__debug_port_));
+		}
+	}
 #endif
 
 char uart_get_command(void){

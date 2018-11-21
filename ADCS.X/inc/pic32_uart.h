@@ -28,6 +28,7 @@
 #include <proc/p32mx440f256h.h>
 
 
+
 #define RX_BUFFER_SIZE 1088
 #define PACKET_SIZE 32
 #define SERIAL_SIZE 9
@@ -54,10 +55,8 @@ typedef struct {
 
 #define __DEBUG_
 
-#define PRINT_STDIO
-	
 #ifdef __DEBUG_
-	#define __debug_port_ UART2
+	#define __debug_port_ UART1
 	void _mon_putc(char c);
 	char uart_get_command(void);
 	void send_debug_chr(char character);
@@ -73,7 +72,7 @@ typedef struct {
 
 
 #define __USE_UART1_ 
-#define __USE_UART2_
+//#define __USE_UART2_
 //#define __USE_UART3_
 //#define __USE_UART4_
 //#define __USE_UART5_
@@ -82,7 +81,6 @@ typedef struct {
 
 #ifdef __USE_UART1_
 	st_uart_set UART1_INST;
-
 #endif /* __USE_UART1_ */
 
 #ifdef __USE_UART2_
@@ -90,31 +88,22 @@ typedef struct {
 #endif 
 
 #ifdef __USE_UART3_
-	#warning "__USE_UART3_ no implemented!"
 	st_uart_set UART3_INST; 
 #endif 
 
 #ifdef __USE_UART4_
-	#warning "__USE_UART4_ no implemented!"
-
 	st_uart_set UART4_INST;
 #endif 
 
 #ifdef __USE_UART5_
-	#warning "__USE_UART5_ no implemented!"
-
 	st_uart_set UART5_INST;
 #endif 
 
 #ifdef __USE_UART6_
-	#warning "__USE_UART6_ no implemented!"
 	st_uart_set UART6_INST;
 #endif 
     
-#define UART_PIN_SETUP(UART_PORT,UARTX_RX_PIN,UARTX_TX_PIN)  m##UART_PORT##SetPinsDigitalOut(UARTX_TX_PIN);\
- 		  				m##UART_PORT##SetPinsDigitalIn(UARTX_RX_PIN);              \
-
-
+   
 #define UART_FUNCTION_DEC(X)    void WriteChar_U##X(char character);      \
 				void WriteString_UART_##X (char *string); \
 				char  U##X##sget( char *rd );             \
@@ -129,7 +118,7 @@ typedef struct {
 #define UART_FUNCTIONS_INIT(X,P,SP)	UARTConfigure(UART##X, UART_ENABLE_PINS_TX_RX_ONLY);                                     \
 					UARTSetFifoMode(UART##X, UART_INTERRUPT_ON_RX_NOT_EMPTY | UART_INTERRUPT_ON_TX_DONE);    \
 					UARTSetLineControl(UART##X, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);\
-					UARTSetDataRate(UART##X, PBCLK_FREQUENCY, UART_Baud);                               \
+					UARTSetDataRate(UART##X, GetPeripheralClock(), UART_Baud);                               \
 					UARTEnable(UART##X, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));             \
 					U##X##_clear_variables();                                                                \
 					INTEnable(INT_SOURCE_UART_RX(UART##X), INT_ENABLED);                                     \
@@ -251,7 +240,7 @@ UART_FUNCTION_DEC(3)
 UART_FUNCTION_DEC(4)
 UART_FUNCTION_DEC(5) 
 //UART Functions:
-void                initialize_UART_x(unsigned char UART_NUM,unsigned long  UART_Baud);
+void                initialize_UART_x(char UART_NUM,long int UART_Baud);
 
      
 
