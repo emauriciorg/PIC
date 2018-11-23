@@ -26,7 +26,7 @@
 #include "plib.h"
 #include "hw_profile.h"
 #include <proc/p32mx440f256h.h>
-
+#include "common_structs.h"
 
 #define RX_BUFFER_SIZE 1088
 #define PACKET_SIZE 32
@@ -53,7 +53,7 @@ typedef struct {
 
 
 #define __DEBUG_
-
+#define UART2_IS_DEBUG_PORT
 #define PRINT_STDIO
 	
 #ifdef __DEBUG_
@@ -72,7 +72,7 @@ typedef struct {
 #endif /* __DEBUG_ */
 
 
-#define __USE_UART1_ 
+//#define __USE_UART1_ 
 #define __USE_UART2_
 //#define __USE_UART3_
 //#define __USE_UART4_
@@ -80,36 +80,6 @@ typedef struct {
 //#define __USE_UART6_
 
 
-#ifdef __USE_UART1_
-	st_uart_set UART1_INST;
-
-#endif /* __USE_UART1_ */
-
-#ifdef __USE_UART2_
-	st_uart_set UART2_INST;
-#endif 
-
-#ifdef __USE_UART3_
-	#warning "__USE_UART3_ no implemented!"
-	st_uart_set UART3_INST; 
-#endif 
-
-#ifdef __USE_UART4_
-	#warning "__USE_UART4_ no implemented!"
-
-	st_uart_set UART4_INST;
-#endif 
-
-#ifdef __USE_UART5_
-	#warning "__USE_UART5_ no implemented!"
-
-	st_uart_set UART5_INST;
-#endif 
-
-#ifdef __USE_UART6_
-	#warning "__USE_UART6_ no implemented!"
-	st_uart_set UART6_INST;
-#endif 
     
 #define UART_PIN_SETUP(UART_PORT,UARTX_RX_PIN,UARTX_TX_PIN)  m##UART_PORT##SetPinsDigitalOut(UARTX_TX_PIN);\
  		  				m##UART_PORT##SetPinsDigitalIn(UARTX_RX_PIN);              \
@@ -131,7 +101,7 @@ typedef struct {
 					UARTSetLineControl(UART##X, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);\
 					UARTSetDataRate(UART##X, PBCLK_FREQUENCY, UART_Baud);                               \
 					UARTEnable(UART##X, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));             \
-					U##X##_clear_variables();                                                                \
+					/*U##X##_clear_variables();*/                                                                \
 					INTEnable(INT_SOURCE_UART_RX(UART##X), INT_ENABLED);                                     \
 					INTSetVectorPriority(INT_VECTOR_UART(UART##X), INT_PRIORITY_LEVEL_##P);                  \
 					INTSetVectorSubPriority(INT_VECTOR_UART(UART##X), INT_SUB_PRIORITY_LEVEL_##SP);          \
@@ -251,9 +221,13 @@ UART_FUNCTION_DEC(3)
 UART_FUNCTION_DEC(4)
 UART_FUNCTION_DEC(5) 
 //UART Functions:
-void  pic32_uart_initialize(unsigned char UART_NUM,unsigned long  UART_Baud);
+void  pic32_uart_initialize(uint8_t UART_NUM,unsigned long  UART_Baud);
 
      
 
+void pic32_uart2_check_stream(st_uart_string *uart_instance);
+char pic32_pending_debug_packet(void);
+char *pic32_get_debug_packet(void);
+void pi32_flush_debug_packet(void);
 
 #endif /* __END_OF_FILE__ */

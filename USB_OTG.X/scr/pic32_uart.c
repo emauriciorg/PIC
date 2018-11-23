@@ -5,7 +5,7 @@
 #endif
 
 
-void pic32_uart_initialize(unsigned char UART_NUM,unsigned long UART_Baud){
+void pic32_uart_initialize(uint8_t UART_NUM,unsigned long UART_Baud){
 	
 	switch (UART_NUM){
 	
@@ -46,19 +46,20 @@ void pic32_uart_initialize(unsigned char UART_NUM,unsigned long UART_Baud){
 	default:
 		break;
 	}
-
 }
 
 /*for pps use*/
-void uart_set_pins(){
+void uart_set_pins(void){
 	PPSUnLock;
 	/* PPSInput(4,U2RX,RPF4); */
 	/* PPSOutput(3,RPf5,U2TX);*/
 	PPSLock;
 }
 
+
 #ifdef __USE_UART1_ // UART1 
 
+	st_uart_set UART1_INST;
 	UART_FUNCTION_ISR(1,4)
 	/*********************UART1 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(1)
@@ -75,6 +76,9 @@ void uart_set_pins(){
 
 
 #ifdef __USE_UART2_
+	st_uart_string uart2_instance;
+	#ifdef UART2_IS_DEBUG_PORT
+	#else
 	UART_FUNCTION_ISR(2,4)
 	/*********************UART2 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(2)
@@ -85,9 +89,12 @@ void uart_set_pins(){
 	UART_FUNCTION_RECIEVE_DATA_NOT_ISR(2)
 	UART_STORE_RECIEVED_PACKAGE(2)
 	IS_PACKAGE_AVAILABLE(2)
+	#endif
 #endif
 
 #ifdef __USE_UART3_
+	#warning "__USE_UART3_ no implemented!"
+	st_uart_set UART3_INST; 
 	UART_FUNCTION_ISR(3,4)
 	/*********************UART3 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(3)
@@ -101,6 +108,8 @@ void uart_set_pins(){
 #endif /* __USE_UART3_ */
 
 #ifdef __USE_UART4_
+	#warning "__USE_UART4_ no implemented!"
+	st_uart_set UART4_INST;
 	UART_FUNCTION_ISR(4,2)
 	/*********************UART4 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(4)
@@ -114,6 +123,8 @@ void uart_set_pins(){
 #endif /* __USE_UART4_ */
 
 #ifdef __USE_UART5_
+	#warning "__USE_UART5_ no implemented!"
+	st_uart_set UART5_INST;
 	UART_FUNCTION_ISR(5,4)
 	/*********************UART5 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(5)
@@ -148,6 +159,53 @@ void DEBUG_MSG(char* str){
 
 char uart_get_command(void){
 	return Debug_CMD;
+}
+
+
+void __ISR(_UART_2_VECTOR, IPL4AUTO) IntUart2Handler(void){
+	if (INTGetFlag(INT_SOURCE_UART_RX(UART2) )){
+		uart2_instance.in_stream[uart2_instance.tail++] = UARTGetDataByte(UART2);
+		INTClearFlag(INT_SOURCE_UART_RX(UART2));    
+		pic32_uart2_check_stream(&uart2_instance);
+	}                         
+	
+	if ( INTGetFlag(INT_SOURCE_UART_TX(UART2)) ){
+		INTClearFlag(INT_SOURCE_UART_TX(UART2));
+	}
+}                                 
+
+
+void pic32_uart2_check_stream(st_uart_string *uart_instance){
+
+	char len = strlen(uart_instance->in_stream);
+	char *pch = (char *)memchr(uart_instance->in_stream,'\n',len);
+	
+	if (pch){
+   	     	uart_instance->in_stream[len-1]  = false;
+		uart_instance->pending_parse     = true;
+		uart_instance->tail              = false; 	
+	}else{
+		uart_instance->pending_parse =false;
+	}
+
+	if ( uart_instance->tail > UART_STRING_MAX_SIZE)
+		uart_instance->tail       =false; 	
+}
+
+char pic32_pending_debug_packet(void){
+	if(!uart2_instance.pending_parse){ 	 
+		return false;
+	}
+	uart2_instance.pending_parse = false;
+	return true;	
+}
+
+char   *pic32_get_debug_packet(void){
+	return 	&(uart2_instance.in_stream[0]);
+}
+
+void pi32_flush_debug_packet(void){
+	memset(&uart2_instance.in_stream[0],0,sizeof(st_uart_string));
 }
 
 

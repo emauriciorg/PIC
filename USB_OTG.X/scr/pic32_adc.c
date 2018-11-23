@@ -5,8 +5,7 @@
 #include <proc/p32mx440f256h.h>
 
 
-void pic32_adc_initialize(unsigned long int analog_channels_to_enable )
-{
+void pic32_adc_initialize(unsigned long int analog_channels_to_enable ){
 
 	CloseADC10();// ensure the ADC is off before setting the configuration
 
@@ -43,14 +42,12 @@ void pic32_adc_initialize(unsigned long int analog_channels_to_enable )
 
 }
 
-unsigned int pic32_adc_set_channel_setup(void)
-{
+uint16_t pic32_adc_set_channel_setup(void){
 	SetChanADC10(   ADC_CH0_NEG_SAMPLEA_NVREF | 
 			ADC_CH0_POS_SAMPLEA_AN1);
 }
 
-unsigned int pic32_adc_read_channel(unsigned char buffer_index)
-{
+uint16_t pic32_adc_read_channel(uint8_t buffer_index){
 	// active_buffer = 8 * ((~ReadActiveBufferADC10() & 0x01));// with this function we get the active buffer
 	return ReadADC10(buffer_index);
 }
