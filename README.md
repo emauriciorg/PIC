@@ -3,7 +3,7 @@
 `author` S314E
 
 
-#PIC32
+# PIC32
 
 This repo is  self workshop for pic32 MCU   , developed in  MPLAB X IDE , XC32 
 
@@ -24,7 +24,7 @@ pending!
 
 The commands are in `command_list.h`  and are hashed
 
-##HAPPY CODING!
+## HAPPY CODING!
 ### Links ###
 [PICMX440F256H](http://ww1.microchip.com/downloads/en/devicedoc/61143h.pdf)
 
