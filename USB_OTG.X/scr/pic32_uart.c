@@ -59,7 +59,7 @@ void uart_set_pins(void){
 
 #ifdef __USE_UART1_ // UART1 
 
-	st_uart_set UART1_INST;
+	uart_instance_t UART1_INST;
 	UART_FUNCTION_ISR(1,4)
 	/*********************UART1 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(1)
@@ -76,7 +76,7 @@ void uart_set_pins(void){
 
 
 #ifdef __USE_UART2_
-	st_uart_string uart2_instance;
+	uart_protocol_t uart2_instance;
 	#ifdef UART2_IS_DEBUG_PORT
 	#else
 	UART_FUNCTION_ISR(2,4)
@@ -94,7 +94,7 @@ void uart_set_pins(void){
 
 #ifdef __USE_UART3_
 	#warning "__USE_UART3_ no implemented!"
-	st_uart_set UART3_INST; 
+	uart_instance_t UART3_INST; 
 	UART_FUNCTION_ISR(3,4)
 	/*********************UART3 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(3)
@@ -109,7 +109,7 @@ void uart_set_pins(void){
 
 #ifdef __USE_UART4_
 	#warning "__USE_UART4_ no implemented!"
-	st_uart_set UART4_INST;
+	uart_instance_t UART4_INST;
 	UART_FUNCTION_ISR(4,2)
 	/*********************UART4 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(4)
@@ -124,7 +124,7 @@ void uart_set_pins(void){
 
 #ifdef __USE_UART5_
 	#warning "__USE_UART5_ no implemented!"
-	st_uart_set UART5_INST;
+	uart_instance_t UART5_INST;
 	UART_FUNCTION_ISR(5,4)
 	/*********************UART5 FUNCTIONS*******************************/
 	UART_FUNCTION_WRITE_CHAR(5)
@@ -175,7 +175,7 @@ void __ISR(_UART_2_VECTOR, IPL4AUTO) IntUart2Handler(void){
 }                                 
 
 
-void pic32_uart2_check_stream(st_uart_string *uart_instance){
+void pic32_uart2_check_stream(uart_protocol_t *uart_instance){
 
 	char len = strlen(uart_instance->in_stream);
 	char *pch = (char *)memchr(uart_instance->in_stream,'\n',len);
@@ -205,7 +205,7 @@ char   *pic32_get_debug_packet(void){
 }
 
 void pi32_flush_debug_packet(void){
-	memset(&uart2_instance.in_stream[0],0,sizeof(st_uart_string));
+	memset(&uart2_instance.in_stream[0],0,sizeof(uart_protocol_t));
 }
 
 

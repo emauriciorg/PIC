@@ -39,7 +39,7 @@ typedef struct {
     char packet_end_sequence;
     char packet_complete;
     char available;
-}uart_protocol;
+}pic32_uart_protocol_t;
 
 
 typedef struct {
@@ -47,8 +47,8 @@ typedef struct {
 	char     RxBuf[RX_BUFFER_SIZE];
 	uint16_t	RxHead;
 	uint16_t    RxTail;        
-	uart_protocol packet;
-}st_uart_set;
+	pic32_uart_protocol_t packet;
+}uart_instance_t;
 
 
 
@@ -225,7 +225,7 @@ void  pic32_uart_initialize(uint8_t UART_NUM,unsigned long  UART_Baud);
 
      
 
-void pic32_uart2_check_stream(st_uart_string *uart_instance);
+void pic32_uart2_check_stream(uart_protocol_t *uart_instance);
 char pic32_pending_debug_packet(void);
 char *pic32_get_debug_packet(void);
 void pi32_flush_debug_packet(void);

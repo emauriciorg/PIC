@@ -12,7 +12,7 @@ typedef struct {
 	char  pending_parse;
 	char  index;
 	char  tail;
-}st_uart_string; 
+}uart_protocol_t; 
 
 
 #endif /*COMMON_STRUCTS_H*/
