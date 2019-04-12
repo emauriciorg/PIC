@@ -7,6 +7,11 @@
 #define LED_YELLOW_OFF() mPORTDClearBits(BIT_1)
 
 
+#define SERVO_TOGGLE() mPORTDToggleBits(BIT_5)
+#define SERVO_ON() mPORTDSetBits(BIT_5)
+#define SERVO_OFF() mPORTDClearBits(BIT_5)
+
+
 void pheriperals_init(void);
 
 

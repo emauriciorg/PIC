@@ -1,0 +1,3462 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.38 build -256452561 
+                                                                                               Sun Jan 15 22:41:42 2017
+
+Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+     1                           	processor	18F8722
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text14,global,reloc=2,class=CODE,delta=1
+    24                           	psect	text15,global,reloc=2,class=CODE,delta=1
+    25                           	psect	text16,global,reloc=2,class=CODE,delta=1
+    26                           	psect	text17,global,reloc=2,class=CODE,delta=1
+    27                           	psect	text18,global,reloc=2,class=CODE,delta=1
+    28                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    29                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    30  0000                     _ADCON1	set	4033
+    31  0000                     _LATA	set	3977
+    32  0000                     _LATAbits	set	3977
+    33  0000                     _LATB	set	3978
+    34  0000                     _LATCbits	set	3979
+    35  0000                     _LATD	set	3980
+    36  0000                     _LATFbits	set	3982
+    37  0000                     _OSCCON	set	4051
+    38  0000                     _OSCTUNE	set	3995
+    39  0000                     _PIE1	set	3997
+    40  0000                     _PIR1	set	3998
+    41  0000                     _PORTA	set	3968
+    42  0000                     _PORTB	set	3969
+    43  0000                     _PORTD	set	3971
+    44  0000                     _PR2	set	4043
+    45  0000                     _PSPCON	set	4016
+    46  0000                     _T2CON	set	4042
+    47  0000                     _TMR2	set	4044
+    48  0000                     _TRISA	set	3986
+    49  0000                     _TRISAbits	set	3986
+    50  0000                     _TRISB	set	3987
+    51  0000                     _TRISCbits	set	3988
+    52  0000                     _TRISD	set	3989
+    53  0000                     _TRISFbits	set	3991
+    54  0000                     _TMR2IF	set	31985
+    55                           
+    56                           	psect	smallconst
+    57  001000                     __psmallconst:
+    58                           	opt stack 0
+    59  001000  00                 	db	0
+    60  001001                     STR_2:
+    61  001001  54                 	db	84	;'T'
+    62  001002  69                 	db	105	;'i'
+    63  001003  6D                 	db	109	;'m'
+    64  001004  65                 	db	101	;'e'
+    65  001005  72                 	db	114	;'r'
+    66  001006  20                 	db	32
+    67  001007  53                 	db	83	;'S'
+    68  001008  70                 	db	112	;'p'
+    69  001009  65                 	db	101	;'e'
+    70  00100A  61                 	db	97	;'a'
+    71  00100B  6B                 	db	107	;'k'
+    72  00100C  65                 	db	101	;'e'
+    73  00100D  72                 	db	114	;'r'
+    74  00100E  00                 	db	0
+    75  00100F                     STR_1:
+    76  00100F  45                 	db	69	;'E'
+    77  001010  6A                 	db	106	;'j'
+    78  001011  65                 	db	101	;'e'
+    79  001012  6D                 	db	109	;'m'
+    80  001013  70                 	db	112	;'p'
+    81  001014  6C                 	db	108	;'l'
+    82  001015  6F                 	db	111	;'o'
+    83  001016  5F                 	db	95	;'_'
+    84  001017  30                 	db	48	;'0'
+    85  001018  30                 	db	48	;'0'
+    86  001019  33                 	db	51	;'3'
+    87  00101A  00                 	db	0
+    88                           
+    89                           ; #config settings
+    90  00101B  00                 	db	0	; dummy byte at the end
+    91  0000                     
+    92                           	psect	cinit
+    93  001BD4                     __pcinit:
+    94                           	opt stack 0
+    95  001BD4                     start_initialization:
+    96                           	opt stack 0
+    97  001BD4                     __initialization:
+    98                           	opt stack 0
+    99                           
+   100                           ; Clear objects allocated to COMRAM (6 bytes)
+   101  001BD4  6A2E               	clrf	(__pbssCOMRAM+5)& (0+255),c
+   102  001BD6  6A2D               	clrf	(__pbssCOMRAM+4)& (0+255),c
+   103  001BD8  6A2C               	clrf	(__pbssCOMRAM+3)& (0+255),c
+   104  001BDA  6A2B               	clrf	(__pbssCOMRAM+2)& (0+255),c
+   105  001BDC  6A2A               	clrf	(__pbssCOMRAM+1)& (0+255),c
+   106  001BDE  6A29               	clrf	__pbssCOMRAM& (0+255),c
+   107  001BE0                     end_of_initialization:
+   108                           	opt stack 0
+   109  001BE0                     __end_of__initialization:
+   110                           	opt stack 0
+   111  001BE0  0E00               	movlw	low (__Lsmallconst shr (0+16))
+   112  001BE2  6EF8               	movwf	tblptru,c
+   113  001BE4  0E10               	movlw	high __Lsmallconst
+   114  001BE6  6EF7               	movwf	tblptrh,c
+   115  001BE8  0100               	movlb	0
+   116  001BEA  EF11  F00E         	goto	_main	;jump to C main() function
+   117                           tblptru	equ	0xFF8
+   118                           tblptrh	equ	0xFF7
+   119                           
+   120                           	psect	bssCOMRAM
+   121  000029                     __pbssCOMRAM:
+   122                           	opt stack 0
+   123  000029                     _LoopTime:
+   124                           	opt stack 0
+   125  000029                     	ds	4
+   126  00002D                     _DelayAmount:
+   127                           	opt stack 0
+   128  00002D                     	ds	2
+   129                           tblptru	equ	0xFF8
+   130                           tblptrh	equ	0xFF7
+   131                           
+   132                           	psect	cstackCOMRAM
+   133  000001                     __pcstackCOMRAM:
+   134                           	opt stack 0
+   135  000001                     ?___lmul:
+   136                           	opt stack 0
+   137  000001                     SendByteBBSPI@output:
+   138                           	opt stack 0
+   139  000001                     delay_mio@TMR2Millis:
+   140                           	opt stack 0
+   141  000001                     ___lmul@multiplier:
+   142                           	opt stack 0
+   143                           
+   144                           ; 4 bytes @ 0x0
+   145  000001                     	ds	1
+   146  000002                     SendByteBBSPI@bitcount:
+   147                           	opt stack 0
+   148                           
+   149                           ; 1 bytes @ 0x1
+   150  000002                     	ds	1
+   151  000003                     SendByteBBSPI@input:
+   152                           	opt stack 0
+   153  000003                     delay_mio@iTMR2Millis:
+   154                           	opt stack 0
+   155                           
+   156                           ; 2 bytes @ 0x2
+   157  000003                     	ds	1
+   158  000004                     Port_BBSPIInit@port_dir:
+   159                           	opt stack 0
+   160  000004                     WritePort_BBSPI@a:
+   161                           	opt stack 0
+   162                           
+   163                           ; 1 bytes @ 0x3
+   164  000004                     	ds	1
+   165  000005                     WritePort_BBSPI@port_add:
+   166                           	opt stack 0
+   167  000005                     ___lmul@multiplicand:
+   168                           	opt stack 0
+   169                           
+   170                           ; 4 bytes @ 0x4
+   171  000005                     	ds	1
+   172  000006                     ??_LCDPutInst:
+   173  000006                     ??_LCDPutChar:
+   174                           
+   175                           ; 1 bytes @ 0x5
+   176  000006                     	ds	1
+   177  000007                     LCDPutChar@ch:
+   178                           	opt stack 0
+   179  000007                     LCDPutInst@ch:
+   180                           	opt stack 0
+   181                           
+   182                           ; 1 bytes @ 0x6
+   183  000007                     	ds	1
+   184  000008                     ??_LCDInit:
+   185  000008                     LCDPutStr@ptr:
+   186                           	opt stack 0
+   187                           
+   188                           ; 2 bytes @ 0x7
+   189  000008                     	ds	1
+   190  000009                     ___lmul@product:
+   191                           	opt stack 0
+   192                           
+   193                           ; 4 bytes @ 0x8
+   194  000009                     	ds	1
+   195  00000A                     
+   196                           ; 1 bytes @ 0x9
+   197  00000A                     	ds	3
+   198  00000D                     ?___aldiv:
+   199                           	opt stack 0
+   200  00000D                     ___aldiv@dividend:
+   201                           	opt stack 0
+   202                           
+   203                           ; 4 bytes @ 0xC
+   204  00000D                     	ds	4
+   205  000011                     ___aldiv@divisor:
+   206                           	opt stack 0
+   207                           
+   208                           ; 4 bytes @ 0x10
+   209  000011                     	ds	4
+   210  000015                     ___aldiv@counter:
+   211                           	opt stack 0
+   212                           
+   213                           ; 1 bytes @ 0x14
+   214  000015                     	ds	1
+   215  000016                     ___aldiv@sign:
+   216                           	opt stack 0
+   217                           
+   218                           ; 1 bytes @ 0x15
+   219  000016                     	ds	1
+   220  000017                     ___aldiv@quotient:
+   221                           	opt stack 0
+   222                           
+   223                           ; 4 bytes @ 0x16
+   224  000017                     	ds	4
+   225  00001B                     beep@FrequencyInHertz:
+   226                           	opt stack 0
+   227                           
+   228                           ; 2 bytes @ 0x1A
+   229  00001B                     	ds	2
+   230  00001D                     beep@TimeInMilliseconds:
+   231                           	opt stack 0
+   232                           
+   233                           ; 4 bytes @ 0x1C
+   234  00001D                     	ds	4
+   235  000021                     ??_beep:
+   236                           
+   237                           ; 1 bytes @ 0x20
+   238  000021                     	ds	5
+   239  000026                     beep@x:
+   240                           	opt stack 0
+   241                           
+   242                           ; 2 bytes @ 0x25
+   243  000026                     	ds	2
+   244  000028                     ??_TheImperialMarch:
+   245                           
+   246                           ; 1 bytes @ 0x27
+   247  000028                     	ds	1
+   248  000029                     tblptru	equ	0xFF8
+   249                           tblptrh	equ	0xFF7
+   250                           
+   251                           ; 1 bytes @ 0x28
+   252 ;;
+   253 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   254 ;;
+   255 ;; *************** function _main *****************
+   256 ;; Defined at:
+   257 ;;		line 30 in file "main.c"
+   258 ;; Parameters:    Size  Location     Type
+   259 ;;		None
+   260 ;; Auto vars:     Size  Location     Type
+   261 ;;		None
+   262 ;; Return value:  Size  Location     Type
+   263 ;;                  1    wreg      void 
+   264 ;; Registers used:
+   265 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   266 ;; Tracked objects:
+   267 ;;		On entry : 0/0
+   268 ;;		On exit  : 0/0
+   269 ;;		Unchanged: 0/0
+   270 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   271 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   272 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   273 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   274 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   275 ;;Total ram usage:        0 bytes
+   276 ;; Hardware stack levels required when called:    5
+   277 ;; This function calls:
+   278 ;;		_InitConf
+   279 ;;		_InitSpeaker
+   280 ;;		_TheImperialMarch
+   281 ;;		_ejemplo
+   282 ;; This function is called by:
+   283 ;;		Startup code after reset
+   284 ;; This function uses a non-reentrant model
+   285 ;;
+   286                           
+   287                           	psect	text0
+   288  001C22                     __ptext0:
+   289                           	opt stack 0
+   290  001C22                     _main:
+   291                           	opt stack 26
+   292                           
+   293                           ;main.c: 32: InitConf();
+   294                           
+   295                           ;incstack = 0
+   296  001C22  EC2C  F00E         	call	_InitConf	;wreg free
+   297                           
+   298                           ;main.c: 34: ejemplo();
+   299  001C26  ECC0  F00D         	call	_ejemplo	;wreg free
+   300                           
+   301                           ;main.c: 35: InitSpeaker();
+   302  001C2A  EC23  F00E         	call	_InitSpeaker	;wreg free
+   303  001C2E                     l1358:
+   304                           
+   305                           ;main.c: 38: {
+   306                           ;main.c: 41: TheImperialMarch();
+   307  001C2E  EC0E  F008         	call	_TheImperialMarch	;wreg free
+   308  001C32  D7FD               	goto	l1358
+   309  001C34                     __end_of_main:
+   310                           	opt stack 0
+   311                           tblptru	equ	0xFF8
+   312                           tblptrh	equ	0xFF7
+   313                           
+   314 ;; *************** function _ejemplo *****************
+   315 ;; Defined at:
+   316 ;;		line 14 in file "Ejemplo.h"
+   317 ;; Parameters:    Size  Location     Type
+   318 ;;		None
+   319 ;; Auto vars:     Size  Location     Type
+   320 ;;		None
+   321 ;; Return value:  Size  Location     Type
+   322 ;;                  1    wreg      void 
+   323 ;; Registers used:
+   324 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   325 ;; Tracked objects:
+   326 ;;		On entry : 0/0
+   327 ;;		On exit  : 0/0
+   328 ;;		Unchanged: 0/0
+   329 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   330 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   331 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   332 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   333 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   334 ;;Total ram usage:        0 bytes
+   335 ;; Hardware stack levels used:    1
+   336 ;; Hardware stack levels required when called:    4
+   337 ;; This function calls:
+   338 ;;		_LCDInit
+   339 ;;		_LCDPutInst
+   340 ;;		_LCDPutStr
+   341 ;; This function is called by:
+   342 ;;		_main
+   343 ;; This function uses a non-reentrant model
+   344 ;;
+   345                           
+   346                           	psect	text1
+   347  001B80                     __ptext1:
+   348                           	opt stack 0
+   349  001B80                     _ejemplo:
+   350                           	opt stack 26
+   351                           
+   352                           ;Ejemplo.h: 16: LCDInit();
+   353                           
+   354                           ;incstack = 0
+   355  001B80  ECB6  F00C         	call	_LCDInit	;wreg free
+   356                           
+   357                           ;Ejemplo.h: 17: LCDPutInst(0x80);
+   358  001B84  0E80               	movlw	128
+   359  001B86  EC3A  F00D         	call	_LCDPutInst
+   360                           
+   361                           ;Ejemplo.h: 18: LCDPutStr("Ejemplo_003");
+   362  001B8A  0E0F               	movlw	low STR_1
+   363  001B8C  6E08               	movwf	LCDPutStr@ptr,c
+   364  001B8E  0E10               	movlw	high STR_1
+   365  001B90  6E09               	movwf	LCDPutStr@ptr+1,c
+   366  001B92  ECD5  F00D         	call	_LCDPutStr	;wreg free
+   367                           
+   368                           ;Ejemplo.h: 19: LCDPutInst(0xC0);
+   369  001B96  0EC0               	movlw	192
+   370  001B98  EC3A  F00D         	call	_LCDPutInst
+   371                           
+   372                           ;Ejemplo.h: 20: LCDPutStr("Timer Speaker");
+   373  001B9C  0E01               	movlw	low STR_2
+   374  001B9E  6E08               	movwf	LCDPutStr@ptr,c
+   375  001BA0  0E10               	movlw	high STR_2
+   376  001BA2  6E09               	movwf	LCDPutStr@ptr+1,c
+   377  001BA4  ECD5  F00D         	call	_LCDPutStr	;wreg free
+   378  001BA8  0012               	return		;funcret
+   379  001BAA                     __end_of_ejemplo:
+   380                           	opt stack 0
+   381                           tblptru	equ	0xFF8
+   382                           tblptrh	equ	0xFF7
+   383                           
+   384 ;; *************** function _LCDPutStr *****************
+   385 ;; Defined at:
+   386 ;;		line 198 in file "BBSPI_LCD.c"
+   387 ;; Parameters:    Size  Location     Type
+   388 ;;  ptr             2    7[COMRAM] PTR const unsigned char 
+   389 ;;		 -> STR_2(14), STR_1(12), 
+   390 ;; Auto vars:     Size  Location     Type
+   391 ;;		None
+   392 ;; Return value:  Size  Location     Type
+   393 ;;                  1    wreg      void 
+   394 ;; Registers used:
+   395 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   396 ;; Tracked objects:
+   397 ;;		On entry : 0/0
+   398 ;;		On exit  : 0/0
+   399 ;;		Unchanged: 0/0
+   400 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   401 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   402 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   403 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   404 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   405 ;;Total ram usage:        2 bytes
+   406 ;; Hardware stack levels used:    1
+   407 ;; Hardware stack levels required when called:    3
+   408 ;; This function calls:
+   409 ;;		_LCDPutChar
+   410 ;; This function is called by:
+   411 ;;		_ejemplo
+   412 ;; This function uses a non-reentrant model
+   413 ;;
+   414                           
+   415                           	psect	text2
+   416  001BAA                     __ptext2:
+   417                           	opt stack 0
+   418  001BAA                     _LCDPutStr:
+   419                           	opt stack 26
+   420                           
+   421                           ;BBSPI_LCD.c: 200: while(*ptr) LCDPutChar(*(ptr++));
+   422                           
+   423                           ;incstack = 0
+   424  001BAA  D00A               	goto	l1250
+   425  001BAC                     l1246:
+   426  001BAC  C008  FFF6         	movff	LCDPutStr@ptr,tblptrl
+   427  001BB0  C009  FFF7         	movff	LCDPutStr@ptr+1,tblptrh
+   428  001BB4                     	if	0	;tblptru may be non-zero
+   429  001BB4                     	endif
+   430  001BB4                     	if	0	;tblptru may be non-zero
+   431  001BB4                     	endif
+   432  001BB4  0008               	tblrd		*
+   433  001BB6  50F5               	movf	tablat,w,c
+   434  001BB8  EC10  F00D         	call	_LCDPutChar
+   435  001BBC  4A08               	infsnz	LCDPutStr@ptr,f,c
+   436  001BBE  2A09               	incf	LCDPutStr@ptr+1,f,c
+   437  001BC0                     l1250:
+   438  001BC0  C008  FFF6         	movff	LCDPutStr@ptr,tblptrl
+   439  001BC4  C009  FFF7         	movff	LCDPutStr@ptr+1,tblptrh
+   440  001BC8                     	if	0	;tblptru may be non-zero
+   441  001BC8                     	endif
+   442  001BC8                     	if	0	;tblptru may be non-zero
+   443  001BC8                     	endif
+   444  001BC8  0008               	tblrd		*
+   445  001BCA  50F5               	movf	tablat,w,c
+   446  001BCC  0900               	iorlw	0
+   447  001BCE  B4D8               	btfsc	status,2,c
+   448  001BD0  0012               	return	
+   449  001BD2  D7EC               	goto	l1246
+   450  001BD4                     __end_of_LCDPutStr:
+   451                           	opt stack 0
+   452                           tblptru	equ	0xFF8
+   453                           tblptrh	equ	0xFF7
+   454                           tblptrl	equ	0xFF6
+   455                           tablat	equ	0xFF5
+   456                           status	equ	0xFD8
+   457                           
+   458 ;; *************** function _LCDPutChar *****************
+   459 ;; Defined at:
+   460 ;;		line 160 in file "BBSPI_LCD.c"
+   461 ;; Parameters:    Size  Location     Type
+   462 ;;  ch              1    wreg     unsigned char 
+   463 ;; Auto vars:     Size  Location     Type
+   464 ;;  ch              1    6[COMRAM] unsigned char 
+   465 ;; Return value:  Size  Location     Type
+   466 ;;                  1    wreg      void 
+   467 ;; Registers used:
+   468 ;;		wreg, status,2, status,0, cstack
+   469 ;; Tracked objects:
+   470 ;;		On entry : 0/0
+   471 ;;		On exit  : 0/0
+   472 ;;		Unchanged: 0/0
+   473 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   474 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   475 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   476 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   477 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   478 ;;Total ram usage:        2 bytes
+   479 ;; Hardware stack levels used:    1
+   480 ;; Hardware stack levels required when called:    2
+   481 ;; This function calls:
+   482 ;;		_WritePort_BBSPI
+   483 ;; This function is called by:
+   484 ;;		_LCDPutStr
+   485 ;; This function uses a non-reentrant model
+   486 ;;
+   487                           
+   488                           	psect	text3
+   489  001A20                     __ptext3:
+   490                           	opt stack 0
+   491  001A20                     _LCDPutChar:
+   492                           	opt stack 26
+   493                           
+   494                           ;incstack = 0
+   495                           ;LCDPutChar@ch stored from wreg
+   496  001A20  6E07               	movwf	LCDPutChar@ch,c
+   497                           
+   498                           ;BBSPI_LCD.c: 162: _delay((unsigned long)((5)*(4000000/4000.0)));
+   499  001A22  0E07               	movlw	7
+   500  001A24  6E06               	movwf	??_LCDPutChar& (0+255),c
+   501  001A26  0E7D               	movlw	125
+   502  001A28                     u327:
+   503  001A28  2EE8               	decfsz	wreg,f,c
+   504  001A2A  D7FE               	goto	u327
+   505  001A2C  2E06               	decfsz	??_LCDPutChar& (0+255),f,c
+   506  001A2E  D7FC               	goto	u327
+   507  001A30  F000               	nop	
+   508                           
+   509                           ;BBSPI_LCD.c: 163: WritePort_BBSPI (0x12, 0x80);
+   510  001A32  0E80               	movlw	128
+   511  001A34  6E04               	movwf	WritePort_BBSPI@a,c
+   512  001A36  0E12               	movlw	18
+   513  001A38  EC04  F00E         	call	_WritePort_BBSPI
+   514                           
+   515                           ;BBSPI_LCD.c: 164: _delay((unsigned long)((1)*(4000000/4000.0)));
+   516  001A3C  0EFA               	movlw	250
+   517  001A3E                     u337:
+   518  001A3E  F000               	nop	
+   519  001A40  2EE8               	decfsz	wreg,f,c
+   520  001A42  D7FD               	goto	u337
+   521                           
+   522                           ;BBSPI_LCD.c: 165: WritePort_BBSPI (0x13, ch);
+   523  001A44  C007  F004         	movff	LCDPutChar@ch,WritePort_BBSPI@a
+   524  001A48  0E13               	movlw	19
+   525  001A4A  EC04  F00E         	call	_WritePort_BBSPI
+   526                           
+   527                           ;BBSPI_LCD.c: 166: _delay((unsigned long)((1)*(4000000/4000.0)));
+   528  001A4E  0EFA               	movlw	250
+   529  001A50                     u347:
+   530  001A50  F000               	nop	
+   531  001A52  2EE8               	decfsz	wreg,f,c
+   532  001A54  D7FD               	goto	u347
+   533                           
+   534                           ;BBSPI_LCD.c: 167: WritePort_BBSPI (0x12, 0xC0);
+   535  001A56  0EC0               	movlw	192
+   536  001A58  6E04               	movwf	WritePort_BBSPI@a,c
+   537  001A5A  0E12               	movlw	18
+   538  001A5C  EC04  F00E         	call	_WritePort_BBSPI
+   539                           
+   540                           ;BBSPI_LCD.c: 168: _delay((unsigned long)((1)*(4000000/4000.0)));
+   541  001A60  0EFA               	movlw	250
+   542  001A62                     u357:
+   543  001A62  F000               	nop	
+   544  001A64  2EE8               	decfsz	wreg,f,c
+   545  001A66  D7FD               	goto	u357
+   546                           
+   547                           ;BBSPI_LCD.c: 169: WritePort_BBSPI (0x12, 0x00);
+   548  001A68  0E00               	movlw	0
+   549  001A6A  6E04               	movwf	WritePort_BBSPI@a,c
+   550  001A6C  0E12               	movlw	18
+   551  001A6E  EC04  F00E         	call	_WritePort_BBSPI
+   552  001A72  0012               	return		;funcret
+   553  001A74                     __end_of_LCDPutChar:
+   554                           	opt stack 0
+   555                           tblptru	equ	0xFF8
+   556                           tblptrh	equ	0xFF7
+   557                           tblptrl	equ	0xFF6
+   558                           tablat	equ	0xFF5
+   559                           wreg	equ	0xFE8
+   560                           status	equ	0xFD8
+   561                           
+   562 ;; *************** function _LCDInit *****************
+   563 ;; Defined at:
+   564 ;;		line 45 in file "BBSPI_LCD.c"
+   565 ;; Parameters:    Size  Location     Type
+   566 ;;		None
+   567 ;; Auto vars:     Size  Location     Type
+   568 ;;		None
+   569 ;; Return value:  Size  Location     Type
+   570 ;;                  1    wreg      void 
+   571 ;; Registers used:
+   572 ;;		wreg, status,2, status,0, cstack
+   573 ;; Tracked objects:
+   574 ;;		On entry : 0/0
+   575 ;;		On exit  : 0/0
+   576 ;;		Unchanged: 0/0
+   577 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   578 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   579 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   580 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   581 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   582 ;;Total ram usage:        1 bytes
+   583 ;; Hardware stack levels used:    1
+   584 ;; Hardware stack levels required when called:    3
+   585 ;; This function calls:
+   586 ;;		_InitBBSPI
+   587 ;;		_LCDPutInst
+   588 ;;		_Port_BBSPIInit
+   589 ;;		_WritePort_BBSPI
+   590 ;; This function is called by:
+   591 ;;		_ejemplo
+   592 ;; This function uses a non-reentrant model
+   593 ;;
+   594                           
+   595                           	psect	text4
+   596  00196C                     __ptext4:
+   597                           	opt stack 0
+   598  00196C                     _LCDInit:
+   599                           	opt stack 26
+   600                           
+   601                           ;BBSPI_LCD.c: 47: InitBBSPI();
+   602                           
+   603                           ;incstack = 0
+   604  00196C  EC1A  F00E         	call	_InitBBSPI	;wreg free
+   605                           
+   606                           ;BBSPI_LCD.c: 48: TRISFbits.TRISF6 = 0;
+   607  001970  9C97               	bcf	3991,6,c	;volatile
+   608                           
+   609                           ;BBSPI_LCD.c: 49: LATFbits.LATF6 = 0;
+   610  001972  9C8E               	bcf	3982,6,c	;volatile
+   611                           
+   612                           ;BBSPI_LCD.c: 50: _delay((unsigned long)((5)*(4000000/4000.0)));
+   613  001974  0E07               	movlw	7
+   614  001976  6E08               	movwf	??_LCDInit& (0+255),c
+   615  001978  0E7D               	movlw	125
+   616  00197A                     u367:
+   617  00197A  2EE8               	decfsz	wreg,f,c
+   618  00197C  D7FE               	goto	u367
+   619  00197E  2E08               	decfsz	??_LCDInit& (0+255),f,c
+   620  001980  D7FC               	goto	u367
+   621  001982  F000               	nop	
+   622                           
+   623                           ;BBSPI_LCD.c: 51: LATFbits.LATF6 = 1;
+   624  001984  8C8E               	bsf	3982,6,c	;volatile
+   625                           
+   626                           ;BBSPI_LCD.c: 52: Port_BBSPIInit (0x00);
+   627  001986  0E00               	movlw	0
+   628  001988  ECF7  F00D         	call	_Port_BBSPIInit
+   629                           
+   630                           ;BBSPI_LCD.c: 53: Port_BBSPIInit (0x01);
+   631  00198C  0E01               	movlw	1
+   632  00198E  ECF7  F00D         	call	_Port_BBSPIInit
+   633                           
+   634                           ;BBSPI_LCD.c: 54: WritePort_BBSPI (0x12, 0);
+   635  001992  0E00               	movlw	0
+   636  001994  6E04               	movwf	WritePort_BBSPI@a,c
+   637  001996  0E12               	movlw	18
+   638  001998  EC04  F00E         	call	_WritePort_BBSPI
+   639                           
+   640                           ;BBSPI_LCD.c: 55: _delay((unsigned long)((15)*(4000000/4000.0)));
+   641  00199C  0E14               	movlw	20
+   642  00199E  6E08               	movwf	??_LCDInit& (0+255),c
+   643  0019A0  0E7A               	movlw	122
+   644  0019A2                     u377:
+   645  0019A2  2EE8               	decfsz	wreg,f,c
+   646  0019A4  D7FE               	goto	u377
+   647  0019A6  2E08               	decfsz	??_LCDInit& (0+255),f,c
+   648  0019A8  D7FC               	goto	u377
+   649                           
+   650                           ;BBSPI_LCD.c: 56: LCDPutInst(0x32);
+   651  0019AA  0E32               	movlw	50
+   652  0019AC  EC3A  F00D         	call	_LCDPutInst
+   653                           
+   654                           ;BBSPI_LCD.c: 57: LCDPutInst(0x3C);
+   655  0019B0  0E3C               	movlw	60
+   656  0019B2  EC3A  F00D         	call	_LCDPutInst
+   657                           
+   658                           ;BBSPI_LCD.c: 58: LCDPutInst(0x0C);
+   659  0019B6  0E0C               	movlw	12
+   660  0019B8  EC3A  F00D         	call	_LCDPutInst
+   661                           
+   662                           ;BBSPI_LCD.c: 59: LCDPutInst(0x01);
+   663  0019BC  0E01               	movlw	1
+   664  0019BE  EC3A  F00D         	call	_LCDPutInst
+   665                           
+   666                           ;BBSPI_LCD.c: 60: LCDPutInst(0x06);
+   667  0019C2  0E06               	movlw	6
+   668  0019C4  EC3A  F00D         	call	_LCDPutInst
+   669  0019C8  0012               	return		;funcret
+   670  0019CA                     __end_of_LCDInit:
+   671                           	opt stack 0
+   672                           tblptru	equ	0xFF8
+   673                           tblptrh	equ	0xFF7
+   674                           tblptrl	equ	0xFF6
+   675                           tablat	equ	0xFF5
+   676                           wreg	equ	0xFE8
+   677                           status	equ	0xFD8
+   678                           
+   679 ;; *************** function _Port_BBSPIInit *****************
+   680 ;; Defined at:
+   681 ;;		line 123 in file "BBSPI_LCD.c"
+   682 ;; Parameters:    Size  Location     Type
+   683 ;;  port_dir        1    wreg     unsigned char 
+   684 ;; Auto vars:     Size  Location     Type
+   685 ;;  port_dir        1    3[COMRAM] unsigned char 
+   686 ;; Return value:  Size  Location     Type
+   687 ;;                  1    wreg      void 
+   688 ;; Registers used:
+   689 ;;		wreg, status,2, status,0, cstack
+   690 ;; Tracked objects:
+   691 ;;		On entry : 0/0
+   692 ;;		On exit  : 0/0
+   693 ;;		Unchanged: 0/0
+   694 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   695 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   696 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   697 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   698 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   699 ;;Total ram usage:        1 bytes
+   700 ;; Hardware stack levels used:    1
+   701 ;; Hardware stack levels required when called:    1
+   702 ;; This function calls:
+   703 ;;		_SendByteBBSPI
+   704 ;; This function is called by:
+   705 ;;		_LCDInit
+   706 ;; This function uses a non-reentrant model
+   707 ;;
+   708                           
+   709                           	psect	text5
+   710  001BEE                     __ptext5:
+   711                           	opt stack 0
+   712  001BEE                     _Port_BBSPIInit:
+   713                           	opt stack 27
+   714                           
+   715                           ;incstack = 0
+   716                           ;Port_BBSPIInit@port_dir stored from wreg
+   717  001BEE  6E04               	movwf	Port_BBSPIInit@port_dir,c
+   718                           
+   719                           ;BBSPI_LCD.c: 128: LATAbits.LATA2 = 0;
+   720  001BF0  9489               	bcf	3977,2,c	;volatile
+   721                           
+   722                           ;BBSPI_LCD.c: 129: SendByteBBSPI(0x40);
+   723  001BF2  0E40               	movlw	64
+   724  001BF4  EC64  F00D         	call	_SendByteBBSPI
+   725                           
+   726                           ;BBSPI_LCD.c: 130: SendByteBBSPI(port_dir);
+   727  001BF8  5004               	movf	Port_BBSPIInit@port_dir,w,c
+   728  001BFA  EC64  F00D         	call	_SendByteBBSPI
+   729                           
+   730                           ;BBSPI_LCD.c: 131: SendByteBBSPI(0x00);
+   731  001BFE  0E00               	movlw	0
+   732  001C00  EC64  F00D         	call	_SendByteBBSPI
+   733                           
+   734                           ;BBSPI_LCD.c: 132: LATAbits.LATA2 = 1;
+   735  001C04  8489               	bsf	3977,2,c	;volatile
+   736  001C06  0012               	return		;funcret
+   737  001C08                     __end_of_Port_BBSPIInit:
+   738                           	opt stack 0
+   739                           tblptru	equ	0xFF8
+   740                           tblptrh	equ	0xFF7
+   741                           tblptrl	equ	0xFF6
+   742                           tablat	equ	0xFF5
+   743                           wreg	equ	0xFE8
+   744                           status	equ	0xFD8
+   745                           
+   746 ;; *************** function _LCDPutInst *****************
+   747 ;; Defined at:
+   748 ;;		line 179 in file "BBSPI_LCD.c"
+   749 ;; Parameters:    Size  Location     Type
+   750 ;;  ch              1    wreg     unsigned char 
+   751 ;; Auto vars:     Size  Location     Type
+   752 ;;  ch              1    6[COMRAM] unsigned char 
+   753 ;; Return value:  Size  Location     Type
+   754 ;;                  1    wreg      void 
+   755 ;; Registers used:
+   756 ;;		wreg, status,2, status,0, cstack
+   757 ;; Tracked objects:
+   758 ;;		On entry : 0/0
+   759 ;;		On exit  : 0/0
+   760 ;;		Unchanged: 0/0
+   761 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   762 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   763 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   764 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   765 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   766 ;;Total ram usage:        2 bytes
+   767 ;; Hardware stack levels used:    1
+   768 ;; Hardware stack levels required when called:    2
+   769 ;; This function calls:
+   770 ;;		_WritePort_BBSPI
+   771 ;; This function is called by:
+   772 ;;		_LCDInit
+   773 ;;		_ejemplo
+   774 ;; This function uses a non-reentrant model
+   775 ;;
+   776                           
+   777                           	psect	text6
+   778  001A74                     __ptext6:
+   779                           	opt stack 0
+   780  001A74                     _LCDPutInst:
+   781                           	opt stack 27
+   782                           
+   783                           ;incstack = 0
+   784                           ;LCDPutInst@ch stored from wreg
+   785  001A74  6E07               	movwf	LCDPutInst@ch,c
+   786                           
+   787                           ;BBSPI_LCD.c: 181: _delay((unsigned long)((5)*(4000000/4000.0)));
+   788  001A76  0E07               	movlw	7
+   789  001A78  6E06               	movwf	??_LCDPutInst& (0+255),c
+   790  001A7A  0E7D               	movlw	125
+   791  001A7C                     u387:
+   792  001A7C  2EE8               	decfsz	wreg,f,c
+   793  001A7E  D7FE               	goto	u387
+   794  001A80  2E06               	decfsz	??_LCDPutInst& (0+255),f,c
+   795  001A82  D7FC               	goto	u387
+   796  001A84  F000               	nop	
+   797                           
+   798                           ;BBSPI_LCD.c: 182: WritePort_BBSPI (0x12, 0x00);
+   799  001A86  0E00               	movlw	0
+   800  001A88  6E04               	movwf	WritePort_BBSPI@a,c
+   801  001A8A  0E12               	movlw	18
+   802  001A8C  EC04  F00E         	call	_WritePort_BBSPI
+   803                           
+   804                           ;BBSPI_LCD.c: 183: _delay((unsigned long)((1)*(4000000/4000.0)));
+   805  001A90  0EFA               	movlw	250
+   806  001A92                     u397:
+   807  001A92  F000               	nop	
+   808  001A94  2EE8               	decfsz	wreg,f,c
+   809  001A96  D7FD               	goto	u397
+   810                           
+   811                           ;BBSPI_LCD.c: 184: WritePort_BBSPI (0x13, ch);
+   812  001A98  C007  F004         	movff	LCDPutInst@ch,WritePort_BBSPI@a
+   813  001A9C  0E13               	movlw	19
+   814  001A9E  EC04  F00E         	call	_WritePort_BBSPI
+   815                           
+   816                           ;BBSPI_LCD.c: 185: _delay((unsigned long)((1)*(4000000/4000.0)));
+   817  001AA2  0EFA               	movlw	250
+   818  001AA4                     u407:
+   819  001AA4  F000               	nop	
+   820  001AA6  2EE8               	decfsz	wreg,f,c
+   821  001AA8  D7FD               	goto	u407
+   822                           
+   823                           ;BBSPI_LCD.c: 186: WritePort_BBSPI (0x12,0x40);
+   824  001AAA  0E40               	movlw	64
+   825  001AAC  6E04               	movwf	WritePort_BBSPI@a,c
+   826  001AAE  0E12               	movlw	18
+   827  001AB0  EC04  F00E         	call	_WritePort_BBSPI
+   828                           
+   829                           ;BBSPI_LCD.c: 187: _delay((unsigned long)((1)*(4000000/4000.0)));
+   830  001AB4  0EFA               	movlw	250
+   831  001AB6                     u417:
+   832  001AB6  F000               	nop	
+   833  001AB8  2EE8               	decfsz	wreg,f,c
+   834  001ABA  D7FD               	goto	u417
+   835                           
+   836                           ;BBSPI_LCD.c: 188: WritePort_BBSPI (0x12, 0x00);
+   837  001ABC  0E00               	movlw	0
+   838  001ABE  6E04               	movwf	WritePort_BBSPI@a,c
+   839  001AC0  0E12               	movlw	18
+   840  001AC2  EC04  F00E         	call	_WritePort_BBSPI
+   841  001AC6  0012               	return		;funcret
+   842  001AC8                     __end_of_LCDPutInst:
+   843                           	opt stack 0
+   844                           tblptru	equ	0xFF8
+   845                           tblptrh	equ	0xFF7
+   846                           tblptrl	equ	0xFF6
+   847                           tablat	equ	0xFF5
+   848                           wreg	equ	0xFE8
+   849                           status	equ	0xFD8
+   850                           
+   851 ;; *************** function _WritePort_BBSPI *****************
+   852 ;; Defined at:
+   853 ;;		line 144 in file "BBSPI_LCD.c"
+   854 ;; Parameters:    Size  Location     Type
+   855 ;;  port_add        1    wreg     unsigned char 
+   856 ;;  a               1    3[COMRAM] unsigned char 
+   857 ;; Auto vars:     Size  Location     Type
+   858 ;;  port_add        1    4[COMRAM] unsigned char 
+   859 ;; Return value:  Size  Location     Type
+   860 ;;                  1    wreg      void 
+   861 ;; Registers used:
+   862 ;;		wreg, status,2, status,0, cstack
+   863 ;; Tracked objects:
+   864 ;;		On entry : 0/0
+   865 ;;		On exit  : 0/0
+   866 ;;		Unchanged: 0/0
+   867 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   868 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   869 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   870 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   871 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   872 ;;Total ram usage:        2 bytes
+   873 ;; Hardware stack levels used:    1
+   874 ;; Hardware stack levels required when called:    1
+   875 ;; This function calls:
+   876 ;;		_SendByteBBSPI
+   877 ;; This function is called by:
+   878 ;;		_LCDInit
+   879 ;;		_LCDPutChar
+   880 ;;		_LCDPutInst
+   881 ;; This function uses a non-reentrant model
+   882 ;;
+   883                           
+   884                           	psect	text7
+   885  001C08                     __ptext7:
+   886                           	opt stack 0
+   887  001C08                     _WritePort_BBSPI:
+   888                           	opt stack 26
+   889                           
+   890                           ;incstack = 0
+   891                           ;WritePort_BBSPI@port_add stored from wreg
+   892  001C08  6E05               	movwf	WritePort_BBSPI@port_add,c
+   893                           
+   894                           ;BBSPI_LCD.c: 146: LATAbits.LATA2 = 0;
+   895  001C0A  9489               	bcf	3977,2,c	;volatile
+   896                           
+   897                           ;BBSPI_LCD.c: 147: SendByteBBSPI(0x40);
+   898  001C0C  0E40               	movlw	64
+   899  001C0E  EC64  F00D         	call	_SendByteBBSPI
+   900                           
+   901                           ;BBSPI_LCD.c: 148: SendByteBBSPI(port_add);
+   902  001C12  5005               	movf	WritePort_BBSPI@port_add,w,c
+   903  001C14  EC64  F00D         	call	_SendByteBBSPI
+   904                           
+   905                           ;BBSPI_LCD.c: 149: SendByteBBSPI(a);
+   906  001C18  5004               	movf	WritePort_BBSPI@a,w,c
+   907  001C1A  EC64  F00D         	call	_SendByteBBSPI
+   908                           
+   909                           ;BBSPI_LCD.c: 150: LATAbits.LATA2 = 1;
+   910  001C1E  8489               	bsf	3977,2,c	;volatile
+   911  001C20  0012               	return		;funcret
+   912  001C22                     __end_of_WritePort_BBSPI:
+   913                           	opt stack 0
+   914                           tblptru	equ	0xFF8
+   915                           tblptrh	equ	0xFF7
+   916                           tblptrl	equ	0xFF6
+   917                           tablat	equ	0xFF5
+   918                           wreg	equ	0xFE8
+   919                           status	equ	0xFD8
+   920                           
+   921 ;; *************** function _SendByteBBSPI *****************
+   922 ;; Defined at:
+   923 ;;		line 91 in file "BBSPI_LCD.c"
+   924 ;; Parameters:    Size  Location     Type
+   925 ;;  output          1    wreg     unsigned char 
+   926 ;; Auto vars:     Size  Location     Type
+   927 ;;  output          1    0[COMRAM] unsigned char 
+   928 ;;  input           1    2[COMRAM] unsigned char 
+   929 ;;  bitcount        1    1[COMRAM] unsigned char 
+   930 ;; Return value:  Size  Location     Type
+   931 ;;                  1    wreg      void 
+   932 ;; Registers used:
+   933 ;;		wreg, status,2, status,0
+   934 ;; Tracked objects:
+   935 ;;		On entry : 0/0
+   936 ;;		On exit  : 0/0
+   937 ;;		Unchanged: 0/0
+   938 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   939 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   940 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   941 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   942 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   943 ;;Total ram usage:        3 bytes
+   944 ;; Hardware stack levels used:    1
+   945 ;; This function calls:
+   946 ;;		Nothing
+   947 ;; This function is called by:
+   948 ;;		_Port_BBSPIInit
+   949 ;;		_WritePort_BBSPI
+   950 ;; This function uses a non-reentrant model
+   951 ;;
+   952                           
+   953                           	psect	text8
+   954  001AC8                     __ptext8:
+   955                           	opt stack 0
+   956  001AC8                     _SendByteBBSPI:
+   957                           	opt stack 26
+   958                           
+   959                           ;incstack = 0
+   960                           ;SendByteBBSPI@output stored from wreg
+   961  001AC8  6E01               	movwf	SendByteBBSPI@output,c
+   962                           
+   963                           ;BBSPI_LCD.c: 93: unsigned char bitcount;
+   964                           ;BBSPI_LCD.c: 94: unsigned char input = output;
+   965  001ACA  C001  F003         	movff	SendByteBBSPI@output,SendByteBBSPI@input
+   966                           
+   967                           ;BBSPI_LCD.c: 96: for(bitcount=0;bitcount<8;bitcount++)
+   968  001ACE  0E00               	movlw	0
+   969  001AD0  6E02               	movwf	SendByteBBSPI@bitcount,c
+   970  001AD2                     l788:
+   971  001AD2  0E07               	movlw	7
+   972  001AD4  6402               	cpfsgt	SendByteBBSPI@bitcount,c
+   973  001AD6  D001               	goto	l33
+   974  001AD8  0012               	return	
+   975  001ADA                     l33:
+   976                           
+   977                           ;BBSPI_LCD.c: 97: {
+   978                           ;BBSPI_LCD.c: 99: if(output & 0x80)
+   979  001ADA  AE01               	btfss	SendByteBBSPI@output,7,c
+   980  001ADC  D002               	goto	l35
+   981                           
+   982                           ;BBSPI_LCD.c: 100: LATCbits.LATC5 = 1;
+   983  001ADE  8A8B               	bsf	3979,5,c	;volatile
+   984  001AE0  D001               	goto	l36
+   985  001AE2                     l35:
+   986                           
+   987                           ;BBSPI_LCD.c: 101: else
+   988                           ;BBSPI_LCD.c: 102: LATCbits.LATC5 = 0;
+   989  001AE2  9A8B               	bcf	3979,5,c	;volatile
+   990  001AE4                     l36:
+   991                           
+   992                           ;BBSPI_LCD.c: 104: if (LATCbits.LATC4)
+   993  001AE4  A88B               	btfss	3979,4,c	;volatile
+   994  001AE6  D003               	goto	l796
+   995                           
+   996                           ;BBSPI_LCD.c: 105: input = (input << 1) | 0x1;
+   997  001AE8  80D8               	bsf	status,0,c
+   998  001AEA  3603               	rlcf	SendByteBBSPI@input,f,c
+   999  001AEC  D003               	goto	l798
+  1000  001AEE                     l796:
+  1001                           
+  1002                           ;BBSPI_LCD.c: 106: else
+  1003                           ;BBSPI_LCD.c: 107: input = input << 1;
+  1004  001AEE  5003               	movf	SendByteBBSPI@input,w,c
+  1005  001AF0  2403               	addwf	SendByteBBSPI@input,w,c
+  1006  001AF2  6E03               	movwf	SendByteBBSPI@input,c
+  1007  001AF4                     l798:
+  1008                           
+  1009                           ;BBSPI_LCD.c: 108: LATCbits.LATC3 = 1;
+  1010  001AF4  868B               	bsf	3979,3,c	;volatile
+  1011                           
+  1012                           ;BBSPI_LCD.c: 109: __nop();__nop();__nop();__nop();__nop();__nop();
+  1013  001AF6  F000               	nop	
+  1014  001AF8  F000               	nop	
+  1015  001AFA  F000               	nop	
+  1016  001AFC  F000               	nop	
+  1017  001AFE  F000               	nop	
+  1018  001B00  F000               	nop	
+  1019                           
+  1020                           ;BBSPI_LCD.c: 110: __nop();__nop();__nop();__nop();__nop();__nop();
+  1021  001B02  F000               	nop	
+  1022  001B04  F000               	nop	
+  1023  001B06  F000               	nop	
+  1024  001B08  F000               	nop	
+  1025  001B0A  F000               	nop	
+  1026  001B0C  F000               	nop	
+  1027                           
+  1028                           ;BBSPI_LCD.c: 111: LATCbits.LATC3 = 0;
+  1029  001B0E  968B               	bcf	3979,3,c	;volatile
+  1030                           
+  1031                           ;BBSPI_LCD.c: 112: output <<= 1;
+  1032  001B10  90D8               	bcf	status,0,c
+  1033  001B12  3601               	rlcf	SendByteBBSPI@output,f,c
+  1034  001B14  2A02               	incf	SendByteBBSPI@bitcount,f,c
+  1035  001B16  D7DD               	goto	l788
+  1036  001B18                     __end_of_SendByteBBSPI:
+  1037                           	opt stack 0
+  1038                           tblptru	equ	0xFF8
+  1039                           tblptrh	equ	0xFF7
+  1040                           tblptrl	equ	0xFF6
+  1041                           tablat	equ	0xFF5
+  1042                           wreg	equ	0xFE8
+  1043                           status	equ	0xFD8
+  1044                           
+  1045 ;; *************** function _InitBBSPI *****************
+  1046 ;; Defined at:
+  1047 ;;		line 70 in file "BBSPI_LCD.c"
+  1048 ;; Parameters:    Size  Location     Type
+  1049 ;;		None
+  1050 ;; Auto vars:     Size  Location     Type
+  1051 ;;		None
+  1052 ;; Return value:  Size  Location     Type
+  1053 ;;                  1    wreg      void 
+  1054 ;; Registers used:
+  1055 ;;		None
+  1056 ;; Tracked objects:
+  1057 ;;		On entry : 0/0
+  1058 ;;		On exit  : 0/0
+  1059 ;;		Unchanged: 0/0
+  1060 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1061 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1062 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1063 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1064 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1065 ;;Total ram usage:        0 bytes
+  1066 ;; Hardware stack levels used:    1
+  1067 ;; This function calls:
+  1068 ;;		Nothing
+  1069 ;; This function is called by:
+  1070 ;;		_LCDInit
+  1071 ;; This function uses a non-reentrant model
+  1072 ;;
+  1073                           
+  1074                           	psect	text9
+  1075  001C34                     __ptext9:
+  1076                           	opt stack 0
+  1077  001C34                     _InitBBSPI:
+  1078                           	opt stack 28
+  1079                           
+  1080                           ;BBSPI_LCD.c: 72: TRISAbits.TRISA2 = 0;
+  1081                           
+  1082                           ;incstack = 0
+  1083  001C34  9492               	bcf	3986,2,c	;volatile
+  1084                           
+  1085                           ;BBSPI_LCD.c: 73: TRISCbits.TRISC4 = 1;
+  1086  001C36  8894               	bsf	3988,4,c	;volatile
+  1087                           
+  1088                           ;BBSPI_LCD.c: 74: TRISCbits.TRISC5 = 0;
+  1089  001C38  9A94               	bcf	3988,5,c	;volatile
+  1090                           
+  1091                           ;BBSPI_LCD.c: 75: TRISCbits.TRISC3 = 0;
+  1092  001C3A  9694               	bcf	3988,3,c	;volatile
+  1093                           
+  1094                           ;BBSPI_LCD.c: 77: LATAbits.LATA2 = 1;
+  1095  001C3C  8489               	bsf	3977,2,c	;volatile
+  1096                           
+  1097                           ;BBSPI_LCD.c: 78: LATCbits.LATC4 = 1;
+  1098  001C3E  888B               	bsf	3979,4,c	;volatile
+  1099                           
+  1100                           ;BBSPI_LCD.c: 79: LATCbits.LATC5 = 0;
+  1101  001C40  9A8B               	bcf	3979,5,c	;volatile
+  1102                           
+  1103                           ;BBSPI_LCD.c: 80: LATCbits.LATC3 = 0;
+  1104  001C42  968B               	bcf	3979,3,c	;volatile
+  1105  001C44  0012               	return		;funcret
+  1106  001C46                     __end_of_InitBBSPI:
+  1107                           	opt stack 0
+  1108                           tblptru	equ	0xFF8
+  1109                           tblptrh	equ	0xFF7
+  1110                           tblptrl	equ	0xFF6
+  1111                           tablat	equ	0xFF5
+  1112                           wreg	equ	0xFE8
+  1113                           status	equ	0xFD8
+  1114                           
+  1115 ;; *************** function _TheImperialMarch *****************
+  1116 ;; Defined at:
+  1117 ;;		line 81 in file "Notes.h"
+  1118 ;; Parameters:    Size  Location     Type
+  1119 ;;		None
+  1120 ;; Auto vars:     Size  Location     Type
+  1121 ;;		None
+  1122 ;; Return value:  Size  Location     Type
+  1123 ;;                  1    wreg      void 
+  1124 ;; Registers used:
+  1125 ;;		wreg, status,2, status,0, cstack
+  1126 ;; Tracked objects:
+  1127 ;;		On entry : 0/0
+  1128 ;;		On exit  : 0/0
+  1129 ;;		Unchanged: 0/0
+  1130 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1131 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1132 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1133 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1134 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1135 ;;Total ram usage:        1 bytes
+  1136 ;; Hardware stack levels used:    1
+  1137 ;; Hardware stack levels required when called:    2
+  1138 ;; This function calls:
+  1139 ;;		_beep
+  1140 ;; This function is called by:
+  1141 ;;		_main
+  1142 ;; This function uses a non-reentrant model
+  1143 ;;
+  1144                           
+  1145                           	psect	text10
+  1146  00101C                     __ptext10:
+  1147                           	opt stack 0
+  1148  00101C                     _TheImperialMarch:
+  1149                           	opt stack 28
+  1150                           
+  1151                           ;Notes.h: 83: beep(440, 500);
+  1152                           
+  1153                           ;incstack = 0
+  1154  00101C  0E01               	movlw	1
+  1155  00101E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1156  001020  0EB8               	movlw	184
+  1157  001022  6E1B               	movwf	beep@FrequencyInHertz,c
+  1158  001024  0EF4               	movlw	244
+  1159  001026  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1160  001028  0E01               	movlw	1
+  1161  00102A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1162  00102C  0E00               	movlw	0
+  1163  00102E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1164  001030  0E00               	movlw	0
+  1165  001032  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1166  001034  ECCB  F00B         	call	_beep	;wreg free
+  1167                           
+  1168                           ;Notes.h: 84: beep( 440, 500);
+  1169  001038  0E01               	movlw	1
+  1170  00103A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1171  00103C  0EB8               	movlw	184
+  1172  00103E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1173  001040  0EF4               	movlw	244
+  1174  001042  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1175  001044  0E01               	movlw	1
+  1176  001046  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1177  001048  0E00               	movlw	0
+  1178  00104A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1179  00104C  0E00               	movlw	0
+  1180  00104E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1181  001050  ECCB  F00B         	call	_beep	;wreg free
+  1182                           
+  1183                           ;Notes.h: 85: beep( 440, 500);
+  1184  001054  0E01               	movlw	1
+  1185  001056  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1186  001058  0EB8               	movlw	184
+  1187  00105A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1188  00105C  0EF4               	movlw	244
+  1189  00105E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1190  001060  0E01               	movlw	1
+  1191  001062  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1192  001064  0E00               	movlw	0
+  1193  001066  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1194  001068  0E00               	movlw	0
+  1195  00106A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1196  00106C  ECCB  F00B         	call	_beep	;wreg free
+  1197                           
+  1198                           ;Notes.h: 86: beep( 349, 350);
+  1199  001070  0E01               	movlw	1
+  1200  001072  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1201  001074  0E5D               	movlw	93
+  1202  001076  6E1B               	movwf	beep@FrequencyInHertz,c
+  1203  001078  0E5E               	movlw	94
+  1204  00107A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1205  00107C  0E01               	movlw	1
+  1206  00107E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1207  001080  0E00               	movlw	0
+  1208  001082  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1209  001084  0E00               	movlw	0
+  1210  001086  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1211  001088  ECCB  F00B         	call	_beep	;wreg free
+  1212                           
+  1213                           ;Notes.h: 87: beep( 523, 150);
+  1214  00108C  0E02               	movlw	2
+  1215  00108E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1216  001090  0E0B               	movlw	11
+  1217  001092  6E1B               	movwf	beep@FrequencyInHertz,c
+  1218  001094  0E96               	movlw	150
+  1219  001096  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1220  001098  0E00               	movlw	0
+  1221  00109A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1222  00109C  0E00               	movlw	0
+  1223  00109E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1224  0010A0  0E00               	movlw	0
+  1225  0010A2  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1226  0010A4  ECCB  F00B         	call	_beep	;wreg free
+  1227                           
+  1228                           ;Notes.h: 89: beep( 440, 500);
+  1229  0010A8  0E01               	movlw	1
+  1230  0010AA  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1231  0010AC  0EB8               	movlw	184
+  1232  0010AE  6E1B               	movwf	beep@FrequencyInHertz,c
+  1233  0010B0  0EF4               	movlw	244
+  1234  0010B2  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1235  0010B4  0E01               	movlw	1
+  1236  0010B6  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1237  0010B8  0E00               	movlw	0
+  1238  0010BA  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1239  0010BC  0E00               	movlw	0
+  1240  0010BE  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1241  0010C0  ECCB  F00B         	call	_beep	;wreg free
+  1242                           
+  1243                           ;Notes.h: 90: beep( 349, 350);
+  1244  0010C4  0E01               	movlw	1
+  1245  0010C6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1246  0010C8  0E5D               	movlw	93
+  1247  0010CA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1248  0010CC  0E5E               	movlw	94
+  1249  0010CE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1250  0010D0  0E01               	movlw	1
+  1251  0010D2  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1252  0010D4  0E00               	movlw	0
+  1253  0010D6  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1254  0010D8  0E00               	movlw	0
+  1255  0010DA  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1256  0010DC  ECCB  F00B         	call	_beep	;wreg free
+  1257                           
+  1258                           ;Notes.h: 91: beep( 523, 150);
+  1259  0010E0  0E02               	movlw	2
+  1260  0010E2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1261  0010E4  0E0B               	movlw	11
+  1262  0010E6  6E1B               	movwf	beep@FrequencyInHertz,c
+  1263  0010E8  0E96               	movlw	150
+  1264  0010EA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1265  0010EC  0E00               	movlw	0
+  1266  0010EE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1267  0010F0  0E00               	movlw	0
+  1268  0010F2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1269  0010F4  0E00               	movlw	0
+  1270  0010F6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1271  0010F8  ECCB  F00B         	call	_beep	;wreg free
+  1272                           
+  1273                           ;Notes.h: 92: beep( 440, 1000);
+  1274  0010FC  0E01               	movlw	1
+  1275  0010FE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1276  001100  0EB8               	movlw	184
+  1277  001102  6E1B               	movwf	beep@FrequencyInHertz,c
+  1278  001104  0EE8               	movlw	232
+  1279  001106  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1280  001108  0E03               	movlw	3
+  1281  00110A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1282  00110C  0E00               	movlw	0
+  1283  00110E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1284  001110  0E00               	movlw	0
+  1285  001112  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1286  001114  ECCB  F00B         	call	_beep	;wreg free
+  1287                           
+  1288                           ;Notes.h: 94: beep( 659, 500);
+  1289  001118  0E02               	movlw	2
+  1290  00111A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1291  00111C  0E93               	movlw	147
+  1292  00111E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1293  001120  0EF4               	movlw	244
+  1294  001122  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1295  001124  0E01               	movlw	1
+  1296  001126  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1297  001128  0E00               	movlw	0
+  1298  00112A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1299  00112C  0E00               	movlw	0
+  1300  00112E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1301  001130  ECCB  F00B         	call	_beep	;wreg free
+  1302                           
+  1303                           ;Notes.h: 95: beep( 659, 500);
+  1304  001134  0E02               	movlw	2
+  1305  001136  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1306  001138  0E93               	movlw	147
+  1307  00113A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1308  00113C  0EF4               	movlw	244
+  1309  00113E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1310  001140  0E01               	movlw	1
+  1311  001142  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1312  001144  0E00               	movlw	0
+  1313  001146  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1314  001148  0E00               	movlw	0
+  1315  00114A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1316  00114C  ECCB  F00B         	call	_beep	;wreg free
+  1317                           
+  1318                           ;Notes.h: 96: beep(659, 500);
+  1319  001150  0E02               	movlw	2
+  1320  001152  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1321  001154  0E93               	movlw	147
+  1322  001156  6E1B               	movwf	beep@FrequencyInHertz,c
+  1323  001158  0EF4               	movlw	244
+  1324  00115A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1325  00115C  0E01               	movlw	1
+  1326  00115E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1327  001160  0E00               	movlw	0
+  1328  001162  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1329  001164  0E00               	movlw	0
+  1330  001166  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1331  001168  ECCB  F00B         	call	_beep	;wreg free
+  1332                           
+  1333                           ;Notes.h: 97: beep( 698, 350);
+  1334  00116C  0E02               	movlw	2
+  1335  00116E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1336  001170  0EBA               	movlw	186
+  1337  001172  6E1B               	movwf	beep@FrequencyInHertz,c
+  1338  001174  0E5E               	movlw	94
+  1339  001176  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1340  001178  0E01               	movlw	1
+  1341  00117A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1342  00117C  0E00               	movlw	0
+  1343  00117E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1344  001180  0E00               	movlw	0
+  1345  001182  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1346  001184  ECCB  F00B         	call	_beep	;wreg free
+  1347                           
+  1348                           ;Notes.h: 98: beep( 523, 150);
+  1349  001188  0E02               	movlw	2
+  1350  00118A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1351  00118C  0E0B               	movlw	11
+  1352  00118E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1353  001190  0E96               	movlw	150
+  1354  001192  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1355  001194  0E00               	movlw	0
+  1356  001196  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1357  001198  0E00               	movlw	0
+  1358  00119A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1359  00119C  0E00               	movlw	0
+  1360  00119E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1361  0011A0  ECCB  F00B         	call	_beep	;wreg free
+  1362                           
+  1363                           ;Notes.h: 100: beep( 415, 500);
+  1364  0011A4  0E01               	movlw	1
+  1365  0011A6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1366  0011A8  0E9F               	movlw	159
+  1367  0011AA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1368  0011AC  0EF4               	movlw	244
+  1369  0011AE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1370  0011B0  0E01               	movlw	1
+  1371  0011B2  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1372  0011B4  0E00               	movlw	0
+  1373  0011B6  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1374  0011B8  0E00               	movlw	0
+  1375  0011BA  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1376  0011BC  ECCB  F00B         	call	_beep	;wreg free
+  1377                           
+  1378                           ;Notes.h: 101: beep( 349, 350);
+  1379  0011C0  0E01               	movlw	1
+  1380  0011C2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1381  0011C4  0E5D               	movlw	93
+  1382  0011C6  6E1B               	movwf	beep@FrequencyInHertz,c
+  1383  0011C8  0E5E               	movlw	94
+  1384  0011CA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1385  0011CC  0E01               	movlw	1
+  1386  0011CE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1387  0011D0  0E00               	movlw	0
+  1388  0011D2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1389  0011D4  0E00               	movlw	0
+  1390  0011D6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1391  0011D8  ECCB  F00B         	call	_beep	;wreg free
+  1392                           
+  1393                           ;Notes.h: 102: beep( 523, 150);
+  1394  0011DC  0E02               	movlw	2
+  1395  0011DE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1396  0011E0  0E0B               	movlw	11
+  1397  0011E2  6E1B               	movwf	beep@FrequencyInHertz,c
+  1398  0011E4  0E96               	movlw	150
+  1399  0011E6  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1400  0011E8  0E00               	movlw	0
+  1401  0011EA  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1402  0011EC  0E00               	movlw	0
+  1403  0011EE  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1404  0011F0  0E00               	movlw	0
+  1405  0011F2  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1406  0011F4  ECCB  F00B         	call	_beep	;wreg free
+  1407                           
+  1408                           ;Notes.h: 103: beep( 440, 1000);
+  1409  0011F8  0E01               	movlw	1
+  1410  0011FA  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1411  0011FC  0EB8               	movlw	184
+  1412  0011FE  6E1B               	movwf	beep@FrequencyInHertz,c
+  1413  001200  0EE8               	movlw	232
+  1414  001202  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1415  001204  0E03               	movlw	3
+  1416  001206  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1417  001208  0E00               	movlw	0
+  1418  00120A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1419  00120C  0E00               	movlw	0
+  1420  00120E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1421  001210  ECCB  F00B         	call	_beep	;wreg free
+  1422                           
+  1423                           ;Notes.h: 105: beep( 880, 500);
+  1424  001214  0E03               	movlw	3
+  1425  001216  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1426  001218  0E70               	movlw	112
+  1427  00121A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1428  00121C  0EF4               	movlw	244
+  1429  00121E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1430  001220  0E01               	movlw	1
+  1431  001222  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1432  001224  0E00               	movlw	0
+  1433  001226  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1434  001228  0E00               	movlw	0
+  1435  00122A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1436  00122C  ECCB  F00B         	call	_beep	;wreg free
+  1437                           
+  1438                           ;Notes.h: 106: beep( 440, 350);
+  1439  001230  0E01               	movlw	1
+  1440  001232  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1441  001234  0EB8               	movlw	184
+  1442  001236  6E1B               	movwf	beep@FrequencyInHertz,c
+  1443  001238  0E5E               	movlw	94
+  1444  00123A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1445  00123C  0E01               	movlw	1
+  1446  00123E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1447  001240  0E00               	movlw	0
+  1448  001242  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1449  001244  0E00               	movlw	0
+  1450  001246  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1451  001248  ECCB  F00B         	call	_beep	;wreg free
+  1452                           
+  1453                           ;Notes.h: 107: beep( 440, 150);
+  1454  00124C  0E01               	movlw	1
+  1455  00124E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1456  001250  0EB8               	movlw	184
+  1457  001252  6E1B               	movwf	beep@FrequencyInHertz,c
+  1458  001254  0E96               	movlw	150
+  1459  001256  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1460  001258  0E00               	movlw	0
+  1461  00125A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1462  00125C  0E00               	movlw	0
+  1463  00125E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1464  001260  0E00               	movlw	0
+  1465  001262  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1466  001264  ECCB  F00B         	call	_beep	;wreg free
+  1467                           
+  1468                           ;Notes.h: 108: beep( 880, 500);
+  1469  001268  0E03               	movlw	3
+  1470  00126A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1471  00126C  0E70               	movlw	112
+  1472  00126E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1473  001270  0EF4               	movlw	244
+  1474  001272  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1475  001274  0E01               	movlw	1
+  1476  001276  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1477  001278  0E00               	movlw	0
+  1478  00127A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1479  00127C  0E00               	movlw	0
+  1480  00127E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1481  001280  ECCB  F00B         	call	_beep	;wreg free
+  1482                           
+  1483                           ;Notes.h: 109: beep( 830, 250);
+  1484  001284  0E03               	movlw	3
+  1485  001286  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1486  001288  0E3E               	movlw	62
+  1487  00128A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1488  00128C  0EFA               	movlw	250
+  1489  00128E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1490  001290  0E00               	movlw	0
+  1491  001292  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1492  001294  0E00               	movlw	0
+  1493  001296  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1494  001298  0E00               	movlw	0
+  1495  00129A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1496  00129C  ECCB  F00B         	call	_beep	;wreg free
+  1497                           
+  1498                           ;Notes.h: 110: beep( 784, 250);
+  1499  0012A0  0E03               	movlw	3
+  1500  0012A2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1501  0012A4  0E10               	movlw	16
+  1502  0012A6  6E1B               	movwf	beep@FrequencyInHertz,c
+  1503  0012A8  0EFA               	movlw	250
+  1504  0012AA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1505  0012AC  0E00               	movlw	0
+  1506  0012AE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1507  0012B0  0E00               	movlw	0
+  1508  0012B2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1509  0012B4  0E00               	movlw	0
+  1510  0012B6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1511  0012B8  ECCB  F00B         	call	_beep	;wreg free
+  1512                           
+  1513                           ;Notes.h: 112: beep( 740, 125);
+  1514  0012BC  0E02               	movlw	2
+  1515  0012BE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1516  0012C0  0EE4               	movlw	228
+  1517  0012C2  6E1B               	movwf	beep@FrequencyInHertz,c
+  1518  0012C4  0E7D               	movlw	125
+  1519  0012C6  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1520  0012C8  0E00               	movlw	0
+  1521  0012CA  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1522  0012CC  0E00               	movlw	0
+  1523  0012CE  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1524  0012D0  0E00               	movlw	0
+  1525  0012D2  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1526  0012D4  ECCB  F00B         	call	_beep	;wreg free
+  1527                           
+  1528                           ;Notes.h: 113: beep( 698, 125);
+  1529  0012D8  0E02               	movlw	2
+  1530  0012DA  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1531  0012DC  0EBA               	movlw	186
+  1532  0012DE  6E1B               	movwf	beep@FrequencyInHertz,c
+  1533  0012E0  0E7D               	movlw	125
+  1534  0012E2  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1535  0012E4  0E00               	movlw	0
+  1536  0012E6  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1537  0012E8  0E00               	movlw	0
+  1538  0012EA  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1539  0012EC  0E00               	movlw	0
+  1540  0012EE  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1541  0012F0  ECCB  F00B         	call	_beep	;wreg free
+  1542                           
+  1543                           ;Notes.h: 114: beep( 740, 250);
+  1544  0012F4  0E02               	movlw	2
+  1545  0012F6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1546  0012F8  0EE4               	movlw	228
+  1547  0012FA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1548  0012FC  0EFA               	movlw	250
+  1549  0012FE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1550  001300  0E00               	movlw	0
+  1551  001302  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1552  001304  0E00               	movlw	0
+  1553  001306  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1554  001308  0E00               	movlw	0
+  1555  00130A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1556  00130C  ECCB  F00B         	call	_beep	;wreg free
+  1557                           
+  1558                           ;Notes.h: 115: _delay((unsigned long)((150)*(4000000/4000.0)));
+  1559  001310  0EC3               	movlw	195
+  1560  001312  6E28               	movwf	??_TheImperialMarch& (0+255),c
+  1561  001314  0ECD               	movlw	205
+  1562  001316                     u427:
+  1563  001316  2EE8               	decfsz	wreg,f,c
+  1564  001318  D7FE               	goto	u427
+  1565  00131A  2E28               	decfsz	??_TheImperialMarch& (0+255),f,c
+  1566  00131C  D7FC               	goto	u427
+  1567  00131E  F000               	nop	
+  1568                           
+  1569                           ;Notes.h: 116: beep( 455, 250);
+  1570  001320  0E01               	movlw	1
+  1571  001322  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1572  001324  0EC7               	movlw	199
+  1573  001326  6E1B               	movwf	beep@FrequencyInHertz,c
+  1574  001328  0EFA               	movlw	250
+  1575  00132A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1576  00132C  0E00               	movlw	0
+  1577  00132E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1578  001330  0E00               	movlw	0
+  1579  001332  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1580  001334  0E00               	movlw	0
+  1581  001336  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1582  001338  ECCB  F00B         	call	_beep	;wreg free
+  1583                           
+  1584                           ;Notes.h: 117: beep( 622, 500);
+  1585  00133C  0E02               	movlw	2
+  1586  00133E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1587  001340  0E6E               	movlw	110
+  1588  001342  6E1B               	movwf	beep@FrequencyInHertz,c
+  1589  001344  0EF4               	movlw	244
+  1590  001346  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1591  001348  0E01               	movlw	1
+  1592  00134A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1593  00134C  0E00               	movlw	0
+  1594  00134E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1595  001350  0E00               	movlw	0
+  1596  001352  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1597  001354  ECCB  F00B         	call	_beep	;wreg free
+  1598                           
+  1599                           ;Notes.h: 118: beep( 587, 250);
+  1600  001358  0E02               	movlw	2
+  1601  00135A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1602  00135C  0E4B               	movlw	75
+  1603  00135E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1604  001360  0EFA               	movlw	250
+  1605  001362  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1606  001364  0E00               	movlw	0
+  1607  001366  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1608  001368  0E00               	movlw	0
+  1609  00136A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1610  00136C  0E00               	movlw	0
+  1611  00136E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1612  001370  ECCB  F00B         	call	_beep	;wreg free
+  1613                           
+  1614                           ;Notes.h: 119: beep( 554, 250);
+  1615  001374  0E02               	movlw	2
+  1616  001376  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1617  001378  0E2A               	movlw	42
+  1618  00137A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1619  00137C  0EFA               	movlw	250
+  1620  00137E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1621  001380  0E00               	movlw	0
+  1622  001382  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1623  001384  0E00               	movlw	0
+  1624  001386  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1625  001388  0E00               	movlw	0
+  1626  00138A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1627  00138C  ECCB  F00B         	call	_beep	;wreg free
+  1628                           
+  1629                           ;Notes.h: 122: beep( 523, 125);
+  1630  001390  0E02               	movlw	2
+  1631  001392  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1632  001394  0E0B               	movlw	11
+  1633  001396  6E1B               	movwf	beep@FrequencyInHertz,c
+  1634  001398  0E7D               	movlw	125
+  1635  00139A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1636  00139C  0E00               	movlw	0
+  1637  00139E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1638  0013A0  0E00               	movlw	0
+  1639  0013A2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1640  0013A4  0E00               	movlw	0
+  1641  0013A6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1642  0013A8  ECCB  F00B         	call	_beep	;wreg free
+  1643                           
+  1644                           ;Notes.h: 123: beep( 466, 125);
+  1645  0013AC  0E01               	movlw	1
+  1646  0013AE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1647  0013B0  0ED2               	movlw	210
+  1648  0013B2  6E1B               	movwf	beep@FrequencyInHertz,c
+  1649  0013B4  0E7D               	movlw	125
+  1650  0013B6  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1651  0013B8  0E00               	movlw	0
+  1652  0013BA  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1653  0013BC  0E00               	movlw	0
+  1654  0013BE  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1655  0013C0  0E00               	movlw	0
+  1656  0013C2  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1657  0013C4  ECCB  F00B         	call	_beep	;wreg free
+  1658                           
+  1659                           ;Notes.h: 124: beep( 523, 250);
+  1660  0013C8  0E02               	movlw	2
+  1661  0013CA  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1662  0013CC  0E0B               	movlw	11
+  1663  0013CE  6E1B               	movwf	beep@FrequencyInHertz,c
+  1664  0013D0  0EFA               	movlw	250
+  1665  0013D2  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1666  0013D4  0E00               	movlw	0
+  1667  0013D6  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1668  0013D8  0E00               	movlw	0
+  1669  0013DA  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1670  0013DC  0E00               	movlw	0
+  1671  0013DE  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1672  0013E0  ECCB  F00B         	call	_beep	;wreg free
+  1673                           
+  1674                           ;Notes.h: 125: _delay((unsigned long)((150)*(4000000/4000.0)));
+  1675  0013E4  0EC3               	movlw	195
+  1676  0013E6  6E28               	movwf	??_TheImperialMarch& (0+255),c
+  1677  0013E8  0ECD               	movlw	205
+  1678  0013EA                     u437:
+  1679  0013EA  2EE8               	decfsz	wreg,f,c
+  1680  0013EC  D7FE               	goto	u437
+  1681  0013EE  2E28               	decfsz	??_TheImperialMarch& (0+255),f,c
+  1682  0013F0  D7FC               	goto	u437
+  1683  0013F2  F000               	nop	
+  1684                           
+  1685                           ;Notes.h: 126: beep( 349, 125);
+  1686  0013F4  0E01               	movlw	1
+  1687  0013F6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1688  0013F8  0E5D               	movlw	93
+  1689  0013FA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1690  0013FC  0E7D               	movlw	125
+  1691  0013FE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1692  001400  0E00               	movlw	0
+  1693  001402  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1694  001404  0E00               	movlw	0
+  1695  001406  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1696  001408  0E00               	movlw	0
+  1697  00140A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1698  00140C  ECCB  F00B         	call	_beep	;wreg free
+  1699                           
+  1700                           ;Notes.h: 127: beep( 415, 500);
+  1701  001410  0E01               	movlw	1
+  1702  001412  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1703  001414  0E9F               	movlw	159
+  1704  001416  6E1B               	movwf	beep@FrequencyInHertz,c
+  1705  001418  0EF4               	movlw	244
+  1706  00141A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1707  00141C  0E01               	movlw	1
+  1708  00141E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1709  001420  0E00               	movlw	0
+  1710  001422  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1711  001424  0E00               	movlw	0
+  1712  001426  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1713  001428  ECCB  F00B         	call	_beep	;wreg free
+  1714                           
+  1715                           ;Notes.h: 128: beep( 349, 375);
+  1716  00142C  0E01               	movlw	1
+  1717  00142E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1718  001430  0E5D               	movlw	93
+  1719  001432  6E1B               	movwf	beep@FrequencyInHertz,c
+  1720  001434  0E77               	movlw	119
+  1721  001436  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1722  001438  0E01               	movlw	1
+  1723  00143A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1724  00143C  0E00               	movlw	0
+  1725  00143E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1726  001440  0E00               	movlw	0
+  1727  001442  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1728  001444  ECCB  F00B         	call	_beep	;wreg free
+  1729                           
+  1730                           ;Notes.h: 129: beep( 440, 125);
+  1731  001448  0E01               	movlw	1
+  1732  00144A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1733  00144C  0EB8               	movlw	184
+  1734  00144E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1735  001450  0E7D               	movlw	125
+  1736  001452  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1737  001454  0E00               	movlw	0
+  1738  001456  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1739  001458  0E00               	movlw	0
+  1740  00145A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1741  00145C  0E00               	movlw	0
+  1742  00145E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1743  001460  ECCB  F00B         	call	_beep	;wreg free
+  1744                           
+  1745                           ;Notes.h: 131: beep( 523, 500);
+  1746  001464  0E02               	movlw	2
+  1747  001466  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1748  001468  0E0B               	movlw	11
+  1749  00146A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1750  00146C  0EF4               	movlw	244
+  1751  00146E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1752  001470  0E01               	movlw	1
+  1753  001472  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1754  001474  0E00               	movlw	0
+  1755  001476  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1756  001478  0E00               	movlw	0
+  1757  00147A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1758  00147C  ECCB  F00B         	call	_beep	;wreg free
+  1759                           
+  1760                           ;Notes.h: 132: beep( 440, 375);
+  1761  001480  0E01               	movlw	1
+  1762  001482  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1763  001484  0EB8               	movlw	184
+  1764  001486  6E1B               	movwf	beep@FrequencyInHertz,c
+  1765  001488  0E77               	movlw	119
+  1766  00148A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1767  00148C  0E01               	movlw	1
+  1768  00148E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1769  001490  0E00               	movlw	0
+  1770  001492  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1771  001494  0E00               	movlw	0
+  1772  001496  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1773  001498  ECCB  F00B         	call	_beep	;wreg free
+  1774                           
+  1775                           ;Notes.h: 133: beep( 523, 125);
+  1776  00149C  0E02               	movlw	2
+  1777  00149E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1778  0014A0  0E0B               	movlw	11
+  1779  0014A2  6E1B               	movwf	beep@FrequencyInHertz,c
+  1780  0014A4  0E7D               	movlw	125
+  1781  0014A6  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1782  0014A8  0E00               	movlw	0
+  1783  0014AA  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1784  0014AC  0E00               	movlw	0
+  1785  0014AE  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1786  0014B0  0E00               	movlw	0
+  1787  0014B2  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1788  0014B4  ECCB  F00B         	call	_beep	;wreg free
+  1789                           
+  1790                           ;Notes.h: 134: beep( 659, 1000);
+  1791  0014B8  0E02               	movlw	2
+  1792  0014BA  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1793  0014BC  0E93               	movlw	147
+  1794  0014BE  6E1B               	movwf	beep@FrequencyInHertz,c
+  1795  0014C0  0EE8               	movlw	232
+  1796  0014C2  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1797  0014C4  0E03               	movlw	3
+  1798  0014C6  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1799  0014C8  0E00               	movlw	0
+  1800  0014CA  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1801  0014CC  0E00               	movlw	0
+  1802  0014CE  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1803  0014D0  ECCB  F00B         	call	_beep	;wreg free
+  1804                           
+  1805                           ;Notes.h: 136: beep( 880, 500);
+  1806  0014D4  0E03               	movlw	3
+  1807  0014D6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1808  0014D8  0E70               	movlw	112
+  1809  0014DA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1810  0014DC  0EF4               	movlw	244
+  1811  0014DE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1812  0014E0  0E01               	movlw	1
+  1813  0014E2  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1814  0014E4  0E00               	movlw	0
+  1815  0014E6  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1816  0014E8  0E00               	movlw	0
+  1817  0014EA  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1818  0014EC  ECCB  F00B         	call	_beep	;wreg free
+  1819                           
+  1820                           ;Notes.h: 137: beep( 440, 350);
+  1821  0014F0  0E01               	movlw	1
+  1822  0014F2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1823  0014F4  0EB8               	movlw	184
+  1824  0014F6  6E1B               	movwf	beep@FrequencyInHertz,c
+  1825  0014F8  0E5E               	movlw	94
+  1826  0014FA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1827  0014FC  0E01               	movlw	1
+  1828  0014FE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1829  001500  0E00               	movlw	0
+  1830  001502  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1831  001504  0E00               	movlw	0
+  1832  001506  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1833  001508  ECCB  F00B         	call	_beep	;wreg free
+  1834                           
+  1835                           ;Notes.h: 138: beep( 440, 150);
+  1836  00150C  0E01               	movlw	1
+  1837  00150E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1838  001510  0EB8               	movlw	184
+  1839  001512  6E1B               	movwf	beep@FrequencyInHertz,c
+  1840  001514  0E96               	movlw	150
+  1841  001516  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1842  001518  0E00               	movlw	0
+  1843  00151A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1844  00151C  0E00               	movlw	0
+  1845  00151E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1846  001520  0E00               	movlw	0
+  1847  001522  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1848  001524  ECCB  F00B         	call	_beep	;wreg free
+  1849                           
+  1850                           ;Notes.h: 139: beep( 880, 500);
+  1851  001528  0E03               	movlw	3
+  1852  00152A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1853  00152C  0E70               	movlw	112
+  1854  00152E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1855  001530  0EF4               	movlw	244
+  1856  001532  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1857  001534  0E01               	movlw	1
+  1858  001536  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1859  001538  0E00               	movlw	0
+  1860  00153A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1861  00153C  0E00               	movlw	0
+  1862  00153E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1863  001540  ECCB  F00B         	call	_beep	;wreg free
+  1864                           
+  1865                           ;Notes.h: 140: beep( 830, 250);
+  1866  001544  0E03               	movlw	3
+  1867  001546  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1868  001548  0E3E               	movlw	62
+  1869  00154A  6E1B               	movwf	beep@FrequencyInHertz,c
+  1870  00154C  0EFA               	movlw	250
+  1871  00154E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1872  001550  0E00               	movlw	0
+  1873  001552  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1874  001554  0E00               	movlw	0
+  1875  001556  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1876  001558  0E00               	movlw	0
+  1877  00155A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1878  00155C  ECCB  F00B         	call	_beep	;wreg free
+  1879                           
+  1880                           ;Notes.h: 141: beep( 784, 250);
+  1881  001560  0E03               	movlw	3
+  1882  001562  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1883  001564  0E10               	movlw	16
+  1884  001566  6E1B               	movwf	beep@FrequencyInHertz,c
+  1885  001568  0EFA               	movlw	250
+  1886  00156A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1887  00156C  0E00               	movlw	0
+  1888  00156E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1889  001570  0E00               	movlw	0
+  1890  001572  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1891  001574  0E00               	movlw	0
+  1892  001576  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1893  001578  ECCB  F00B         	call	_beep	;wreg free
+  1894                           
+  1895                           ;Notes.h: 143: beep( 740, 125);
+  1896  00157C  0E02               	movlw	2
+  1897  00157E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1898  001580  0EE4               	movlw	228
+  1899  001582  6E1B               	movwf	beep@FrequencyInHertz,c
+  1900  001584  0E7D               	movlw	125
+  1901  001586  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1902  001588  0E00               	movlw	0
+  1903  00158A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1904  00158C  0E00               	movlw	0
+  1905  00158E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1906  001590  0E00               	movlw	0
+  1907  001592  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1908  001594  ECCB  F00B         	call	_beep	;wreg free
+  1909                           
+  1910                           ;Notes.h: 144: beep( 698, 125);
+  1911  001598  0E02               	movlw	2
+  1912  00159A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1913  00159C  0EBA               	movlw	186
+  1914  00159E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1915  0015A0  0E7D               	movlw	125
+  1916  0015A2  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1917  0015A4  0E00               	movlw	0
+  1918  0015A6  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1919  0015A8  0E00               	movlw	0
+  1920  0015AA  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1921  0015AC  0E00               	movlw	0
+  1922  0015AE  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1923  0015B0  ECCB  F00B         	call	_beep	;wreg free
+  1924                           
+  1925                           ;Notes.h: 145: beep( 740, 250);
+  1926  0015B4  0E02               	movlw	2
+  1927  0015B6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1928  0015B8  0EE4               	movlw	228
+  1929  0015BA  6E1B               	movwf	beep@FrequencyInHertz,c
+  1930  0015BC  0EFA               	movlw	250
+  1931  0015BE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1932  0015C0  0E00               	movlw	0
+  1933  0015C2  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1934  0015C4  0E00               	movlw	0
+  1935  0015C6  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1936  0015C8  0E00               	movlw	0
+  1937  0015CA  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1938  0015CC  ECCB  F00B         	call	_beep	;wreg free
+  1939                           
+  1940                           ;Notes.h: 146: _delay((unsigned long)((150)*(4000000/4000.0)));
+  1941  0015D0  0EC3               	movlw	195
+  1942  0015D2  6E28               	movwf	??_TheImperialMarch& (0+255),c
+  1943  0015D4  0ECD               	movlw	205
+  1944  0015D6                     u447:
+  1945  0015D6  2EE8               	decfsz	wreg,f,c
+  1946  0015D8  D7FE               	goto	u447
+  1947  0015DA  2E28               	decfsz	??_TheImperialMarch& (0+255),f,c
+  1948  0015DC  D7FC               	goto	u447
+  1949  0015DE  F000               	nop	
+  1950                           
+  1951                           ;Notes.h: 147: beep(455, 250);
+  1952  0015E0  0E01               	movlw	1
+  1953  0015E2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1954  0015E4  0EC7               	movlw	199
+  1955  0015E6  6E1B               	movwf	beep@FrequencyInHertz,c
+  1956  0015E8  0EFA               	movlw	250
+  1957  0015EA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1958  0015EC  0E00               	movlw	0
+  1959  0015EE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1960  0015F0  0E00               	movlw	0
+  1961  0015F2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1962  0015F4  0E00               	movlw	0
+  1963  0015F6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1964  0015F8  ECCB  F00B         	call	_beep	;wreg free
+  1965                           
+  1966                           ;Notes.h: 148: beep(622, 500);
+  1967  0015FC  0E02               	movlw	2
+  1968  0015FE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1969  001600  0E6E               	movlw	110
+  1970  001602  6E1B               	movwf	beep@FrequencyInHertz,c
+  1971  001604  0EF4               	movlw	244
+  1972  001606  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1973  001608  0E01               	movlw	1
+  1974  00160A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1975  00160C  0E00               	movlw	0
+  1976  00160E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1977  001610  0E00               	movlw	0
+  1978  001612  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1979  001614  ECCB  F00B         	call	_beep	;wreg free
+  1980                           
+  1981                           ;Notes.h: 149: beep(587, 250);
+  1982  001618  0E02               	movlw	2
+  1983  00161A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1984  00161C  0E4B               	movlw	75
+  1985  00161E  6E1B               	movwf	beep@FrequencyInHertz,c
+  1986  001620  0EFA               	movlw	250
+  1987  001622  6E1D               	movwf	beep@TimeInMilliseconds,c
+  1988  001624  0E00               	movlw	0
+  1989  001626  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  1990  001628  0E00               	movlw	0
+  1991  00162A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  1992  00162C  0E00               	movlw	0
+  1993  00162E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  1994  001630  ECCB  F00B         	call	_beep	;wreg free
+  1995                           
+  1996                           ;Notes.h: 150: beep(554, 250);
+  1997  001634  0E02               	movlw	2
+  1998  001636  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  1999  001638  0E2A               	movlw	42
+  2000  00163A  6E1B               	movwf	beep@FrequencyInHertz,c
+  2001  00163C  0EFA               	movlw	250
+  2002  00163E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2003  001640  0E00               	movlw	0
+  2004  001642  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2005  001644  0E00               	movlw	0
+  2006  001646  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2007  001648  0E00               	movlw	0
+  2008  00164A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2009  00164C  ECCB  F00B         	call	_beep	;wreg free
+  2010                           
+  2011                           ;Notes.h: 153: beep( 523, 125);
+  2012  001650  0E02               	movlw	2
+  2013  001652  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2014  001654  0E0B               	movlw	11
+  2015  001656  6E1B               	movwf	beep@FrequencyInHertz,c
+  2016  001658  0E7D               	movlw	125
+  2017  00165A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2018  00165C  0E00               	movlw	0
+  2019  00165E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2020  001660  0E00               	movlw	0
+  2021  001662  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2022  001664  0E00               	movlw	0
+  2023  001666  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2024  001668  ECCB  F00B         	call	_beep	;wreg free
+  2025                           
+  2026                           ;Notes.h: 154: beep( 466, 125);
+  2027  00166C  0E01               	movlw	1
+  2028  00166E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2029  001670  0ED2               	movlw	210
+  2030  001672  6E1B               	movwf	beep@FrequencyInHertz,c
+  2031  001674  0E7D               	movlw	125
+  2032  001676  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2033  001678  0E00               	movlw	0
+  2034  00167A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2035  00167C  0E00               	movlw	0
+  2036  00167E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2037  001680  0E00               	movlw	0
+  2038  001682  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2039  001684  ECCB  F00B         	call	_beep	;wreg free
+  2040                           
+  2041                           ;Notes.h: 155: beep( 523, 250);
+  2042  001688  0E02               	movlw	2
+  2043  00168A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2044  00168C  0E0B               	movlw	11
+  2045  00168E  6E1B               	movwf	beep@FrequencyInHertz,c
+  2046  001690  0EFA               	movlw	250
+  2047  001692  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2048  001694  0E00               	movlw	0
+  2049  001696  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2050  001698  0E00               	movlw	0
+  2051  00169A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2052  00169C  0E00               	movlw	0
+  2053  00169E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2054  0016A0  ECCB  F00B         	call	_beep	;wreg free
+  2055                           
+  2056                           ;Notes.h: 156: _delay((unsigned long)((150)*(4000000/4000.0)));
+  2057  0016A4  0EC3               	movlw	195
+  2058  0016A6  6E28               	movwf	??_TheImperialMarch& (0+255),c
+  2059  0016A8  0ECD               	movlw	205
+  2060  0016AA                     u457:
+  2061  0016AA  2EE8               	decfsz	wreg,f,c
+  2062  0016AC  D7FE               	goto	u457
+  2063  0016AE  2E28               	decfsz	??_TheImperialMarch& (0+255),f,c
+  2064  0016B0  D7FC               	goto	u457
+  2065  0016B2  F000               	nop	
+  2066                           
+  2067                           ;Notes.h: 157: beep( 349, 250);
+  2068  0016B4  0E01               	movlw	1
+  2069  0016B6  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2070  0016B8  0E5D               	movlw	93
+  2071  0016BA  6E1B               	movwf	beep@FrequencyInHertz,c
+  2072  0016BC  0EFA               	movlw	250
+  2073  0016BE  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2074  0016C0  0E00               	movlw	0
+  2075  0016C2  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2076  0016C4  0E00               	movlw	0
+  2077  0016C6  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2078  0016C8  0E00               	movlw	0
+  2079  0016CA  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2080  0016CC  ECCB  F00B         	call	_beep	;wreg free
+  2081                           
+  2082                           ;Notes.h: 158: beep( 415, 500);
+  2083  0016D0  0E01               	movlw	1
+  2084  0016D2  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2085  0016D4  0E9F               	movlw	159
+  2086  0016D6  6E1B               	movwf	beep@FrequencyInHertz,c
+  2087  0016D8  0EF4               	movlw	244
+  2088  0016DA  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2089  0016DC  0E01               	movlw	1
+  2090  0016DE  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2091  0016E0  0E00               	movlw	0
+  2092  0016E2  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2093  0016E4  0E00               	movlw	0
+  2094  0016E6  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2095  0016E8  ECCB  F00B         	call	_beep	;wreg free
+  2096                           
+  2097                           ;Notes.h: 159: beep( 349, 375);
+  2098  0016EC  0E01               	movlw	1
+  2099  0016EE  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2100  0016F0  0E5D               	movlw	93
+  2101  0016F2  6E1B               	movwf	beep@FrequencyInHertz,c
+  2102  0016F4  0E77               	movlw	119
+  2103  0016F6  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2104  0016F8  0E01               	movlw	1
+  2105  0016FA  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2106  0016FC  0E00               	movlw	0
+  2107  0016FE  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2108  001700  0E00               	movlw	0
+  2109  001702  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2110  001704  ECCB  F00B         	call	_beep	;wreg free
+  2111                           
+  2112                           ;Notes.h: 160: beep( 523, 125);
+  2113  001708  0E02               	movlw	2
+  2114  00170A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2115  00170C  0E0B               	movlw	11
+  2116  00170E  6E1B               	movwf	beep@FrequencyInHertz,c
+  2117  001710  0E7D               	movlw	125
+  2118  001712  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2119  001714  0E00               	movlw	0
+  2120  001716  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2121  001718  0E00               	movlw	0
+  2122  00171A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2123  00171C  0E00               	movlw	0
+  2124  00171E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2125  001720  ECCB  F00B         	call	_beep	;wreg free
+  2126                           
+  2127                           ;Notes.h: 162: beep( 440, 500);
+  2128  001724  0E01               	movlw	1
+  2129  001726  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2130  001728  0EB8               	movlw	184
+  2131  00172A  6E1B               	movwf	beep@FrequencyInHertz,c
+  2132  00172C  0EF4               	movlw	244
+  2133  00172E  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2134  001730  0E01               	movlw	1
+  2135  001732  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2136  001734  0E00               	movlw	0
+  2137  001736  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2138  001738  0E00               	movlw	0
+  2139  00173A  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2140  00173C  ECCB  F00B         	call	_beep	;wreg free
+  2141                           
+  2142                           ;Notes.h: 163: beep( 349, 375);
+  2143  001740  0E01               	movlw	1
+  2144  001742  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2145  001744  0E5D               	movlw	93
+  2146  001746  6E1B               	movwf	beep@FrequencyInHertz,c
+  2147  001748  0E77               	movlw	119
+  2148  00174A  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2149  00174C  0E01               	movlw	1
+  2150  00174E  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2151  001750  0E00               	movlw	0
+  2152  001752  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2153  001754  0E00               	movlw	0
+  2154  001756  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2155  001758  ECCB  F00B         	call	_beep	;wreg free
+  2156                           
+  2157                           ;Notes.h: 164: beep( 261, 125);
+  2158  00175C  0E01               	movlw	1
+  2159  00175E  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2160  001760  0E05               	movlw	5
+  2161  001762  6E1B               	movwf	beep@FrequencyInHertz,c
+  2162  001764  0E7D               	movlw	125
+  2163  001766  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2164  001768  0E00               	movlw	0
+  2165  00176A  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2166  00176C  0E00               	movlw	0
+  2167  00176E  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2168  001770  0E00               	movlw	0
+  2169  001772  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2170  001774  ECCB  F00B         	call	_beep	;wreg free
+  2171                           
+  2172                           ;Notes.h: 165: beep( 440, 1000);
+  2173  001778  0E01               	movlw	1
+  2174  00177A  6E1C               	movwf	beep@FrequencyInHertz+1,c
+  2175  00177C  0EB8               	movlw	184
+  2176  00177E  6E1B               	movwf	beep@FrequencyInHertz,c
+  2177  001780  0EE8               	movlw	232
+  2178  001782  6E1D               	movwf	beep@TimeInMilliseconds,c
+  2179  001784  0E03               	movlw	3
+  2180  001786  6E1E               	movwf	beep@TimeInMilliseconds+1,c
+  2181  001788  0E00               	movlw	0
+  2182  00178A  6E1F               	movwf	beep@TimeInMilliseconds+2,c
+  2183  00178C  0E00               	movlw	0
+  2184  00178E  6E20               	movwf	beep@TimeInMilliseconds+3,c
+  2185  001790  ECCB  F00B         	call	_beep	;wreg free
+  2186  001794  0012               	return		;funcret
+  2187  001796                     __end_of_TheImperialMarch:
+  2188                           	opt stack 0
+  2189                           tblptru	equ	0xFF8
+  2190                           tblptrh	equ	0xFF7
+  2191                           tblptrl	equ	0xFF6
+  2192                           tablat	equ	0xFF5
+  2193                           wreg	equ	0xFE8
+  2194                           status	equ	0xFD8
+  2195                           
+  2196 ;; *************** function _beep *****************
+  2197 ;; Defined at:
+  2198 ;;		line 62 in file "Notes.h"
+  2199 ;; Parameters:    Size  Location     Type
+  2200 ;;  FrequencyInH    2   26[COMRAM] int 
+  2201 ;;  TimeInMillis    4   28[COMRAM] long 
+  2202 ;; Auto vars:     Size  Location     Type
+  2203 ;;  x               2   37[COMRAM] volatile int 
+  2204 ;; Return value:  Size  Location     Type
+  2205 ;;                  1    wreg      void 
+  2206 ;; Registers used:
+  2207 ;;		wreg, status,2, status,0, cstack
+  2208 ;; Tracked objects:
+  2209 ;;		On entry : 0/0
+  2210 ;;		On exit  : 0/0
+  2211 ;;		Unchanged: 0/0
+  2212 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2213 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2214 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2215 ;;      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2216 ;;      Totals:        13       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2217 ;;Total ram usage:       13 bytes
+  2218 ;; Hardware stack levels used:    1
+  2219 ;; Hardware stack levels required when called:    1
+  2220 ;; This function calls:
+  2221 ;;		___aldiv
+  2222 ;;		___lmul
+  2223 ;;		_delay_mio
+  2224 ;; This function is called by:
+  2225 ;;		_TheImperialMarch
+  2226 ;; This function uses a non-reentrant model
+  2227 ;;
+  2228                           
+  2229                           	psect	text11
+  2230  001796                     __ptext11:
+  2231                           	opt stack 0
+  2232  001796                     _beep:
+  2233                           	opt stack 28
+  2234                           
+  2235                           ;Notes.h: 64: volatile int x=0;
+  2236                           
+  2237                           ;incstack = 0
+  2238  001796  0E00               	movlw	0
+  2239  001798  6E27               	movwf	beep@x+1,c	;volatile
+  2240  00179A  0E00               	movlw	0
+  2241  00179C  6E26               	movwf	beep@x,c	;volatile
+  2242                           
+  2243                           ;Notes.h: 65: LATFbits.LATF0=1;
+  2244  00179E  808E               	bsf	3982,0,c	;volatile
+  2245                           
+  2246                           ;Notes.h: 66: LATD=FrequencyInHertz;
+  2247  0017A0  C01B  FF8C         	movff	beep@FrequencyInHertz,3980	;volatile
+  2248                           
+  2249                           ;Notes.h: 67: DelayAmount = (80000/FrequencyInHertz);
+  2250  0017A4  0E80               	movlw	128
+  2251  0017A6  6E0D               	movwf	___aldiv@dividend,c
+  2252  0017A8  0E38               	movlw	56
+  2253  0017AA  6E0E               	movwf	___aldiv@dividend+1,c
+  2254  0017AC  0E01               	movlw	1
+  2255  0017AE  6E0F               	movwf	___aldiv@dividend+2,c
+  2256  0017B0  0E00               	movlw	0
+  2257  0017B2  6E10               	movwf	___aldiv@dividend+3,c
+  2258  0017B4  C01B  F011         	movff	beep@FrequencyInHertz,___aldiv@divisor
+  2259  0017B8  C01C  F012         	movff	beep@FrequencyInHertz+1,___aldiv@divisor+1
+  2260  0017BC  0E00               	movlw	0
+  2261  0017BE  BE12               	btfsc	___aldiv@divisor+1,7,c
+  2262  0017C0  0EFF               	movlw	-1
+  2263  0017C2  6E13               	movwf	___aldiv@divisor+2,c
+  2264  0017C4  6E14               	movwf	___aldiv@divisor+3,c
+  2265  0017C6  EC50  F00C         	call	___aldiv	;wreg free
+  2266  0017CA  C00D  F02D         	movff	?___aldiv,_DelayAmount
+  2267  0017CE  C00E  F02E         	movff	?___aldiv+1,_DelayAmount+1
+  2268                           
+  2269                           ;Notes.h: 68: LoopTime = (long)((TimeInMilliseconds*100)/(DelayAmount*2));
+  2270  0017D2  C01D  F001         	movff	beep@TimeInMilliseconds,___lmul@multiplier
+  2271  0017D6  C01E  F002         	movff	beep@TimeInMilliseconds+1,___lmul@multiplier+1
+  2272  0017DA  C01F  F003         	movff	beep@TimeInMilliseconds+2,___lmul@multiplier+2
+  2273  0017DE  C020  F004         	movff	beep@TimeInMilliseconds+3,___lmul@multiplier+3
+  2274  0017E2  0E64               	movlw	100
+  2275  0017E4  6E05               	movwf	___lmul@multiplicand,c
+  2276  0017E6  0E00               	movlw	0
+  2277  0017E8  6E06               	movwf	___lmul@multiplicand+1,c
+  2278  0017EA  0E00               	movlw	0
+  2279  0017EC  6E07               	movwf	___lmul@multiplicand+2,c
+  2280  0017EE  0E00               	movlw	0
+  2281  0017F0  6E08               	movwf	___lmul@multiplicand+3,c
+  2282  0017F2  ECE5  F00C         	call	___lmul	;wreg free
+  2283  0017F6  C001  F00D         	movff	?___lmul,___aldiv@dividend
+  2284  0017FA  C002  F00E         	movff	?___lmul+1,___aldiv@dividend+1
+  2285  0017FE  C003  F00F         	movff	?___lmul+2,___aldiv@dividend+2
+  2286  001802  C004  F010         	movff	?___lmul+3,___aldiv@dividend+3
+  2287  001806  C02D  F021         	movff	_DelayAmount,??_beep
+  2288  00180A  C02E  F022         	movff	_DelayAmount+1,??_beep+1
+  2289  00180E  90D8               	bcf	status,0,c
+  2290  001810  3621               	rlcf	??_beep,f,c
+  2291  001812  3622               	rlcf	??_beep+1,f,c
+  2292  001814  C021  F011         	movff	??_beep,___aldiv@divisor
+  2293  001818  C022  F012         	movff	??_beep+1,___aldiv@divisor+1
+  2294  00181C  6A13               	clrf	___aldiv@divisor+2,c
+  2295  00181E  6A14               	clrf	___aldiv@divisor+3,c
+  2296  001820  EC50  F00C         	call	___aldiv	;wreg free
+  2297  001824  C00D  F029         	movff	?___aldiv,_LoopTime
+  2298  001828  C00E  F02A         	movff	?___aldiv+1,_LoopTime+1
+  2299  00182C  C00F  F02B         	movff	?___aldiv+2,_LoopTime+2
+  2300  001830  C010  F02C         	movff	?___aldiv+3,_LoopTime+3
+  2301                           
+  2302                           ;Notes.h: 70: for (x=0;x<LoopTime;x++)
+  2303  001834  0E00               	movlw	0
+  2304  001836  6E27               	movwf	beep@x+1,c	;volatile
+  2305  001838  0E00               	movlw	0
+  2306  00183A  6E26               	movwf	beep@x,c	;volatile
+  2307  00183C  D010               	goto	l1268
+  2308  00183E                     l159:
+  2309                           
+  2310                           ;Notes.h: 71: {
+  2311                           ;Notes.h: 72: LATFbits.LATF0=1;
+  2312  00183E  808E               	bsf	3982,0,c	;volatile
+  2313                           
+  2314                           ;Notes.h: 73: delay_mio(DelayAmount);
+  2315  001840  C02D  F001         	movff	_DelayAmount,delay_mio@TMR2Millis
+  2316  001844  C02E  F002         	movff	_DelayAmount+1,delay_mio@TMR2Millis+1
+  2317  001848  EC8C  F00D         	call	_delay_mio	;wreg free
+  2318                           
+  2319                           ;Notes.h: 74: LATFbits.LATF0=0;
+  2320  00184C  908E               	bcf	3982,0,c	;volatile
+  2321                           
+  2322                           ;Notes.h: 75: delay_mio(DelayAmount);
+  2323  00184E  C02D  F001         	movff	_DelayAmount,delay_mio@TMR2Millis
+  2324  001852  C02E  F002         	movff	_DelayAmount+1,delay_mio@TMR2Millis+1
+  2325  001856  EC8C  F00D         	call	_delay_mio	;wreg free
+  2326  00185A  4A26               	infsnz	beep@x,f,c	;volatile
+  2327  00185C  2A27               	incf	beep@x+1,f,c	;volatile
+  2328  00185E                     l1268:
+  2329  00185E  C026  F021         	movff	beep@x,??_beep	;volatile
+  2330  001862  C027  F022         	movff	beep@x+1,??_beep+1	;volatile
+  2331  001866  0E00               	movlw	0
+  2332  001868  BE22               	btfsc	(??_beep+1)& (0+255),7,c
+  2333  00186A  0EFF               	movlw	255
+  2334  00186C  6E23               	movwf	(??_beep+2)& (0+255),c
+  2335  00186E  6E24               	movwf	(??_beep+3)& (0+255),c
+  2336  001870  5029               	movf	_LoopTime,w,c
+  2337  001872  5C21               	subwf	??_beep,w,c
+  2338  001874  502A               	movf	_LoopTime+1,w,c
+  2339  001876  5822               	subwfb	??_beep+1,w,c
+  2340  001878  502B               	movf	_LoopTime+2,w,c
+  2341  00187A  5823               	subwfb	??_beep+2,w,c
+  2342  00187C  5024               	movf	??_beep+3,w,c
+  2343  00187E  0A80               	xorlw	128
+  2344  001880  6E25               	movwf	(??_beep+4)& (0+255),c
+  2345  001882  502C               	movf	_LoopTime+3,w,c
+  2346  001884  0A80               	xorlw	128
+  2347  001886  5825               	subwfb	(??_beep+4)& (0+255),w,c
+  2348  001888  A0D8               	btfss	status,0,c
+  2349  00188A  D7D9               	goto	l159
+  2350                           
+  2351                           ;Notes.h: 76: }
+  2352                           ;Notes.h: 77: LATD=0;
+  2353  00188C  0E00               	movlw	0
+  2354  00188E  6E8C               	movwf	3980,c	;volatile
+  2355                           
+  2356                           ;Notes.h: 78: _delay((unsigned long)((100)*(4000000/4000.0)));
+  2357  001890  0E82               	movlw	130
+  2358  001892  6E21               	movwf	??_beep& (0+255),c
+  2359  001894  0EDE               	movlw	222
+  2360  001896                     u467:
+  2361  001896  2EE8               	decfsz	wreg,f,c
+  2362  001898  D7FE               	goto	u467
+  2363  00189A  2E21               	decfsz	??_beep& (0+255),f,c
+  2364  00189C  D7FC               	goto	u467
+  2365  00189E  0012               	return		;funcret
+  2366  0018A0                     __end_of_beep:
+  2367                           	opt stack 0
+  2368                           tblptru	equ	0xFF8
+  2369                           tblptrh	equ	0xFF7
+  2370                           tblptrl	equ	0xFF6
+  2371                           tablat	equ	0xFF5
+  2372                           wreg	equ	0xFE8
+  2373                           status	equ	0xFD8
+  2374                           
+  2375 ;; *************** function _delay_mio *****************
+  2376 ;; Defined at:
+  2377 ;;		line 42 in file "Notes.h"
+  2378 ;; Parameters:    Size  Location     Type
+  2379 ;;  TMR2Millis      2    0[COMRAM] unsigned int 
+  2380 ;; Auto vars:     Size  Location     Type
+  2381 ;;  iTMR2Millis     2    2[COMRAM] volatile unsigned int 
+  2382 ;; Return value:  Size  Location     Type
+  2383 ;;                  1    wreg      void 
+  2384 ;; Registers used:
+  2385 ;;		wreg, status,2, status,0
+  2386 ;; Tracked objects:
+  2387 ;;		On entry : 0/0
+  2388 ;;		On exit  : 0/0
+  2389 ;;		Unchanged: 0/0
+  2390 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2391 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2392 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2393 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2394 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2395 ;;Total ram usage:        4 bytes
+  2396 ;; Hardware stack levels used:    1
+  2397 ;; This function calls:
+  2398 ;;		Nothing
+  2399 ;; This function is called by:
+  2400 ;;		_beep
+  2401 ;; This function uses a non-reentrant model
+  2402 ;;
+  2403                           
+  2404                           	psect	text12
+  2405  001B18                     __ptext12:
+  2406                           	opt stack 0
+  2407  001B18                     _delay_mio:
+  2408                           	opt stack 28
+  2409                           
+  2410                           ;Notes.h: 44: volatile unsigned int iTMR2Millis;
+  2411                           ;Notes.h: 45: for(iTMR2Millis=0;iTMR2Millis<TMR2Millis;iTMR2Millis++)
+  2412                           
+  2413                           ;incstack = 0
+  2414  001B18  0E00               	movlw	0
+  2415  001B1A  6E04               	movwf	delay_mio@iTMR2Millis+1,c	;volatile
+  2416  001B1C  0E00               	movlw	0
+  2417  001B1E  6E03               	movwf	delay_mio@iTMR2Millis,c	;volatile
+  2418  001B20  D00F               	goto	l1160
+  2419  001B22                     l1152:
+  2420                           
+  2421                           ;Notes.h: 46: {
+  2422                           ;Notes.h: 47: PR2=1;
+  2423  001B22  0E01               	movlw	1
+  2424  001B24  6ECB               	movwf	4043,c	;volatile
+  2425                           
+  2426                           ;Notes.h: 48: T2CON=0x00|0x00;
+  2427  001B26  0E00               	movlw	0
+  2428  001B28  6ECA               	movwf	4042,c	;volatile
+  2429                           
+  2430                           ;Notes.h: 49: TMR2=0;
+  2431  001B2A  0E00               	movlw	0
+  2432  001B2C  6ECC               	movwf	4044,c	;volatile
+  2433                           
+  2434                           ;Notes.h: 50: T2CON|=0x04;
+  2435  001B2E  84CA               	bsf	4042,2,c	;volatile
+  2436                           
+  2437                           ;Notes.h: 51: PIE1|=0x02;
+  2438  001B30  829D               	bsf	3997,1,c	;volatile
+  2439  001B32                     l151:
+  2440  001B32  A29E               	btfss	3998,1,c	;volatile
+  2441  001B34  D7FE               	goto	l151
+  2442                           
+  2443                           ;Notes.h: 53: PIR1&=~0x02;
+  2444  001B36  929E               	bcf	3998,1,c	;volatile
+  2445                           
+  2446                           ;Notes.h: 54: T2CON&=~0x04;
+  2447  001B38  94CA               	bcf	4042,2,c	;volatile
+  2448                           
+  2449                           ;Notes.h: 55: PIE1&=~0x02;
+  2450  001B3A  929D               	bcf	3997,1,c	;volatile
+  2451  001B3C  4A03               	infsnz	delay_mio@iTMR2Millis,f,c	;volatile
+  2452  001B3E  2A04               	incf	delay_mio@iTMR2Millis+1,f,c	;volatile
+  2453  001B40                     l1160:
+  2454  001B40  5001               	movf	delay_mio@TMR2Millis,w,c
+  2455  001B42  5C03               	subwf	delay_mio@iTMR2Millis,w,c	;volatile
+  2456  001B44  5002               	movf	delay_mio@TMR2Millis+1,w,c
+  2457  001B46  5804               	subwfb	delay_mio@iTMR2Millis+1,w,c	;volatile
+  2458  001B48  B0D8               	btfsc	status,0,c
+  2459  001B4A  0012               	return	
+  2460  001B4C  D7EA               	goto	l1152
+  2461  001B4E                     __end_of_delay_mio:
+  2462                           	opt stack 0
+  2463                           tblptru	equ	0xFF8
+  2464                           tblptrh	equ	0xFF7
+  2465                           tblptrl	equ	0xFF6
+  2466                           tablat	equ	0xFF5
+  2467                           wreg	equ	0xFE8
+  2468                           status	equ	0xFD8
+  2469                           
+  2470 ;; *************** function ___lmul *****************
+  2471 ;; Defined at:
+  2472 ;;		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c"
+  2473 ;; Parameters:    Size  Location     Type
+  2474 ;;  multiplier      4    0[COMRAM] unsigned long 
+  2475 ;;  multiplicand    4    4[COMRAM] unsigned long 
+  2476 ;; Auto vars:     Size  Location     Type
+  2477 ;;  product         4    8[COMRAM] unsigned long 
+  2478 ;; Return value:  Size  Location     Type
+  2479 ;;                  4    0[COMRAM] unsigned long 
+  2480 ;; Registers used:
+  2481 ;;		wreg, status,2, status,0
+  2482 ;; Tracked objects:
+  2483 ;;		On entry : 0/0
+  2484 ;;		On exit  : 0/0
+  2485 ;;		Unchanged: 0/0
+  2486 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2487 ;;      Params:         8       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2488 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2489 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2490 ;;      Totals:        12       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2491 ;;Total ram usage:       12 bytes
+  2492 ;; Hardware stack levels used:    1
+  2493 ;; This function calls:
+  2494 ;;		Nothing
+  2495 ;; This function is called by:
+  2496 ;;		_beep
+  2497 ;; This function uses a non-reentrant model
+  2498 ;;
+  2499                           
+  2500                           	psect	text13
+  2501  0019CA                     __ptext13:
+  2502                           	opt stack 0
+  2503  0019CA                     ___lmul:
+  2504                           	opt stack 28
+  2505                           
+  2506                           ;incstack = 0
+  2507  0019CA  0E00               	movlw	0
+  2508  0019CC  6E09               	movwf	___lmul@product,c
+  2509  0019CE  0E00               	movlw	0
+  2510  0019D0  6E0A               	movwf	___lmul@product+1,c
+  2511  0019D2  0E00               	movlw	0
+  2512  0019D4  6E0B               	movwf	___lmul@product+2,c
+  2513  0019D6  0E00               	movlw	0
+  2514  0019D8  6E0C               	movwf	___lmul@product+3,c
+  2515  0019DA                     l1164:
+  2516  0019DA  A001               	btfss	___lmul@multiplier,0,c
+  2517  0019DC  D008               	goto	l1168
+  2518  0019DE  5005               	movf	___lmul@multiplicand,w,c
+  2519  0019E0  2609               	addwf	___lmul@product,f,c
+  2520  0019E2  5006               	movf	___lmul@multiplicand+1,w,c
+  2521  0019E4  220A               	addwfc	___lmul@product+1,f,c
+  2522  0019E6  5007               	movf	___lmul@multiplicand+2,w,c
+  2523  0019E8  220B               	addwfc	___lmul@product+2,f,c
+  2524  0019EA  5008               	movf	___lmul@multiplicand+3,w,c
+  2525  0019EC  220C               	addwfc	___lmul@product+3,f,c
+  2526  0019EE                     l1168:
+  2527  0019EE  90D8               	bcf	status,0,c
+  2528  0019F0  3605               	rlcf	___lmul@multiplicand,f,c
+  2529  0019F2  3606               	rlcf	___lmul@multiplicand+1,f,c
+  2530  0019F4  3607               	rlcf	___lmul@multiplicand+2,f,c
+  2531  0019F6  3608               	rlcf	___lmul@multiplicand+3,f,c
+  2532  0019F8  90D8               	bcf	status,0,c
+  2533  0019FA  3204               	rrcf	___lmul@multiplier+3,f,c
+  2534  0019FC  3203               	rrcf	___lmul@multiplier+2,f,c
+  2535  0019FE  3202               	rrcf	___lmul@multiplier+1,f,c
+  2536  001A00  3201               	rrcf	___lmul@multiplier,f,c
+  2537  001A02  5001               	movf	___lmul@multiplier,w,c
+  2538  001A04  1002               	iorwf	___lmul@multiplier+1,w,c
+  2539  001A06  1003               	iorwf	___lmul@multiplier+2,w,c
+  2540  001A08  1004               	iorwf	___lmul@multiplier+3,w,c
+  2541  001A0A  A4D8               	btfss	status,2,c
+  2542  001A0C  D7E6               	goto	l1164
+  2543  001A0E  C009  F001         	movff	___lmul@product,?___lmul
+  2544  001A12  C00A  F002         	movff	___lmul@product+1,?___lmul+1
+  2545  001A16  C00B  F003         	movff	___lmul@product+2,?___lmul+2
+  2546  001A1A  C00C  F004         	movff	___lmul@product+3,?___lmul+3
+  2547  001A1E  0012               	return		;funcret
+  2548  001A20                     __end_of___lmul:
+  2549                           	opt stack 0
+  2550                           tblptru	equ	0xFF8
+  2551                           tblptrh	equ	0xFF7
+  2552                           tblptrl	equ	0xFF6
+  2553                           tablat	equ	0xFF5
+  2554                           wreg	equ	0xFE8
+  2555                           status	equ	0xFD8
+  2556                           
+  2557 ;; *************** function ___aldiv *****************
+  2558 ;; Defined at:
+  2559 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\aldiv.c"
+  2560 ;; Parameters:    Size  Location     Type
+  2561 ;;  dividend        4   12[COMRAM] long 
+  2562 ;;  divisor         4   16[COMRAM] long 
+  2563 ;; Auto vars:     Size  Location     Type
+  2564 ;;  quotient        4   22[COMRAM] long 
+  2565 ;;  sign            1   21[COMRAM] unsigned char 
+  2566 ;;  counter         1   20[COMRAM] unsigned char 
+  2567 ;; Return value:  Size  Location     Type
+  2568 ;;                  4   12[COMRAM] long 
+  2569 ;; Registers used:
+  2570 ;;		wreg, status,2, status,0
+  2571 ;; Tracked objects:
+  2572 ;;		On entry : 0/0
+  2573 ;;		On exit  : 0/0
+  2574 ;;		Unchanged: 0/0
+  2575 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2576 ;;      Params:         8       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2577 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2578 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2579 ;;      Totals:        14       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2580 ;;Total ram usage:       14 bytes
+  2581 ;; Hardware stack levels used:    1
+  2582 ;; This function calls:
+  2583 ;;		Nothing
+  2584 ;; This function is called by:
+  2585 ;;		_beep
+  2586 ;; This function uses a non-reentrant model
+  2587 ;;
+  2588                           
+  2589                           	psect	text14
+  2590  0018A0                     __ptext14:
+  2591                           	opt stack 0
+  2592  0018A0                     ___aldiv:
+  2593                           	opt stack 28
+  2594                           
+  2595                           ;incstack = 0
+  2596  0018A0  0E00               	movlw	0
+  2597  0018A2  6E16               	movwf	___aldiv@sign,c
+  2598  0018A4  AE14               	btfss	___aldiv@divisor+3,7,c
+  2599  0018A6  D00A               	goto	l1180
+  2600  0018A8  1E14               	comf	___aldiv@divisor+3,f,c
+  2601  0018AA  1E13               	comf	___aldiv@divisor+2,f,c
+  2602  0018AC  1E12               	comf	___aldiv@divisor+1,f,c
+  2603  0018AE  6C11               	negf	___aldiv@divisor,c
+  2604  0018B0  0E00               	movlw	0
+  2605  0018B2  2212               	addwfc	___aldiv@divisor+1,f,c
+  2606  0018B4  2213               	addwfc	___aldiv@divisor+2,f,c
+  2607  0018B6  2214               	addwfc	___aldiv@divisor+3,f,c
+  2608  0018B8  0E01               	movlw	1
+  2609  0018BA  6E16               	movwf	___aldiv@sign,c
+  2610  0018BC                     l1180:
+  2611  0018BC  AE10               	btfss	___aldiv@dividend+3,7,c
+  2612  0018BE  D00A               	goto	l1186
+  2613  0018C0  1E10               	comf	___aldiv@dividend+3,f,c
+  2614  0018C2  1E0F               	comf	___aldiv@dividend+2,f,c
+  2615  0018C4  1E0E               	comf	___aldiv@dividend+1,f,c
+  2616  0018C6  6C0D               	negf	___aldiv@dividend,c
+  2617  0018C8  0E00               	movlw	0
+  2618  0018CA  220E               	addwfc	___aldiv@dividend+1,f,c
+  2619  0018CC  220F               	addwfc	___aldiv@dividend+2,f,c
+  2620  0018CE  2210               	addwfc	___aldiv@dividend+3,f,c
+  2621  0018D0  0E01               	movlw	1
+  2622  0018D2  1A16               	xorwf	___aldiv@sign,f,c
+  2623  0018D4                     l1186:
+  2624  0018D4  0E00               	movlw	0
+  2625  0018D6  6E17               	movwf	___aldiv@quotient,c
+  2626  0018D8  0E00               	movlw	0
+  2627  0018DA  6E18               	movwf	___aldiv@quotient+1,c
+  2628  0018DC  0E00               	movlw	0
+  2629  0018DE  6E19               	movwf	___aldiv@quotient+2,c
+  2630  0018E0  0E00               	movlw	0
+  2631  0018E2  6E1A               	movwf	___aldiv@quotient+3,c
+  2632  0018E4  5011               	movf	___aldiv@divisor,w,c
+  2633  0018E6  1012               	iorwf	___aldiv@divisor+1,w,c
+  2634  0018E8  1013               	iorwf	___aldiv@divisor+2,w,c
+  2635  0018EA  1014               	iorwf	___aldiv@divisor+3,w,c
+  2636  0018EC  B4D8               	btfsc	status,2,c
+  2637  0018EE  D02A               	goto	l1208
+  2638  0018F0  0E01               	movlw	1
+  2639  0018F2  6E15               	movwf	___aldiv@counter,c
+  2640  0018F4  D006               	goto	l1194
+  2641  0018F6                     l1192:
+  2642  0018F6  90D8               	bcf	status,0,c
+  2643  0018F8  3611               	rlcf	___aldiv@divisor,f,c
+  2644  0018FA  3612               	rlcf	___aldiv@divisor+1,f,c
+  2645  0018FC  3613               	rlcf	___aldiv@divisor+2,f,c
+  2646  0018FE  3614               	rlcf	___aldiv@divisor+3,f,c
+  2647  001900  2A15               	incf	___aldiv@counter,f,c
+  2648  001902                     l1194:
+  2649  001902  AE14               	btfss	___aldiv@divisor+3,7,c
+  2650  001904  D7F8               	goto	l1192
+  2651  001906                     l1196:
+  2652  001906  90D8               	bcf	status,0,c
+  2653  001908  3617               	rlcf	___aldiv@quotient,f,c
+  2654  00190A  3618               	rlcf	___aldiv@quotient+1,f,c
+  2655  00190C  3619               	rlcf	___aldiv@quotient+2,f,c
+  2656  00190E  361A               	rlcf	___aldiv@quotient+3,f,c
+  2657  001910  5011               	movf	___aldiv@divisor,w,c
+  2658  001912  5C0D               	subwf	___aldiv@dividend,w,c
+  2659  001914  5012               	movf	___aldiv@divisor+1,w,c
+  2660  001916  580E               	subwfb	___aldiv@dividend+1,w,c
+  2661  001918  5013               	movf	___aldiv@divisor+2,w,c
+  2662  00191A  580F               	subwfb	___aldiv@dividend+2,w,c
+  2663  00191C  5014               	movf	___aldiv@divisor+3,w,c
+  2664  00191E  5810               	subwfb	___aldiv@dividend+3,w,c
+  2665  001920  A0D8               	btfss	status,0,c
+  2666  001922  D009               	goto	l1204
+  2667  001924  5011               	movf	___aldiv@divisor,w,c
+  2668  001926  5E0D               	subwf	___aldiv@dividend,f,c
+  2669  001928  5012               	movf	___aldiv@divisor+1,w,c
+  2670  00192A  5A0E               	subwfb	___aldiv@dividend+1,f,c
+  2671  00192C  5013               	movf	___aldiv@divisor+2,w,c
+  2672  00192E  5A0F               	subwfb	___aldiv@dividend+2,f,c
+  2673  001930  5014               	movf	___aldiv@divisor+3,w,c
+  2674  001932  5A10               	subwfb	___aldiv@dividend+3,f,c
+  2675  001934  8017               	bsf	___aldiv@quotient,0,c
+  2676  001936                     l1204:
+  2677  001936  90D8               	bcf	status,0,c
+  2678  001938  3214               	rrcf	___aldiv@divisor+3,f,c
+  2679  00193A  3213               	rrcf	___aldiv@divisor+2,f,c
+  2680  00193C  3212               	rrcf	___aldiv@divisor+1,f,c
+  2681  00193E  3211               	rrcf	___aldiv@divisor,f,c
+  2682  001940  2E15               	decfsz	___aldiv@counter,f,c
+  2683  001942  D7E1               	goto	l1196
+  2684  001944                     l1208:
+  2685  001944  5016               	movf	___aldiv@sign,w,c
+  2686  001946  B4D8               	btfsc	status,2,c
+  2687  001948  D008               	goto	l1212
+  2688  00194A  1E1A               	comf	___aldiv@quotient+3,f,c
+  2689  00194C  1E19               	comf	___aldiv@quotient+2,f,c
+  2690  00194E  1E18               	comf	___aldiv@quotient+1,f,c
+  2691  001950  6C17               	negf	___aldiv@quotient,c
+  2692  001952  0E00               	movlw	0
+  2693  001954  2218               	addwfc	___aldiv@quotient+1,f,c
+  2694  001956  2219               	addwfc	___aldiv@quotient+2,f,c
+  2695  001958  221A               	addwfc	___aldiv@quotient+3,f,c
+  2696  00195A                     l1212:
+  2697  00195A  C017  F00D         	movff	___aldiv@quotient,?___aldiv
+  2698  00195E  C018  F00E         	movff	___aldiv@quotient+1,?___aldiv+1
+  2699  001962  C019  F00F         	movff	___aldiv@quotient+2,?___aldiv+2
+  2700  001966  C01A  F010         	movff	___aldiv@quotient+3,?___aldiv+3
+  2701  00196A  0012               	return	
+  2702  00196C                     __end_of___aldiv:
+  2703                           	opt stack 0
+  2704                           tblptru	equ	0xFF8
+  2705                           tblptrh	equ	0xFF7
+  2706                           tblptrl	equ	0xFF6
+  2707                           tablat	equ	0xFF5
+  2708                           wreg	equ	0xFE8
+  2709                           status	equ	0xFD8
+  2710                           
+  2711 ;; *************** function _InitSpeaker *****************
+  2712 ;; Defined at:
+  2713 ;;		line 19 in file "speaker.h"
+  2714 ;; Parameters:    Size  Location     Type
+  2715 ;;		None
+  2716 ;; Auto vars:     Size  Location     Type
+  2717 ;;		None
+  2718 ;; Return value:  Size  Location     Type
+  2719 ;;                  1    wreg      void 
+  2720 ;; Registers used:
+  2721 ;;		wreg, status,2, status,0
+  2722 ;; Tracked objects:
+  2723 ;;		On entry : 0/0
+  2724 ;;		On exit  : 0/0
+  2725 ;;		Unchanged: 0/0
+  2726 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2727 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2728 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2729 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2730 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2731 ;;Total ram usage:        0 bytes
+  2732 ;; Hardware stack levels used:    1
+  2733 ;; This function calls:
+  2734 ;;		Nothing
+  2735 ;; This function is called by:
+  2736 ;;		_main
+  2737 ;; This function uses a non-reentrant model
+  2738 ;;
+  2739                           
+  2740                           	psect	text15
+  2741  001C46                     __ptext15:
+  2742                           	opt stack 0
+  2743  001C46                     _InitSpeaker:
+  2744                           	opt stack 30
+  2745                           
+  2746                           ;speaker.h: 21: TRISFbits.TRISF0 =0;
+  2747                           
+  2748                           ;incstack = 0
+  2749  001C46  9097               	bcf	3991,0,c	;volatile
+  2750                           
+  2751                           ;speaker.h: 23: PR2=249;
+  2752  001C48  0EF9               	movlw	249
+  2753  001C4A  6ECB               	movwf	4043,c	;volatile
+  2754                           
+  2755                           ;speaker.h: 24: T2CON=(0x40>>1)|(0x01);
+  2756  001C4C  0E21               	movlw	33
+  2757  001C4E  6ECA               	movwf	4042,c	;volatile
+  2758                           
+  2759                           ;speaker.h: 25: PIE1|=0x02;
+  2760  001C50  829D               	bsf	3997,1,c	;volatile
+  2761                           
+  2762                           ;speaker.h: 26: PIR1&=~0x02;
+  2763  001C52  929E               	bcf	3998,1,c	;volatile
+  2764                           
+  2765                           ;speaker.h: 27: T2CON|=0x04;
+  2766  001C54  84CA               	bsf	4042,2,c	;volatile
+  2767  001C56  0012               	return		;funcret
+  2768  001C58                     __end_of_InitSpeaker:
+  2769                           	opt stack 0
+  2770                           tblptru	equ	0xFF8
+  2771                           tblptrh	equ	0xFF7
+  2772                           tblptrl	equ	0xFF6
+  2773                           tablat	equ	0xFF5
+  2774                           wreg	equ	0xFE8
+  2775                           status	equ	0xFD8
+  2776                           
+  2777 ;; *************** function _InitConf *****************
+  2778 ;; Defined at:
+  2779 ;;		line 54 in file "Modules.h"
+  2780 ;; Parameters:    Size  Location     Type
+  2781 ;;		None
+  2782 ;; Auto vars:     Size  Location     Type
+  2783 ;;		None
+  2784 ;; Return value:  Size  Location     Type
+  2785 ;;                  1    wreg      void 
+  2786 ;; Registers used:
+  2787 ;;		wreg, status,2, cstack
+  2788 ;; Tracked objects:
+  2789 ;;		On entry : 0/0
+  2790 ;;		On exit  : 0/0
+  2791 ;;		Unchanged: 0/0
+  2792 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2793 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2794 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2795 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2796 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2797 ;;Total ram usage:        0 bytes
+  2798 ;; Hardware stack levels used:    1
+  2799 ;; Hardware stack levels required when called:    1
+  2800 ;; This function calls:
+  2801 ;;		_ClockSetup
+  2802 ;;		_DigitalIO
+  2803 ;; This function is called by:
+  2804 ;;		_main
+  2805 ;; This function uses a non-reentrant model
+  2806 ;;
+  2807                           
+  2808                           	psect	text16
+  2809  001C58                     __ptext16:
+  2810                           	opt stack 0
+  2811  001C58                     _InitConf:
+  2812                           	opt stack 29
+  2813                           
+  2814                           ;Modules.h: 56: ClockSetup();
+  2815                           
+  2816                           ;incstack = 0
+  2817  001C58  EC31  F00E         	call	_ClockSetup	;wreg free
+  2818                           
+  2819                           ;Modules.h: 57: DigitalIO();
+  2820  001C5C  ECA7  F00D         	call	_DigitalIO	;wreg free
+  2821  001C60  0012               	return		;funcret
+  2822  001C62                     __end_of_InitConf:
+  2823                           	opt stack 0
+  2824                           tblptru	equ	0xFF8
+  2825                           tblptrh	equ	0xFF7
+  2826                           tblptrl	equ	0xFF6
+  2827                           tablat	equ	0xFF5
+  2828                           wreg	equ	0xFE8
+  2829                           status	equ	0xFD8
+  2830                           
+  2831 ;; *************** function _DigitalIO *****************
+  2832 ;; Defined at:
+  2833 ;;		line 36 in file "Modules.h"
+  2834 ;; Parameters:    Size  Location     Type
+  2835 ;;		None
+  2836 ;; Auto vars:     Size  Location     Type
+  2837 ;;		None
+  2838 ;; Return value:  Size  Location     Type
+  2839 ;;                  1    wreg      void 
+  2840 ;; Registers used:
+  2841 ;;		wreg, status,2
+  2842 ;; Tracked objects:
+  2843 ;;		On entry : 0/0
+  2844 ;;		On exit  : 0/0
+  2845 ;;		Unchanged: 0/0
+  2846 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2847 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2848 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2849 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2850 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2851 ;;Total ram usage:        0 bytes
+  2852 ;; Hardware stack levels used:    1
+  2853 ;; This function calls:
+  2854 ;;		Nothing
+  2855 ;; This function is called by:
+  2856 ;;		_InitConf
+  2857 ;; This function uses a non-reentrant model
+  2858 ;;
+  2859                           
+  2860                           	psect	text17
+  2861  001B4E                     __ptext17:
+  2862                           	opt stack 0
+  2863  001B4E                     _DigitalIO:
+  2864                           	opt stack 29
+  2865                           
+  2866                           ;Modules.h: 38: LATA=0;
+  2867                           
+  2868                           ;incstack = 0
+  2869  001B4E  0E00               	movlw	0
+  2870  001B50  6E89               	movwf	3977,c	;volatile
+  2871                           
+  2872                           ;Modules.h: 39: PORTA=0;
+  2873  001B52  0E00               	movlw	0
+  2874  001B54  6E80               	movwf	3968,c	;volatile
+  2875                           
+  2876                           ;Modules.h: 40: TRISA=0X20;
+  2877  001B56  0E20               	movlw	32
+  2878  001B58  6E92               	movwf	3986,c	;volatile
+  2879                           
+  2880                           ;Modules.h: 41: ADCON1=0X0F;
+  2881  001B5A  0E0F               	movlw	15
+  2882  001B5C  6EC1               	movwf	4033,c	;volatile
+  2883                           
+  2884                           ;Modules.h: 43: LATB=0;
+  2885  001B5E  0E00               	movlw	0
+  2886  001B60  6E8A               	movwf	3978,c	;volatile
+  2887                           
+  2888                           ;Modules.h: 44: PORTB=0;
+  2889  001B62  0E00               	movlw	0
+  2890  001B64  6E81               	movwf	3969,c	;volatile
+  2891                           
+  2892                           ;Modules.h: 45: TRISB=0X01;
+  2893  001B66  0E01               	movlw	1
+  2894  001B68  6E93               	movwf	3987,c	;volatile
+  2895                           
+  2896                           ;Modules.h: 47: LATD=0;
+  2897  001B6A  0E00               	movlw	0
+  2898  001B6C  6E8C               	movwf	3980,c	;volatile
+  2899                           
+  2900                           ;Modules.h: 48: PORTD=0;
+  2901  001B6E  0E00               	movlw	0
+  2902  001B70  6E83               	movwf	3971,c	;volatile
+  2903                           
+  2904                           ;Modules.h: 49: TRISD=0;
+  2905  001B72  0E00               	movlw	0
+  2906  001B74  6E95               	movwf	3989,c	;volatile
+  2907                           
+  2908                           ;Modules.h: 50: TRISD&=~(0xFF);
+  2909  001B76  0E00               	movlw	0
+  2910  001B78  6E95               	movwf	3989,c	;volatile
+  2911                           
+  2912                           ;Modules.h: 51: PSPCON=0;
+  2913  001B7A  0E00               	movlw	0
+  2914  001B7C  6EB0               	movwf	4016,c	;volatile
+  2915  001B7E  0012               	return		;funcret
+  2916  001B80                     __end_of_DigitalIO:
+  2917                           	opt stack 0
+  2918                           tblptru	equ	0xFF8
+  2919                           tblptrh	equ	0xFF7
+  2920                           tblptrl	equ	0xFF6
+  2921                           tablat	equ	0xFF5
+  2922                           wreg	equ	0xFE8
+  2923                           status	equ	0xFD8
+  2924                           
+  2925 ;; *************** function _ClockSetup *****************
+  2926 ;; Defined at:
+  2927 ;;		line 28 in file "Modules.h"
+  2928 ;; Parameters:    Size  Location     Type
+  2929 ;;		None
+  2930 ;; Auto vars:     Size  Location     Type
+  2931 ;;		None
+  2932 ;; Return value:  Size  Location     Type
+  2933 ;;                  1    wreg      void 
+  2934 ;; Registers used:
+  2935 ;;		wreg, status,2
+  2936 ;; Tracked objects:
+  2937 ;;		On entry : 0/0
+  2938 ;;		On exit  : 0/0
+  2939 ;;		Unchanged: 0/0
+  2940 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2941 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2942 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2943 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2944 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2945 ;;Total ram usage:        0 bytes
+  2946 ;; Hardware stack levels used:    1
+  2947 ;; This function calls:
+  2948 ;;		Nothing
+  2949 ;; This function is called by:
+  2950 ;;		_InitConf
+  2951 ;; This function uses a non-reentrant model
+  2952 ;;
+  2953                           
+  2954                           	psect	text18
+  2955  001C62                     __ptext18:
+  2956                           	opt stack 0
+  2957  001C62                     _ClockSetup:
+  2958                           	opt stack 29
+  2959                           
+  2960                           ;Modules.h: 30: OSCCON=0x60|0x00;
+  2961                           
+  2962                           ;incstack = 0
+  2963  001C62  0E60               	movlw	96
+  2964  001C64  6ED3               	movwf	4051,c	;volatile
+  2965                           
+  2966                           ;Modules.h: 31: OSCTUNE = 0x00;
+  2967  001C66  0E00               	movlw	0
+  2968  001C68  6E9B               	movwf	3995,c	;volatile
+  2969  001C6A  0012               	return		;funcret
+  2970  001C6C                     __end_of_ClockSetup:
+  2971                           	opt stack 0
+  2972                           tblptru	equ	0xFF8
+  2973                           tblptrh	equ	0xFF7
+  2974                           tblptrl	equ	0xFF6
+  2975                           tablat	equ	0xFF5
+  2976                           wreg	equ	0xFE8
+  2977                           status	equ	0xFD8
+  2978                           tblptru	equ	0xFF8
+  2979                           tblptrh	equ	0xFF7
+  2980                           tblptrl	equ	0xFF6
+  2981                           tablat	equ	0xFF5
+  2982                           wreg	equ	0xFE8
+  2983                           status	equ	0xFD8
+  2984                           
+  2985                           	psect	rparam
+  2986  0000                     tblptru	equ	0xFF8
+  2987                           tblptrh	equ	0xFF7
+  2988                           tblptrl	equ	0xFF6
+  2989                           tablat	equ	0xFF5
+  2990                           wreg	equ	0xFE8
+  2991                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     26
+    Constant    0
+    Data        0
+    BSS         6
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     40      46
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14          256      0       0
+    BANK15           96      0       0
+
+Pointer List with Targets:
+
+    LCDPutStr@ptr	PTR const unsigned char  size(2) Largest target is 14
+		 -> STR_2(CODE[14]), STR_1(CODE[12]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_TheImperialMarch
+    _ejemplo->_LCDPutStr
+    _LCDPutStr->_LCDPutChar
+    _LCDPutChar->_WritePort_BBSPI
+    _LCDInit->_LCDPutInst
+    _Port_BBSPIInit->_SendByteBBSPI
+    _LCDPutInst->_WritePort_BBSPI
+    _WritePort_BBSPI->_SendByteBBSPI
+    _TheImperialMarch->_beep
+    _beep->___aldiv
+    ___aldiv->___lmul
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0   12775
+                           _InitConf
+                        _InitSpeaker
+                   _TheImperialMarch
+                            _ejemplo
+ ---------------------------------------------------------------------------------
+ (1) _ejemplo                                              0     0      0    3184
+                            _LCDInit
+                         _LCDPutInst
+                          _LCDPutStr
+ ---------------------------------------------------------------------------------
+ (2) _LCDPutStr                                            2     0      2     905
+                                              7 COMRAM     2     0      2
+                         _LCDPutChar
+ ---------------------------------------------------------------------------------
+ (3) _LCDPutChar                                           2     2      0     732
+                                              5 COMRAM     2     2      0
+                    _WritePort_BBSPI
+ ---------------------------------------------------------------------------------
+ (2) _LCDInit                                              1     1      0    1547
+                                              7 COMRAM     1     1      0
+                          _InitBBSPI
+                         _LCDPutInst
+                     _Port_BBSPIInit
+                    _WritePort_BBSPI
+ ---------------------------------------------------------------------------------
+ (3) _Port_BBSPIInit                                       1     1      0     105
+                                              3 COMRAM     1     1      0
+                      _SendByteBBSPI
+ ---------------------------------------------------------------------------------
+ (2) _LCDPutInst                                           2     2      0     732
+                                              5 COMRAM     2     2      0
+                    _WritePort_BBSPI
+ ---------------------------------------------------------------------------------
+ (4) _WritePort_BBSPI                                      2     1      1     710
+                                              3 COMRAM     2     1      1
+                      _SendByteBBSPI
+ ---------------------------------------------------------------------------------
+ (5) _SendByteBBSPI                                        3     3      0      90
+                                              0 COMRAM     3     3      0
+ ---------------------------------------------------------------------------------
+ (3) _InitBBSPI                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _TheImperialMarch                                     1     1      0    9591
+                                             39 COMRAM     1     1      0
+                               _beep
+ ---------------------------------------------------------------------------------
+ (2) _beep                                                13     7      6    9591
+                                             26 COMRAM    13     7      6
+                            ___aldiv
+                             ___lmul
+                          _delay_mio
+ ---------------------------------------------------------------------------------
+ (3) _delay_mio                                            4     2      2     174
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (3) ___lmul                                              12     4      8     322
+                                              0 COMRAM    12     4      8
+ ---------------------------------------------------------------------------------
+ (3) ___aldiv                                             14     6      8     556
+                                             12 COMRAM    14     6      8
+                             ___lmul (ARG)
+ ---------------------------------------------------------------------------------
+ (1) _InitSpeaker                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _InitConf                                             0     0      0       0
+                         _ClockSetup
+                          _DigitalIO
+ ---------------------------------------------------------------------------------
+ (2) _DigitalIO                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _ClockSetup                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _InitConf
+     _ClockSetup
+     _DigitalIO
+   _InitSpeaker
+   _TheImperialMarch
+     _beep
+       ___aldiv
+         ___lmul (ARG)
+       ___lmul
+       _delay_mio
+   _ejemplo
+     _LCDInit
+       _InitBBSPI
+       _LCDPutInst
+         _WritePort_BBSPI
+           _SendByteBBSPI
+       _Port_BBSPIInit
+         _SendByteBBSPI
+       _WritePort_BBSPI
+         _SendByteBBSPI
+     _LCDPutInst
+       _WritePort_BBSPI
+         _SendByteBBSPI
+     _LCDPutStr
+       _LCDPutChar
+         _WritePort_BBSPI
+           _SendByteBBSPI
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             F5F      0       0      37        0.0%
+EEDATA             400      0       0       0        0.0%
+BITBANK14          100      0       0      33        0.0%
+BANK14             100      0       0      34        0.0%
+BITBANK13          100      0       0      30        0.0%
+BANK13             100      0       0      31        0.0%
+BITBANK12          100      0       0      28        0.0%
+BANK12             100      0       0      29        0.0%
+BITBANK11          100      0       0      26        0.0%
+BANK11             100      0       0      27        0.0%
+BITBANK10          100      0       0      24        0.0%
+BANK10             100      0       0      25        0.0%
+BITBANK9           100      0       0      22        0.0%
+BANK9              100      0       0      23        0.0%
+BITBANK8           100      0       0      20        0.0%
+BANK8              100      0       0      21        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK15           60      0       0      35        0.0%
+BANK15              60      0       0      36        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     28      2E       1       48.4%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      2E      32        0.0%
+DATA                 0      0      2E       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.38 build -256452561 
+Symbol Table                                                                                   Sun Jan 15 22:41:42 2017
+
+                       l33 1ADA                         l35 1AE2                ?_LCDPutChar 0001  
+                       l36 1AE4                ?_LCDPutInst 0001                __CFG_BORV$3 000000  
+             __CFG_CP0$OFF 000000               __CFG_CP1$OFF 000000               __CFG_CP2$OFF 000000  
+             __CFG_CP3$OFF 000000                __CFG_OSC$HS 000000               __CFG_CP4$OFF 000000  
+             __CFG_CP5$OFF 000000      SendByteBBSPI@bitcount 0002               __CFG_CP6$OFF 000000  
+             __CFG_CP7$OFF 000000                        l151 1B32                        l159 183E  
+                      l796 1AEE                        l788 1AD2                        l798 1AF4  
+             __CFG_CPB$OFF 000000                        _PR2 000FCB                        u407 1AA4  
+                      u327 1A28                        u417 1AB6                        u337 1A3E  
+             __CFG_CPD$OFF 000000                        u427 1316                        u347 1A50  
+                      u437 13EA                        u357 1A62                        u447 15D6  
+                      u367 197A                        u457 16AA                        u377 19A2  
+                      u467 1896                        u387 1A7C                        u397 1A92  
+                      wreg 000FE8               __CFG_MODE$MC 000000       delay_mio@iTMR2Millis 0003  
+          __end_of_LCDInit 19CA               __CFG_LVP$OFF 000000               __CFG_WDT$OFF 000000  
+                     l1212 195A                       l1204 1936                       l1208 1944  
+                     l1152 1B22                       l1160 1B40                       l1250 1BC0  
+                     l1180 18BC                       l1164 19DA                       l1246 1BAC  
+                     l1192 18F6                       l1168 19EE                       l1194 1902  
+                     l1186 18D4                       l1196 1906                       l1268 185E  
+                     l1358 1C2E                       STR_1 100F                       STR_2 1001  
+                     _LATA 000F89                       _LATB 000F8A                       _LATD 000F8C  
+                     _PIE1 000F9D                       _PIR1 000F9E                       _TMR2 000FCC  
+                     _beep 1796                       _main 1C22           ?_WritePort_BBSPI 0004  
+                     start 0000         __size_of_LCDPutStr 002A              __CFG_IESO$OFF 000000  
+        ?_TheImperialMarch 0001              __CFG_MCLRE$ON 000000               ___param_bank 000010  
+            ??_InitSpeaker 0001         ??_TheImperialMarch 0028                 _ClockSetup 1C62  
+            __CFG_WAIT$OFF 000000                      ?_beep 001B            __end_of___aldiv 196C  
+                    ?_main 0001                      _T2CON 000FCA                      _PORTA 000F80  
+                    _PORTB 000F81                      _PORTD 000F83                      _TRISA 000F92  
+                    _TRISB 000F93                      _TRISD 000F95              __CFG_PWRT$OFF 000000  
+            __CFG_WRT0$OFF 000000              __CFG_WRT1$OFF 000000              __CFG_WRT2$OFF 000000  
+      ___lmul@multiplicand 0005              __CFG_WRT3$OFF 000000              __CFG_WRT4$OFF 000000  
+            __CFG_WRT5$OFF 000000              __CFG_WRT6$OFF 000000              __CFG_WRT7$OFF 000000  
+           __CFG_EBTR0$OFF 000000             __CFG_FCMEN$OFF 000000             __CFG_EBTR1$OFF 000000  
+           __CFG_EBTR2$OFF 000000            __end_of_ejemplo 1BAA             __CFG_EBTR3$OFF 000000  
+           __CFG_EBTR4$OFF 000000             __CFG_EBTR5$OFF 000000             __CFG_EBTR6$OFF 000000  
+           __CFG_EBTR7$OFF 000000              __CFG_WRTB$OFF 000000    __size_of_Port_BBSPIInit 001A  
+            __CFG_WRTC$OFF 000000              __CFG_WRTD$OFF 000000             __CFG_EBTRB$OFF 000000  
+                    beep@x 0026                _DelayAmount 002D             __CFG_BOREN$OFF 000000  
+                    tablat 000FF5        __size_of_LCDPutChar 0054        __size_of_LCDPutInst 0054  
+                    status 000FD8            __initialization 1BD4               __end_of_beep 18A0  
+             __end_of_main 1C34           __end_of_InitConf 1C62                     ??_beep 0021  
+                   ??_main 0029         __size_of_DigitalIO 0032        __end_of_InitSpeaker 1C58  
+            __activetblptr 000001                  ??_LCDInit 0008               LCDPutChar@ch 0007  
+        __end_of_LCDPutStr 1BD4                     _ADCON1 000FC1         __size_of_InitBBSPI 0012  
+             LCDPutInst@ch 0007            __CFG_BBSIZ$BB2K 000000                     _OSCCON 000FD3  
+                   _TMR2IF 007CF1                     _PSPCON 000FB0               LCDPutStr@ptr 0008  
+           __CFG_XINST$OFF 000000                     ___lmul 19CA                  ??___aldiv 0015  
+           __CFG_STVREN$ON 000000                ?_ClockSetup 0001                  ??_ejemplo 000A  
+   Port_BBSPIInit@port_dir 0004               __mediumconst 0000                     tblptrh 000FF7  
+                   tblptrl 000FF6                     tblptru 000FF8                 __accesstop 0060  
+  __end_of__initialization 1BE0          __end_of_DigitalIO 1B80              ___rparam_used 000001  
+   __size_of_SendByteBBSPI 0050             __pcstackCOMRAM 0001                _InitSpeaker 1C46  
+        __end_of_InitBBSPI 1C46               ??_LCDPutChar 0006               ??_LCDPutInst 0006  
+       __size_of_delay_mio 0036             _Port_BBSPIInit 1BEE                  ?_InitConf 0001  
+      __size_of_ClockSetup 000A         __end_of_LCDPutChar 1A74         __end_of_LCDPutInst 1AC8  
+                  ?___lmul 0001       beep@FrequencyInHertz 001B             ___lmul@product 0009  
+   __end_of_Port_BBSPIInit 1C08                    _LCDInit 196C              _SendByteBBSPI 1AC8  
+__size_of_TheImperialMarch 077A                    _OSCTUNE 000F9B                 ??_InitConf 0001  
+         WritePort_BBSPI@a 0004          __end_of_delay_mio 1B4E                    __Hparam 0000  
+                  __Lparam 0000                    ___aldiv 18A0            __size_of___lmul 0056  
+ __size_of_WritePort_BBSPI 001A               __psmallconst 1000                    __pcinit 1BD4  
+                  __ramtop 1000                    __ptext0 1C22                    __ptext1 1B80  
+                  __ptext2 1BAA                    __ptext3 1A20                    __ptext4 196C  
+                  __ptext5 1BEE                    __ptext6 1A74                    __ptext7 1C08  
+                  __ptext8 1AC8                    __ptext9 1C34                    _ejemplo 1B80  
+           ?_SendByteBBSPI 0001            ?_Port_BBSPIInit 0001           ___aldiv@dividend 000D  
+                _LCDPutStr 1BAA       end_of_initialization 1BE0           ___aldiv@quotient 0017  
+             ??_ClockSetup 0001                  _TRISAbits 000F92                  _TRISCbits 000F94  
+                _TRISFbits 000F97                 ?_LCDPutStr 0008        SendByteBBSPI@output 0001  
+       __end_of_ClockSetup 1C6C                  _DigitalIO 1B4E               ?_InitSpeaker 0001  
+           __end_of___lmul 1A20            ??_SendByteBBSPI 0001                  _InitBBSPI 1C34  
+         _TheImperialMarch 101C          ??_WritePort_BBSPI 0005        start_initialization 1BD4  
+        __size_of_InitConf 000A                 ?_DigitalIO 0001                   ??___lmul 0009  
+         __CFG_LPT1OSC$OFF 000000                 ?_InitBBSPI 0001                   ?_LCDInit 0001  
+              __pbssCOMRAM 0029                ??_LCDPutStr 000A                  _delay_mio 1B18  
+        __CFG_CCP2MX$PORTC 000000                   ?___aldiv 000D           ??_Port_BBSPIInit 0004  
+                 ?_ejemplo 0001                __smallconst 1000            ___aldiv@divisor 0011  
+          ___aldiv@counter 0015                   _LATAbits 000F89                   _LATCbits 000F8B  
+                 _LATFbits 000F8E                 ?_delay_mio 0001      __CFG_DATABW$DATA16BIT 000000  
+              ??_DigitalIO 0001           __CFG_WDTPS$32768 000000       __size_of_InitSpeaker 0012  
+        __CFG_ECCPMX$PORTE 000000     beep@TimeInMilliseconds 001D                ??_InitBBSPI 0001  
+       SendByteBBSPI@input 0003           __size_of_LCDInit 005E          ___lmul@multiplier 0001  
+                 _InitConf 1C58                   _LoopTime 0029   __end_of_TheImperialMarch 1796  
+                 __Hrparam 0000                   __Lrparam 0000               __Lsmallconst 1000  
+          _WritePort_BBSPI 1C08           __size_of___aldiv 00CC        delay_mio@TMR2Millis 0001  
+         __size_of_ejemplo 002A                   __ptext10 101C                   __ptext11 1796  
+                 __ptext12 1B18                   __ptext13 19CA                   __ptext14 18A0  
+                 __ptext15 1C46                   __ptext16 1C58                   __ptext17 1B4E  
+                 __ptext18 1C62              __size_of_beep 010A              __size_of_main 0012  
+              ??_delay_mio 0003                 _LCDPutChar 1A20                 _LCDPutInst 1A74  
+    __end_of_SendByteBBSPI 1B18      __CFG_ADDRBW$ADDR20BIT 000000    __end_of_WritePort_BBSPI 1C22  
+  WritePort_BBSPI@port_add 0005               ___aldiv@sign 0016  

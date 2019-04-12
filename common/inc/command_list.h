@@ -43,6 +43,9 @@ enum{
  cmd_adc                  =   0x252,
  cmd_fet                  =   0x28c,
  cmd_pwm		  =   0x2a5,
- cmd_duty                 =   0x9d
+ cmd_duty                 =   0x9d,
+ cmd_spi_send             =  0x28e,
+ cmd_spip                 =  0x5d,
+ cmd_servo                = 0x150,	
 };
 #endif

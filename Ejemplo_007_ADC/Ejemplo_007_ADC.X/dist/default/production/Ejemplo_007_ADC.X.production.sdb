@@ -1,0 +1,493 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F8722 ]
+[d frameptr 4065 ]
+"45 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\BBSPI_LCD.c
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+"70
+[v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
+"91
+[v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
+"123
+[v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
+"144
+[v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
+"160
+[v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
+"179
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+"198
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Ejemplo.h
+[v _ejemplo ejemplo `(v  1 e 1 0 ]
+"35 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"39 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Modules.h
+[v _ClockSetup ClockSetup `(v  1 e 1 0 ]
+"45
+[v _InitAdc10 InitAdc10 `(v  1 e 1 0 ]
+"57
+[v _SampleAN0 SampleAN0 `(ui  1 e 2 0 ]
+"71
+[v _TestADC TestADC `(v  1 e 1 0 ]
+"94
+[v _DigitalIO DigitalIO `(v  1 e 1 0 ]
+"112
+[v _InitConf InitConf `(v  1 e 1 0 ]
+"2627 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f8722.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"2774
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"3181
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"4524
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S242 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"4572
+[s S251 . 1 `uc 1 LA0 1 0 :1:0 
+]
+[s S253 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+]
+[s S256 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LA2 1 0 :1:2 
+]
+[s S259 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LA3 1 0 :1:3 
+]
+[s S262 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LA4 1 0 :1:4 
+]
+[s S265 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LA5 1 0 :1:5 
+]
+[s S268 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LA6 1 0 :1:6 
+]
+[s S271 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S274 . 1 `S242 1 . 1 0 `S251 1 . 1 0 `S253 1 . 1 0 `S256 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 `S265 1 . 1 0 `S268 1 . 1 0 `S271 1 . 1 0 ]
+[v _LATAbits LATAbits `VES274  1 e 1 @3977 ]
+"4656
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S317 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"4836
+[s S326 . 1 `uc 1 LC0 1 0 :1:0 
+]
+[s S328 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+]
+[s S331 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LC2 1 0 :1:2 
+]
+[s S334 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LC3 1 0 :1:3 
+]
+[s S337 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LC4 1 0 :1:4 
+]
+[s S340 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LC5 1 0 :1:5 
+]
+[s S343 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LC6 1 0 :1:6 
+]
+[s S346 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S349 . 1 `S317 1 . 1 0 `S326 1 . 1 0 `S328 1 . 1 0 `S331 1 . 1 0 `S334 1 . 1 0 `S337 1 . 1 0 `S340 1 . 1 0 `S343 1 . 1 0 `S346 1 . 1 0 ]
+[v _LATCbits LATCbits `VES349  1 e 1 @3979 ]
+"4920
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S65 . 1 `uc 1 LATF0 1 0 :1:0 
+`uc 1 LATF1 1 0 :1:1 
+`uc 1 LATF2 1 0 :1:2 
+`uc 1 LATF3 1 0 :1:3 
+`uc 1 LATF4 1 0 :1:4 
+`uc 1 LATF5 1 0 :1:5 
+`uc 1 LATF6 1 0 :1:6 
+`uc 1 LATF7 1 0 :1:7 
+]
+"5232
+[s S74 . 1 `uc 1 LF0 1 0 :1:0 
+]
+[s S76 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LF1 1 0 :1:1 
+]
+[s S79 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LF2 1 0 :1:2 
+]
+[s S82 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LF3 1 0 :1:3 
+]
+[s S85 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LF4 1 0 :1:4 
+]
+[s S88 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LF5 1 0 :1:5 
+]
+[s S91 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LF6 1 0 :1:6 
+]
+[s S94 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LF7 1 0 :1:7 
+]
+[u S97 . 1 `S65 1 . 1 0 `S74 1 . 1 0 `S76 1 . 1 0 `S79 1 . 1 0 `S82 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 `S91 1 . 1 0 `S94 1 . 1 0 ]
+[v _LATFbits LATFbits `VES97  1 e 1 @3982 ]
+"5673
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+[s S162 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"5705
+[s S171 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S180 . 1 `S162 1 . 1 0 `S171 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES180  1 e 1 @3986 ]
+"5894
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+[s S202 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"6147
+[s S211 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S220 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES220  1 e 1 @3988 ]
+"6336
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S25 . 1 `uc 1 TRISF0 1 0 :1:0 
+`uc 1 TRISF1 1 0 :1:1 
+`uc 1 TRISF2 1 0 :1:2 
+`uc 1 TRISF3 1 0 :1:3 
+`uc 1 TRISF4 1 0 :1:4 
+`uc 1 TRISF5 1 0 :1:5 
+`uc 1 TRISF6 1 0 :1:6 
+`uc 1 TRISF7 1 0 :1:7 
+]
+"6810
+[s S34 . 1 `uc 1 RF0 1 0 :1:0 
+`uc 1 RF1 1 0 :1:1 
+`uc 1 RF2 1 0 :1:2 
+`uc 1 RF3 1 0 :1:3 
+`uc 1 RF4 1 0 :1:4 
+`uc 1 RF5 1 0 :1:5 
+`uc 1 RF6 1 0 :1:6 
+`uc 1 RF7 1 0 :1:7 
+]
+[u S43 . 1 `S25 1 . 1 0 `S34 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES43  1 e 1 @3991 ]
+"7590
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+"9186
+[v _PSPCON PSPCON `VEuc  1 e 1 @4016 ]
+"10295
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+[s S558 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"10316
+[s S563 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S570 . 1 `S558 1 . 1 0 `S563 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES570  1 e 1 @4032 ]
+"10365
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"10455
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S487 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"10499
+[s S490 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S494 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S497 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S504 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S507 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S510 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S513 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S516 . 1 `S487 1 . 1 0 `S490 1 . 1 0 `S494 1 . 1 0 `S497 1 . 1 0 `S504 1 . 1 0 `S507 1 . 1 0 `S510 1 . 1 0 `S513 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES516  1 e 1 @4034 ]
+"10579
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"10585
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"12929
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"29 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Modules.h
+[v _voltage voltage `VEui  1 e 2 0 ]
+[v _volts volts `VEui  1 e 2 0 ]
+"30
+[v _milN milN `VEui  1 e 2 0 ]
+[v _cenN cenN `VEui  1 e 2 0 ]
+[v _decN decN `VEui  1 e 2 0 ]
+[v _unitN unitN `VEui  1 e 2 0 ]
+"32
+[v _volti volti `VEui  1 e 2 0 ]
+"35 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"50
+} 0
+"14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Ejemplo.h
+[v _ejemplo ejemplo `(v  1 e 1 0 ]
+{
+"22
+} 0
+"198 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\BBSPI_LCD.c
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+{
+[v LCDPutStr@ptr ptr `*.32Cuc  1 p 2 6 ]
+"201
+} 0
+"45
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+{
+"61
+} 0
+"123
+[v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
+{
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+"128
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 3 ]
+"133
+} 0
+"70
+[v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
+{
+"81
+} 0
+"71 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Modules.h
+[v _TestADC TestADC `(v  1 e 1 0 ]
+{
+"93
+} 0
+"28 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 8 ]
+"31
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 7 ]
+"31
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 36 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 40 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 35 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 26 ]
+"73
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 21 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 25 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 24 ]
+[v ___ftmul@exp exp `uc  1 a 1 20 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 11 ]
+[v ___ftmul@f2 f2 `f  1 p 3 14 ]
+"157
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"57 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Modules.h
+[v _SampleAN0 SampleAN0 `(ui  1 e 2 0 ]
+{
+"70
+} 0
+"179 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\BBSPI_LCD.c
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+{
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+"181
+[v LCDPutInst@ch ch `uc  1 a 1 5 ]
+"189
+} 0
+"160
+[v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
+{
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+"162
+[v LCDPutChar@ch ch `uc  1 a 1 5 ]
+"170
+} 0
+"144
+[v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
+{
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@a a `uc  1 p 1 3 ]
+"146
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 4 ]
+"151
+} 0
+"91
+[v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
+{
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@input input `uc  1 a 1 2 ]
+"93
+[v SendByteBBSPI@bitcount bitcount `uc  1 a 1 1 ]
+"91
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@output output `uc  1 a 1 0 ]
+"114
+} 0
+"112 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_007_ADC\Ejemplo_007_ADC.X\Modules.h
+[v _InitConf InitConf `(v  1 e 1 0 ]
+{
+"116
+} 0
+"94
+[v _DigitalIO DigitalIO `(v  1 e 1 0 ]
+{
+"110
+} 0
+"39
+[v _ClockSetup ClockSetup `(v  1 e 1 0 ]
+{
+"43
+} 0
+"45
+[v _InitAdc10 InitAdc10 `(v  1 e 1 0 ]
+{
+"56
+} 0

@@ -12,7 +12,10 @@
 #define cnsPbDivide		1
 #define cnsPrescaler		256
 
-#define CORE_TICK_RATE	(SYS_FREQ/2/1000)		// Core timer, 10ms period
+#define TOGGLES_PER_SECOND 10000
+#define CORE_TICK_RATE	(SYS_FREQ/2/TOGGLES_PER_SECOND)		
+
+
 #define Timer1Tick		(SYS_FREQ/cnsPbDivide/cnsPrescaler/cnsTogglesPerSec)// timer 1, 1ms period
 
 #endif  //HARDWARE_PROFILE_H

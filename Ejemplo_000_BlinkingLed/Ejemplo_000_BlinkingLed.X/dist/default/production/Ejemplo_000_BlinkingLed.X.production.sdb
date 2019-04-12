@@ -1,0 +1,342 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18LF8722 ]
+[d frameptr 4065 ]
+"45 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\BBSPI_LCD.c
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+"70
+[v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
+"91
+[v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
+"123
+[v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
+"144
+[v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
+"160
+[v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
+"179
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+"198
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Ejemplo.h
+[v _ejemplo ejemplo `(v  1 e 1 0 ]
+"22 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"20 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Modules.h
+[v _ClockSetup ClockSetup `(v  1 e 1 0 ]
+"25
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+"43
+[v _DigitalIO DigitalIO `(v  1 e 1 0 ]
+"52
+[v _InitConf InitConf `(v  1 e 1 0 ]
+"3181 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18lf8722.h
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S277 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"4572
+[s S286 . 1 `uc 1 LA0 1 0 :1:0 
+]
+[s S288 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+]
+[s S291 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LA2 1 0 :1:2 
+]
+[s S294 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LA3 1 0 :1:3 
+]
+[s S297 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LA4 1 0 :1:4 
+]
+[s S300 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LA5 1 0 :1:5 
+]
+[s S303 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LA6 1 0 :1:6 
+]
+[s S306 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S309 . 1 `S277 1 . 1 0 `S286 1 . 1 0 `S288 1 . 1 0 `S291 1 . 1 0 `S294 1 . 1 0 `S297 1 . 1 0 `S300 1 . 1 0 `S303 1 . 1 0 `S306 1 . 1 0 ]
+[v _LATAbits LATAbits `VES309  1 e 1 @3977 ]
+[s S352 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"4836
+[s S361 . 1 `uc 1 LC0 1 0 :1:0 
+]
+[s S363 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+]
+[s S366 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LC2 1 0 :1:2 
+]
+[s S369 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LC3 1 0 :1:3 
+]
+[s S372 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LC4 1 0 :1:4 
+]
+[s S375 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LC5 1 0 :1:5 
+]
+[s S378 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LC6 1 0 :1:6 
+]
+[s S381 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S384 . 1 `S352 1 . 1 0 `S361 1 . 1 0 `S363 1 . 1 0 `S366 1 . 1 0 `S369 1 . 1 0 `S372 1 . 1 0 `S375 1 . 1 0 `S378 1 . 1 0 `S381 1 . 1 0 ]
+[v _LATCbits LATCbits `VES384  1 e 1 @3979 ]
+"4920
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S104 . 1 `uc 1 LATF0 1 0 :1:0 
+`uc 1 LATF1 1 0 :1:1 
+`uc 1 LATF2 1 0 :1:2 
+`uc 1 LATF3 1 0 :1:3 
+`uc 1 LATF4 1 0 :1:4 
+`uc 1 LATF5 1 0 :1:5 
+`uc 1 LATF6 1 0 :1:6 
+`uc 1 LATF7 1 0 :1:7 
+]
+"5232
+[s S113 . 1 `uc 1 LF0 1 0 :1:0 
+]
+[s S115 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LF1 1 0 :1:1 
+]
+[s S118 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LF2 1 0 :1:2 
+]
+[s S121 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LF3 1 0 :1:3 
+]
+[s S124 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LF4 1 0 :1:4 
+]
+[s S127 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LF5 1 0 :1:5 
+]
+[s S130 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LF6 1 0 :1:6 
+]
+[s S133 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LF7 1 0 :1:7 
+]
+[u S136 . 1 `S104 1 . 1 0 `S113 1 . 1 0 `S115 1 . 1 0 `S118 1 . 1 0 `S121 1 . 1 0 `S124 1 . 1 0 `S127 1 . 1 0 `S130 1 . 1 0 `S133 1 . 1 0 ]
+[v _LATFbits LATFbits `VES136  1 e 1 @3982 ]
+[s S197 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"5705
+[s S206 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S215 . 1 `S197 1 . 1 0 `S206 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES215  1 e 1 @3986 ]
+[s S237 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"6147
+[s S246 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S255 . 1 `S237 1 . 1 0 `S246 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES255  1 e 1 @3988 ]
+"6336
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S64 . 1 `uc 1 TRISF0 1 0 :1:0 
+`uc 1 TRISF1 1 0 :1:1 
+`uc 1 TRISF2 1 0 :1:2 
+`uc 1 TRISF3 1 0 :1:3 
+`uc 1 TRISF4 1 0 :1:4 
+`uc 1 TRISF5 1 0 :1:5 
+`uc 1 TRISF6 1 0 :1:6 
+`uc 1 TRISF7 1 0 :1:7 
+]
+"6810
+[s S73 . 1 `uc 1 RF0 1 0 :1:0 
+`uc 1 RF1 1 0 :1:1 
+`uc 1 RF2 1 0 :1:2 
+`uc 1 RF3 1 0 :1:3 
+`uc 1 RF4 1 0 :1:4 
+`uc 1 RF5 1 0 :1:5 
+`uc 1 RF6 1 0 :1:6 
+`uc 1 RF7 1 0 :1:7 
+]
+[u S82 . 1 `S64 1 . 1 0 `S73 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES82  1 e 1 @3991 ]
+"7590
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+"7714
+[v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
+"7796
+[v _PIR1 PIR1 `VEuc  1 e 1 @3998 ]
+"12286
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+"12356
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+"12362
+[v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
+"12929
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"22 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"40
+} 0
+"14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Ejemplo.h
+[v _ejemplo ejemplo `(v  1 e 1 0 ]
+{
+"22
+} 0
+"198 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\BBSPI_LCD.c
+[v _LCDPutStr LCDPutStr `(v  1 e 1 0 ]
+{
+[v LCDPutStr@ptr ptr `*.32Cuc  1 p 2 7 ]
+"201
+} 0
+"160
+[v _LCDPutChar LCDPutChar `(v  1 e 1 0 ]
+{
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+[v LCDPutChar@ch ch `uc  1 a 1 wreg ]
+"162
+[v LCDPutChar@ch ch `uc  1 a 1 6 ]
+"170
+} 0
+"45
+[v _LCDInit LCDInit `(v  1 e 1 0 ]
+{
+"61
+} 0
+"123
+[v _Port_BBSPIInit Port_BBSPIInit `(v  1 e 1 0 ]
+{
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 wreg ]
+"128
+[v Port_BBSPIInit@port_dir port_dir `uc  1 a 1 3 ]
+"133
+} 0
+"179
+[v _LCDPutInst LCDPutInst `(v  1 e 1 0 ]
+{
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+[v LCDPutInst@ch ch `uc  1 a 1 wreg ]
+"181
+[v LCDPutInst@ch ch `uc  1 a 1 6 ]
+"189
+} 0
+"144
+[v _WritePort_BBSPI WritePort_BBSPI `(v  1 e 1 0 ]
+{
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 wreg ]
+[v WritePort_BBSPI@a a `uc  1 p 1 3 ]
+"146
+[v WritePort_BBSPI@port_add port_add `uc  1 a 1 4 ]
+"151
+} 0
+"91
+[v _SendByteBBSPI SendByteBBSPI `(v  1 e 1 0 ]
+{
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@input input `uc  1 a 1 2 ]
+"93
+[v SendByteBBSPI@bitcount bitcount `uc  1 a 1 1 ]
+"91
+[v SendByteBBSPI@output output `uc  1 a 1 wreg ]
+"94
+[v SendByteBBSPI@output output `uc  1 a 1 0 ]
+"114
+} 0
+"70
+[v _InitBBSPI InitBBSPI `(v  1 e 1 0 ]
+{
+"81
+} 0
+"25 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Modules.h
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+{
+"27
+[v delay_ms@iTMR2Millis iTMR2Millis `VEi  1 a 2 3 ]
+"25
+[v delay_ms@TMR2Millis TMR2Millis `VEi  1 p 2 0 ]
+"40
+} 0
+"52
+[v _InitConf InitConf `(v  1 e 1 0 ]
+{
+"56
+} 0
+"43
+[v _DigitalIO DigitalIO `(v  1 e 1 0 ]
+{
+"50
+} 0
+"20
+[v _ClockSetup ClockSetup `(v  1 e 1 0 ]
+{
+"24
+} 0

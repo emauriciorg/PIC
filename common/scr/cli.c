@@ -22,8 +22,9 @@
 #include "pic32_uart.h"
 #include "pic32_timers.h"
 
-#define CLI_DEBUG_ACTIVE
+#include "spi.h"
 
+#define CLI_DEBUG_ACTIVE
 /*macros to map the whole gpios on the MCU TBD*/
 #define GPIO_SET(GPIO_NUMBER) 
 #define GPIO_CLEAR(GPIO_NUMBER) 
@@ -161,6 +162,16 @@ uint8_t cli_parse_debug_command(char *argv)
 				SetDCOC3PWM(hex2dec_result);	
 				break;
 
+	case cmd_spi_send :    CLI_OUT("Sending spi command \n");
+				matrix_led_shutdown_mode();
+				break;
+	case cmd_spip : 
+				matrix_display_test();
+	//			spi_send_command();
+				break;
+	
+	case cmd_servo: 	servo_set_timeout(15);
+				break;
 	default:	
 				CLI_OUT("unknow command\n");
 				break;
@@ -173,5 +184,17 @@ void cli_execute_debug_command(void){
 	if (!pic32_pending_debug_packet()) return;
 	cli_parse_debug_command( pic32_get_debug_packet() );
 	pi32_flush_debug_packet();
+}
+
+/*TODO : define is I need to extract arg outsite commmands -n*/
+uint32_t extract_parameters(uint8_t *text_stream){
+	uint32_t dec_result = 0;
+
+	while ( ((*text_stream) > '0') && ( (*text_stream) < '9') ){
+		dec_result = ((*text_stream)-'0') + (dec_result *10);
+		text_stream++;
+	}
+	return dec_result;
+
 }
 

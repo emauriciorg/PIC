@@ -10,6 +10,8 @@
 
 void pheripherals_leds_init(void ){
 	mPORTDSetPinsDigitalOut(BIT_1);
+	mPORTDSetPinsDigitalOut(BIT_5);
+
 }
 
 void pheripherals_init(void){

@@ -6,6 +6,16 @@
 uint32_t u32_millis_counter;
 uint32_t u32_timeout_counter;
 
+
+typedef struct {
+	uint32_t counter;
+	uint8_t triggered;
+	uint8_t done;
+}timeout_t;
+
+timeout_t micros;
+timeout_t millis;
+timeout_t seconds;
 #pragma interrupt OC1Interrupt ipl2 vector 6
 void OC1Interrupt(void){
 	IFS0bits.OC1IF = 0;
@@ -34,9 +44,8 @@ void pic32_set_pwm(unsigned  long int pwm_period, unsigned long int pwm_duty_cyc
 }
 
 /*Timeout using the CORETIMER*/
-void timers_trigger_timeout(uint16_t timeout_seconds){ 
+void core_timer_trigger(uint16_t timeout_seconds){ 
 	OpenCoreTimer(CORE_TICK_RATE);
-	u32_timeout_counter  = timeout_seconds*1000;
 	mCTClearIntFlag();
 	UpdateCoreTimer(CORE_TICK_RATE);		
 }
@@ -45,20 +54,55 @@ void timers_coretimer_setup(void){
 	mConfigIntCoreTimer((CT_INT_OFF | CT_INT_PRIOR_2 | CT_INT_SUB_PRIOR_0));
 }
 
-char timers_timeout_reached(void){
+
+
+char servo_timeout_reached(){
+ 	return micros.done;
+}
+void servo_set_timeout(uint32_t micros_period){
+	micros.done = 0 ;
+	micros.counter = micros_period;
+}
+
+char servo_trigger(){
+	return micros.triggered;
+}
+
+
+char millis_timeout_reached(){
+ 	return millis.done;
+}
+void millis_set_timeout(uint32_t millis_period){
+	millis.done = 0 ;
+	millis.counter = millis_period*10;
+}
+
+char millis_trigger(){
+	return millis.triggered;
+}
+
+char core_timer_polling_routine(void){
 	if (!mCTGetIntFlag() ){
 		return 0;
 	}
+	UpdateCoreTimer(CORE_TICK_RATE);
 	mCTClearIntFlag();
 
-	if (u32_millis_counter)u32_millis_counter--;
-		
-	if (u32_timeout_counter){
-		u32_timeout_counter--;
-		UpdateCoreTimer(CORE_TICK_RATE);
-		return 0;
+	if(micros.counter) micros.counter--;
+	if (micros.counter==0) {
+		micros.done = 1;
+		micros.triggered = 0;
 	}
-	CloseCoreTimer();
+
+	if(millis.counter) millis.counter--;
+	if (millis.counter==0) {
+		millis.done = 1;
+		millis.triggered = 0;
+	}
+
+//	CloseCoreTimer();
 	
 	return 1;
 }
+
+
