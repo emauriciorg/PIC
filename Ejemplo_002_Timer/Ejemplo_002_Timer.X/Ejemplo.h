@@ -1,5 +1,5 @@
 // -*- C++ -*-
-/* 
+/*
  * File:   Ejemplo.h
  * Author: Mauricio
  *
@@ -11,15 +11,6 @@
 #include"BBSPI_LCD.h"
 
 void ejemplo(void);
-void ejemplo(void)
-{
-  mOPEN_LCD;
-  mCURSOR_LINE1;
-  LCDPutStr("Ejemplo_002");
-  mCURSOR_LINE2;
-  LCDPutStr("Timer Servo");
 
-}
 
 #endif	/* EJEMPLO_H */
-
