@@ -40,7 +40,7 @@
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Ejemplo.h
-[v _ejemplo ejemplo `(v  1 e 1 0 ]
+[v _ejemplo lcd_start_message `(v  1 e 1 0 ]
 "22 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "20 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Modules.h
@@ -50,7 +50,7 @@
 "43
 [v _DigitalIO DigitalIO `(v  1 e 1 0 ]
 "52
-[v _InitConf InitConf `(v  1 e 1 0 ]
+[v _pheriperals_init pheriperals_init `(v  1 e 1 0 ]
 "3181 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18lf8722.h
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 [s S277 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -245,7 +245,7 @@
 "40
 } 0
 "14 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_000_BlinkingLed\Ejemplo_000_BlinkingLed.X\Ejemplo.h
-[v _ejemplo ejemplo `(v  1 e 1 0 ]
+[v _ejemplo lcd_start_message `(v  1 e 1 0 ]
 {
 "22
 } 0
@@ -326,7 +326,7 @@
 "40
 } 0
 "52
-[v _InitConf InitConf `(v  1 e 1 0 ]
+[v _pheriperals_init pheriperals_init `(v  1 e 1 0 ]
 {
 "56
 } 0

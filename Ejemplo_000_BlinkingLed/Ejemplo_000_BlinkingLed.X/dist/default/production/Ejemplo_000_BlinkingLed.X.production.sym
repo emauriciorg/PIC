@@ -18,7 +18,7 @@ _main 11B0 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
 __size_of_SendByteBBSPI 0 0 ABS 0
-__end_of_InitConf 12A2 0 CODE 0
+__end_of_pheriperals_init 12A2 0 CODE 0
 _TRISD F95 0 ABS 0
 __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
@@ -26,7 +26,7 @@ __HRAM 0 0 ABS 0
 _PORTD F83 0 ABS 0
 __LRAM 1 0 ABS 0
 _T2CON FCA 0 ABS 0
-_InitConf 1298 0 CODE 0
+_pheriperals_init 1298 0 CODE 0
 __CFG_WDTPS$32768 0 0 ABS 0
 __Hconfig 30000E 0 CONFIG 0
 __Lconfig 300000 0 CONFIG 0
@@ -294,7 +294,7 @@ __CFG_CP7$OFF 0 0 ABS 0
 intlevel0 0 0 CODE 0
 LCDPutChar@ch 7 0 COMRAM 1
 intlevel1 0 0 CODE 0
-__size_of_InitConf 0 0 ABS 0
+__size_of_pheriperals_init 0 0 ABS 0
 _Port_BBSPIInit 1232 0 CODE 0
 __CFG_WRTB$OFF 0 0 ABS 0
 intlevel2 0 0 CODE 0

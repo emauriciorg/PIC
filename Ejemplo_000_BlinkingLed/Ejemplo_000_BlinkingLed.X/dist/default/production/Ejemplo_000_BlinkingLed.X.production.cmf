@@ -394,7 +394,7 @@ __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Ejemplo_000_Blink
 _SendByteBBSPI 1122 0 CODE 0 text8 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
-__size_of_InitConf 0 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
+__size_of_pheriperals_init 0 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 _PR2 FCB 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __S1 A 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
@@ -416,7 +416,7 @@ __Htext11 0 0 ABS 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.pro
 __Htext12 0 0 ABS 0 text12 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __CFG_BBSIZ$BB2K 0 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
-_InitConf 1298 0 CODE 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
+_pheriperals_init 1298 0 CODE 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __ptext10 1172 0 CODE 0 text10 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __ptext11 1298 0 CODE 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __ptext12 1278 0 CODE 0 text12 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
@@ -433,7 +433,7 @@ __Lbigram 0 0 ABS 0 bigram dist/default/production\Ejemplo_000_BlinkingLed.X.pro
 __CFG_BORV$3 0 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
-__end_of_InitConf 12A2 0 CODE 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
+__end_of_pheriperals_init 12A2 0 CODE 0 text11 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 _LCDInit 101C 0 CODE 0 text4 dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 __CFG_WAIT$OFF 0 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj
 _LATAbits F89 0 ABS 0 - dist/default/production\Ejemplo_000_BlinkingLed.X.production.obj

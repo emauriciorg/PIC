@@ -7031,7 +7031,7 @@ extern __nonreentrant void _delay3(unsigned char);
 # 15 "Modules.h"
 void ClockSetting(void);
 void DigitalIO(void);
-void InitConf(void);
+void pheriperals_init(void);
 void delay_ms(volatile int);
 
 void ClockSetup(void)
@@ -7066,7 +7066,7 @@ TRISD& =~(0xFF);
 
 }
 
-void InitConf(void)
+void pheriperals_init(void)
 {
 ClockSetup();
 DigitalIO();
@@ -7083,8 +7083,8 @@ void LCDPutInst(unsigned char);
 void LCDPutStr(const char *);
 
 # 13 "Ejemplo.h"
-void ejemplo(void);
-void ejemplo(void)
+void lcd_start_message(void);
+void lcd_start_message(void)
 {
 LCDInit();
 LCDPutInst(0x80);
@@ -7097,8 +7097,8 @@ LCDPutStr("Blinking Led");
 # 22 "main.c"
 void main(void)
 {
-InitConf();
-ejemplo();
+pheriperals_init();
+lcd_start_message();
 LATD=0X0F;
 
 

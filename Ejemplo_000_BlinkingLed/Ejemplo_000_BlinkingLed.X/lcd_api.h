@@ -1,5 +1,5 @@
 // -*- C++ -*-
-/* 
+/*
  * File:   Ejemplo.h
  * Author: Mauricio
  *
@@ -10,16 +10,6 @@
 #define	EJEMPLO_H
 #include"BBSPI_LCD.h"
 
-void ejemplo(void);
-void ejemplo(void)
-{
-  mOPEN_LCD;
-  mCURSOR_LINE1;
-  LCDPutStr("Ejemplo_000");
-  mCURSOR_LINE2;
-  LCDPutStr("Blinking Led");
-
-}
+void lcd_start_message(void);
 
 #endif	/* EJEMPLO_H */
-

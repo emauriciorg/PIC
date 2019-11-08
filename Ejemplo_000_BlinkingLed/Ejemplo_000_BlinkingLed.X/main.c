@@ -1,8 +1,8 @@
 /*
  * File:   main.c
- * Author: Mauricio
+ * Author: mauro r.
  *
- * Created on 4 de enero de 2017, 2:30
+ * Created on Jan-4-2017
  *
 This  example shows how to enable ouputs
 
@@ -21,21 +21,17 @@ This  example shows how to enable ouputs
 #include "Ejemplo.h"
 void main(void)
 {
-  InitConf();
-  ejemplo();
-  LATD=0X0F;
-  
+	pheriperals_init();
+	/*lcd relates routines are optinal*/
+	lcd_start_message();
+	LATD=0X0F;
 
-  while(1)
-  {
-    
-    LATD^=0XFF;  
-    
-    delay_ms(500);//delay_ms  usando el tmr2
-    LATD^=0XFF;    
-  
-    delay_ms(500); 
-  }
-  return;
+	while(1)
+	{
+		LATD^=0XFF;
+		delay_ms(500);//delay_ms	usando el tmr2
+		LATD^=0XFF;
+		delay_ms(500);
+	}
+	return;
 }
-

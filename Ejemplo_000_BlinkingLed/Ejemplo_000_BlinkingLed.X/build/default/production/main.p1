@@ -5601,7 +5601,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTRB=OFF ]
 [; ;Modules.h: 15: void ClockSetting(void);
 [; ;Modules.h: 16: void DigitalIO(void);
-[; ;Modules.h: 17: void InitConf(void);
+[; ;Modules.h: 17: void pheriperals_init(void);
 [; ;Modules.h: 18: void delay_ms(volatile int);
 "20 Modules.h
 [v _ClockSetup `(v ~T0 @X0 1 ef ]
@@ -5714,12 +5714,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 718 ]
 }
 "52
-[v _InitConf `(v ~T0 @X0 1 ef ]
+[v _pheriperals_init `(v ~T0 @X0 1 ef ]
 "53
 {
-[; ;Modules.h: 52: void InitConf(void)
+[; ;Modules.h: 52: void pheriperals_init(void)
 [; ;Modules.h: 53: {
-[e :U _InitConf ]
+[e :U _pheriperals_init ]
 [f ]
 [; ;Modules.h: 54: ClockSetup();
 "54
@@ -5739,12 +5739,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;BBSPI_LCD.h: 52: void LCDPutChar(unsigned char);
 [; ;BBSPI_LCD.h: 53: void LCDPutInst(unsigned char);
 [; ;BBSPI_LCD.h: 54: void LCDPutStr(const char *);
-[; ;Ejemplo.h: 13: void ejemplo(void);
+[; ;Ejemplo.h: 13: void lcd_start_message(void);
 "14 Ejemplo.h
 [v _ejemplo `(v ~T0 @X0 1 ef ]
 "15
 {
-[; ;Ejemplo.h: 14: void ejemplo(void)
+[; ;Ejemplo.h: 14: void lcd_start_message(void)
 [; ;Ejemplo.h: 15: {
 [e :U _ejemplo ]
 [f ]
@@ -5775,10 +5775,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 23: {
 [e :U _main ]
 [f ]
-[; ;main.c: 24: InitConf();
+[; ;main.c: 24: pheriperals_init();
 "24
-[e ( _InitConf ..  ]
-[; ;main.c: 25: ejemplo();
+[e ( _pheriperals_init ..  ]
+[; ;main.c: 25: lcd_start_message();
 "25
 [e ( _ejemplo ..  ]
 [; ;main.c: 26: LATD=0X0F;
