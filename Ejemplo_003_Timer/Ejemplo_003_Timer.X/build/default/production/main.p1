@@ -6031,12 +6031,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;Notes.h: 39: long LoopTime = 0;
 "42
-[v _delay_mio `(v ~T0 @X0 1 ef1`ui ]
+[v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
 "43
 {
-[; ;Notes.h: 42: void delay_mio(unsigned int TMR2Millis)
+[; ;Notes.h: 42: void delay_ms(unsigned int TMR2Millis)
 [; ;Notes.h: 43: {
-[e :U _delay_mio ]
+[e :U _delay_ms ]
 "42
 [v _TMR2Millis `ui ~T0 @X0 1 r1 ]
 "43
@@ -6138,15 +6138,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Notes.h: 72: LATFbits.LATF0=1;
 "72
 [e = . . _LATFbits 0 0 -> -> 1 `i `uc ]
-[; ;Notes.h: 73: delay_mio(DelayAmount);
+[; ;Notes.h: 73: delay_ms(DelayAmount);
 "73
-[e ( _delay_mio (1 _DelayAmount ]
+[e ( _delay_ms (1 _DelayAmount ]
 [; ;Notes.h: 74: LATFbits.LATF0=0;
 "74
 [e = . . _LATFbits 0 0 -> -> 0 `i `uc ]
-[; ;Notes.h: 75: delay_mio(DelayAmount);
+[; ;Notes.h: 75: delay_ms(DelayAmount);
 "75
-[e ( _delay_mio (1 _DelayAmount ]
+[e ( _delay_ms (1 _DelayAmount ]
 "76
 }
 "70

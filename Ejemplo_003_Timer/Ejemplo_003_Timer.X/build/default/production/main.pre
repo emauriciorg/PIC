@@ -7356,7 +7356,7 @@ unsigned int DelayAmount = 0;
 long LoopTime = 0;
 
 
-void delay_mio(unsigned int TMR2Millis)
+void delay_ms(unsigned int TMR2Millis)
 {
 volatile unsigned int iTMR2Millis;
 for(iTMR2Millis=0;iTMR2Millis<TMR2Millis;iTMR2Millis++)
@@ -7387,9 +7387,9 @@ LoopTime = (long)((TimeInMilliseconds*100)/(DelayAmount*2));
 for (x=0;x<LoopTime;x++)
 {
 LATFbits.LATF0=1;
-delay_mio(DelayAmount);
+delay_ms(DelayAmount);
 LATFbits.LATF0=0;
-delay_mio(DelayAmount);
+delay_ms(DelayAmount);
 }
 LATD=0;
 _delay((unsigned long)((100)*(4000000/4000.0)));

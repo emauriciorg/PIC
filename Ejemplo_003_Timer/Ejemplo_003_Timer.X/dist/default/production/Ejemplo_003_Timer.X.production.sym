@@ -131,7 +131,7 @@ ___lmul@multiplier 1 0 COMRAM 1
 __CFG_EBTR5$OFF 0 0 ABS 0
 end_of_initialization 1BE0 0 CODE 0
 ___aldiv@sign 16 0 COMRAM 1
-_delay_mio 1B18 0 CODE 0
+_delay_ms 1B18 0 CODE 0
 __size_of_LCDPutStr 0 0 ABS 0
 ___lmul@multiplicand 5 0 COMRAM 1
 __CFG_EBTR6$OFF 0 0 ABS 0
@@ -145,7 +145,7 @@ __end_of_LCDInit 19CA 0 CODE 0
 _TRISAbits F92 0 ABS 0
 _TRISCbits F94 0 ABS 0
 _TRISFbits F97 0 ABS 0
-delay_mio@TMR2Millis 1 0 COMRAM 1
+delay_ms@TMR2Millis 1 0 COMRAM 1
 __CFG_MODE$MC 0 0 ABS 0
 __end_of_LCDPutInst 1AC8 0 CODE 0
 __Hibigdata 0 0 CODE 0
@@ -255,7 +255,7 @@ __pcinit 1BD4 0 CODE 0
 __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 1000 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
-__size_of_delay_mio 0 0 ABS 0
+__size_of_delay_ms 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __Hconst 0 0 CONST 0
 __end_of_WritePort_BBSPI 1C22 0 CODE 0
@@ -280,7 +280,7 @@ __end_of_TheImperialMarch 1796 0 CODE 0
 __CFG_WRT4$OFF 0 0 ABS 0
 __Hbank14 0 0 ABS 0
 __Lbank14 0 0 ABS 0
-delay_mio@iTMR2Millis 3 0 COMRAM 1
+delay_ms@iTMR2Millis 3 0 COMRAM 1
 __Htext10 0 0 ABS 0
 __Ltext10 0 0 ABS 0
 __ptext10 101C 0 CODE 0
@@ -324,7 +324,7 @@ ___intlo_sp 0 0 STACK 2
 __Hend_init 4 0 CODE 0
 __Lend_init 0 0 CODE 0
 ___aldiv@divisor 11 0 COMRAM 1
-__end_of_delay_mio 1B4E 0 CODE 0
+__end_of_delay_ms 1B4E 0 CODE 0
 __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 1000 0 SMALLCONST 0
 __CFG_CP1$OFF 0 0 ABS 0

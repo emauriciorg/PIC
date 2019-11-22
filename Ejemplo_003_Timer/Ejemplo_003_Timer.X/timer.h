@@ -1,5 +1,5 @@
 // -*- C++ -*-
-/* 
+/*
  * File:   timer.h
  * Author: Mauricio
  *
@@ -28,24 +28,11 @@
 #define Pos16 0xF0
 #define Pres1 0x00
 #define Pres4 0x01
-#define Pres16 0x02 
+#define Pres16 0x02
 #define EnableTimer 0x02
 #define StartTimer  0x04
 #define TimerIFG    0x02
 void Timer2M(void);
 
-void Timer2M(void)
-{
-   PR2=4;
-   T2CON=(Pos5>>1)|(Pres4);
-   TMR2=0;   
-   //PIE1|=EnableTimer;
-   T2CON|=StartTimer;
-   while((PIR1&TimerIFG)==0);
-   PIR1&=~TimerIFG;
-}
-
-
 
 #endif	/* TIMER_H */
-

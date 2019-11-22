@@ -52,7 +52,7 @@
 "54
 [v _InitConf InitConf `(v  1 e 1 0 ]
 "42 M:\P\pic32\PIC_Mauricio\PIC_Mauricio\PIC18\EjemplosMplab\Ejemplo_003_Timer.X\Notes.h
-[v _delay_mio delay_mio `(v  1 e 1 0 ]
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
 "62
 [v _beep beep `(v  1 e 1 0 ]
 "81
@@ -364,12 +364,12 @@
 "79
 } 0
 "42
-[v _delay_mio delay_mio `(v  1 e 1 0 ]
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
 "44
-[v delay_mio@iTMR2Millis iTMR2Millis `VEui  1 a 2 2 ]
+[v delay_ms@iTMR2Millis iTMR2Millis `VEui  1 a 2 2 ]
 "42
-[v delay_mio@TMR2Millis TMR2Millis `ui  1 p 2 0 ]
+[v delay_ms@TMR2Millis TMR2Millis `ui  1 p 2 0 ]
 "57
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c

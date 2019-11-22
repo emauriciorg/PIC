@@ -454,7 +454,7 @@ SendByteBBSPI@input 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_00
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Ejemplo_003_Timer.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
 start_initialization 1BD4 0 CODE 0 cinit dist/default/production\Ejemplo_003_Timer.X.production.obj
-delay_mio@iTMR2Millis 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
+delay_ms@iTMR2Millis 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
 _OSCCON FD3 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
 _PSPCON FB0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
@@ -647,12 +647,12 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.producti
 __CFG_OSC$HS 0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
 ?___aldiv D 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Ejemplo_003_Timer.X.production.obj
-__end_of_delay_mio 1B4E 0 CODE 0 text12 dist/default/production\Ejemplo_003_Timer.X.production.obj
+__end_of_delay_ms 1B4E 0 CODE 0 text12 dist/default/production\Ejemplo_003_Timer.X.production.obj
 __end_of_SendByteBBSPI 1B18 0 CODE 0 text8 dist/default/production\Ejemplo_003_Timer.X.production.obj
 LCDPutInst@ch 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production\Ejemplo_003_Timer.X.production.obj
-__size_of_delay_mio 0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
-delay_mio@TMR2Millis 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
+__size_of_delay_ms 0 0 ABS 0 - dist/default/production\Ejemplo_003_Timer.X.production.obj
+delay_ms@TMR2Millis 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Ejemplo_003_Timer.X.production.obj
 __pcinit 1BD4 0 CODE 0 cinit dist/default/production\Ejemplo_003_Timer.X.production.obj
 __ptext0 1C22 0 CODE 0 text0 dist/default/production\Ejemplo_003_Timer.X.production.obj
@@ -682,7 +682,7 @@ WritePort_BBSPI@a 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Ejemplo_003_Timer.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Ejemplo_003_Timer.X.production.obj
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\Ejemplo_003_Timer.X.production.obj
-_delay_mio 1B18 0 CODE 0 text12 dist/default/production\Ejemplo_003_Timer.X.production.obj
+_delay_ms 1B18 0 CODE 0 text12 dist/default/production\Ejemplo_003_Timer.X.production.obj
 _ClockSetup 1C62 0 CODE 0 text18 dist/default/production\Ejemplo_003_Timer.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Ejemplo_003_Timer.X.production.obj
 LCDPutStr@ptr 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Ejemplo_003_Timer.X.production.obj
