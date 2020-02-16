@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   main.h
  * Author: nb3
  *
@@ -21,15 +21,8 @@ extern "C" {
 #include "datatypes.h"
 #include "xc.h"
 
-    
-
-    
-
-    
-    
 #ifdef	__cplusplus
 }
 #endif
 
 #endif	/* MAIN_H */
-
